@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>贝壳明细</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">贝壳明细</h1>
+        </header>
+        <!-- 签到页面 -->
+        <div class="content infinite-scroll">
+            <div class="shell_detail">
+                <ul>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+                    <li class="cl">
+                        <div class="z left_text">
+                            <p class="line_text">点赞</p>
+                            <p><span>1天前</span><span>12:17</span></p>
+                        </div>
+                        <div class="y right_text">+1</div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <style>
+    .bar-nav~.content{ top:0;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        //无限滚动加载
+        var loading = false;
+        var maxItems = 100;
+        var itemsPerLoad = 2;
+        function addItems(number, lastIndex) {
+            var html = '';
+            for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                var html = '<li class="cl">'+
+                                '<div class="z left_text">'+
+                                    '<p class="line_text">点赞</p>'+
+                                    '<p><span>1天前</span><span>12:17</span></p>'+
+                                '</div>'+
+                                '<div class="y right_text">+1</div>'+
+                            '</li>';
+            }
+            $('.shell_detail >ul').append(html);
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            setTimeout(function() {
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.shell_detail >li').length;
+            }, 1000);
+        });
+        $.init();
+    </script>
+</body>
+</html>

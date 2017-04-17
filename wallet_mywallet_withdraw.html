@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的钱包-提现</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav graybg">
+            <h1 class="title">我的钱包</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content graybg">
+          <div class="withdraw_box">
+            <div class="part3">
+              <div class="sele_item cl withborder" style="margin-top:0;border-top:none;">
+                <p class="z font14"><span class="wallet_card"></span>招商银行（尾号0088）</p>
+                <span class="icon icon-right y"></span>
+              </div>
+              <div class="sele_item withborder cl">
+                <p class="z font14">金额</p>
+                <p class="z withdraw_total">￥536</p>
+              </div>
+            </div>
+            <div class="confirm_btn">确认提现</div>
+            <div class="tips">
+              <p>提现成功后，钱款会在24小时内汇入您的银行账户中。</p>
+              <p>如有疑问，请联系工作人员。</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+      $(document).on('click','.confirm-wechat', function () {
+      $.confirm('请先绑定提现到账的微信号', function () {
+          $.alert('You clicked Ok button');
+      });
+  });
+
+    </script>
+</body>
+</html>

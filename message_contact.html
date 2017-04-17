@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>消息列表/联系人</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="icon-top icon-msg pull-right"></a>
+            <div class="buttons-row">
+                <a href="#tab1" class="tab-link active button" id="msg" onclick="tabSwitch(this)">消息</a>
+                <a href="#tab2" class="tab-link button" id="contact" onclick="tabSwitch(this)">联系人</a>
+            </div>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content msg_contact" id="msg-content">
+            <div class="list-block">
+                <a href="comment_me.html" class="list_item item-link cl external">
+                    <div class="z icon2"><img src="images/icon_like_w.png" alt="" /></div>
+                    <div class="y rightpart">
+                        <span class="z font15 text3">评论</span>
+                        <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                    </div>
+                </a>
+                <a href="like_me.html" class="list_item item-link cl external">
+                    <div class="z icon2"><img src="images/icon_comment_w.png" alt="" /></div>
+                    <div class="y rightpart">
+                        <span class="z font15 text3">赞</span>
+                        <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                        <span class="y new_notice">1</span>
+                    </div>
+                </a>
+                <a href="mentioned_me.html" class="list_item item-link cl external">
+                    <div class="z icon2"><img src="images/xiaoxiat.png" alt="" /></div>
+                    <div class="y rightpart">
+                        <span class="z font15 text3">提到我的</span>
+                        <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                    </div>
+                </a>
+                <a href="inform.html" class="list_item item-link cl external">
+                    <div class="z icon2"><img src="images/inform.png" alt="" /></div>
+                    <div class="y rightpart">
+                        <span class="z font15 text3">系统通知</span>
+                        <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                    </div>
+                </a>
+                <div class="list_item item-link cl">
+                    <div class="z icon2"><img src="images/lin.png" alt="" /></div>
+                    <div class="y rightpart">
+                        <div class="toppart cl">
+                            <span class="font15 text3 text4 z">鱼邻小助手</span>
+                            <span class="y msg_time text4 font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66">Hi，我是鱼邻小助手。在鱼邻，你可以晒一晒自己</p>
+                    </div>
+                </div>
+                <div class="list_item item-link cl">
+                    <div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>
+                    <div class="y rightpart">
+                        <div class="toppart cl">
+                            <span class="font15 text3 text4 z">旧旧的</span>
+                            <span class="y msg_time text4 font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66">你好！在吗？</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content msg_contact" id="contact-content" style="display:none">
+            <div class="bar bar-header-secondary">
+                <div class="searchbar">
+                    <a class="searchbar-cancel">取消</a>
+                    <div class="search-input">
+                        <label class="icon icon-search" for="search"></label>
+                        <input type="search" id='search' placeholder='搜索'/>
+                    </div>
+                </div>
+            </div>
+            <div class="list-block contacts-block">
+                <!-- <div class="search_contact">
+                    <input class="search_input font13" type="search" id='search' placeholder='搜索'/>
+                </div> -->
+                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">A</li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">AAA大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">B</li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">BVBB大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">C</li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">CCC大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">V</li>
+                        <li>
+                          <div class="item-content">
+                            <div class="item-inner">
+                              <div class="z item-title">
+                                <span class="avatar1" style="background:url(images/avatar.jpg) no-repeat; background-size:cover;background-position:center center;"></span>
+                                <span class="nickname2 font15">VVV大王</span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        $(".contacts-block").indexList();
+    </script>
+</body>
+</html>

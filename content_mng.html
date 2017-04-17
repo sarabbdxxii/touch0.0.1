@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>内容管理</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">内容管理</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content inform setting content_mng">
+            <div class="list-block">
+                <div class="list_item cl">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="font15 text3 text4">浏览所有内容</p>
+                        </div>
+                    </div>
+                    <label class="label-switch y">
+                        <input class="ischeck" type="checkbox">
+                        <div class="checkbox"></div>
+                    </label>
+                </div>
+                <div class="list_item tip font13">
+                    开启时首页将会推送所有内容，关闭后可以选择您喜欢的内容进行筛选。
+                </div>
+            </div>
+            <div class="subscribe_all">
+                <div class="wrapper_main">
+                    <p class="col66 midtx" style="margin:.4rem 0;">订阅您喜欢的内容</p>
+                    <div class="cl">
+                        <div class="z fish_type on" onclick="subscribe(this)">龙鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">虎鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">魟鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">锦鲤鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">罗汉鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">水草造景</div>
+                        <div class="z fish_type" onclick="subscribe(this)">海水鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">金鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">孔雀鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">鹦鹉鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">神仙鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">三湖慈鲷</div>
+                        <div class="z fish_type" onclick="subscribe(this)">猛鱼/加拉辛</div>
+                        <div class="z fish_type" onclick="subscribe(this)">其他鱼类</div>
+                        <div class="z fish_type" onclick="subscribe(this)">斗鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">地图鱼</div>
+                        <div class="z fish_type" onclick="subscribe(this)">美洲慈鲷</div>
+                        <div class="z fish_type" onclick="subscribe(this)">七彩神仙</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="blue_btn blue_btn2">保存</a>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        $('.ischeck').click(function(){
+            if($(this).attr('checked')){
+                $(this).removeAttr('checked');
+                $('.subscribe_all').fadeIn();
+                $.toast("开启订阅成功");
+            }else{
+                $(this).attr('checked','checked');
+                $('.subscribe_all').fadeOut();
+                $.toast("关闭订阅成功");
+            }
+        });
+    </script>
+</body>
+</html>

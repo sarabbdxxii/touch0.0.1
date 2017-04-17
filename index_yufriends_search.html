@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>首页-鱼友搜索</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page index_search">
+        <!-- 标题栏 -->
+        <div class="bar">
+          <div class="searchbar ff">
+            <a class="searchbar-cancel">取消</a>
+            <div class="search-input">
+              <label class="icon icon-search" for="search"></label>
+              <input type="search" id='search' placeholder='搜索内容/话题/鱼友...'/>
+            </div>
+          </div>
+        </div>
+        <!-- 这里是页面内容区 -->
+         <div class="content infinite-scroll" style="top:4.4rem;background:#F1F3F7">
+            <div class="buttons-tab1 index">
+                <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">综合</a>
+                <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">微帖</a>
+                <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">长帖</a>
+                <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">话题</a>
+                <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">商品</a>
+                <a href="javascript:;" class="tab-link1 button font15 external active" style="margin-right:1%">鱼友</a>
+            </div>
+            <div class="yufriends_list">
+                <div class="yufriends_item">
+                    <div class="wrapper_main onepiece">
+                        <div class="header_info cl">
+                            <a href="javascript:;" class="external">
+                            <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                            </a>
+                            <div class="info2 z">
+                                <div class="cl info21">
+                                    <a href="javascript:;" class="nickname font14 z external colblue" onclick="show_login_dialog('messge')">冰淇淋</a>
+                                    <span class="z male"></span><!-- <span class="z female"></span> -->
+                                    <div class="grade z cl">
+                                        <div class="arrow-left z"></div>
+                                        <div class="rect z font12 z">LV6</div>
+                                    </div>
+                                </div>
+                                <p class="font13">这家伙很懒，什么也没留下。</p>
+                                <div class="cl font12 aaa">
+                                    <p class="z">关注：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">粉丝：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">分享：</p>
+                                    <p class="z">25</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="yufriends_item">
+                    <div class="wrapper_main onepiece">
+                        <div class="header_info cl">
+                            <a href="javascript:;" class="external">
+                            <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                            </a>
+                            <div class="info2 z">
+                                <div class="cl info21">
+                                    <a href="javascript:;" class="nickname font14 z external colblue" onclick="show_login_dialog('messge')">冰淇淋</a>
+                                    <span class="z female"></span>
+                                    <div class="grade z cl">
+                                        <div class="arrow-left z"></div>
+                                        <div class="rect z font12 z">LV6</div>
+                                    </div>
+                                </div>
+                                <p class="font13">这家伙很懒，什么也没留下。</p>
+                                <div class="cl font12 aaa">
+                                    <p class="z">关注：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">粉丝：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">分享：</p>
+                                    <p class="z">25</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 没有感兴趣的话题(以上内容为空时显示以下内容) -->
+            <div class="title_bar font12 ">
+                没有感兴趣的鱼友？
+            </div>
+            <div class="cl title_bar2">
+                <div class="wrapper_main">
+                    <div class="z title_line"></div>
+                    <span class="z font13 texts">鱼友推荐</span>
+                    <div class="y title_line"></div>
+                </div>
+            </div>
+            <div class="intro_friends yufriends_list cl">
+                <div class="intro_friends_item whitebg wrapper_main">
+                    <div class="onepiece" style="border-bottom: solid 1px #e6e6e6;">
+                        <div class="header_info cl">
+                            <a href="javascript:;" class="external">
+                            <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                            </a>
+                            <div class="info2 z">
+                                <div class="cl info21">
+                                    <a href="javascript:;" class="nickname font14 z external colblue" onclick="show_login_dialog('messge')">冰淇淋</a>
+                                    <span class="z male"></span><!-- <span class="z female"></span> -->
+                                    <div class="grade z cl">
+                                        <div class="arrow-left z"></div>
+                                        <div class="rect z font12 z">LV6</div>
+                                    </div>
+                                </div>
+                                <p class="font13">这家伙很懒，什么也没留下。</p>
+                                <div class="cl font12 aaa">
+                                    <p class="z">关注：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">粉丝：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">分享：</p>
+                                    <p class="z">25</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                        </div>
+                        <ul class="pics pic_hot cl">
+                            <li class="z pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                            <li class="z pb-standalone" onclick="openPic(1,'myPhotoBrowserStandalone2')" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                            <li class="z pb-standalone" onclick="openPic(2,'myPhotoBrowserStandalone2')" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="intro_friends_item whitebg wrapper_main">
+                    <div class="onepiece" style="border-bottom: solid 1px #e6e6e6;">
+                        <div class="header_info cl">
+                            <a href="javascript:;" class="external">
+                            <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                            </a>
+                            <div class="info2 z">
+                                <div class="cl info21">
+                                    <a href="javascript:;" class="nickname font14 z external colblue" onclick="show_login_dialog('messge')">冰淇淋</a>
+                                    <span class="z male"></span><!-- <span class="z female"></span> -->
+                                    <div class="grade z cl">
+                                        <div class="arrow-left z"></div>
+                                        <div class="rect z font12 z">LV6</div>
+                                    </div>
+                                </div>
+                                <p class="font13">这家伙很懒，什么也没留下。</p>
+                                <div class="cl font12 aaa">
+                                    <p class="z">关注：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">粉丝：</p>
+                                    <p class="z" style="margin-right:.3rem">25</p>
+                                    <p class="z">分享：</p>
+                                    <p class="z">25</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                        </div>
+                        <ul class="pics pic_hot cl">
+                            <li class="z pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                            <li class="z pb-standalone" onclick="openPic(1,'myPhotoBrowserStandalone2')" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                            <li class="z pb-standalone" onclick="openPic(2,'myPhotoBrowserStandalone2')" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- preloader -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+         var myPhotoBrowserStandalone2 = $.photoBrowser({
+            photos : [
+                'images/avatar.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg'
+            ]
+        });
+        function openPic(index,name){
+            eval(name).open(index);
+        }
+
+        //无限滚动加载
+        var loading = false;
+        var maxItems = 100;
+        var itemsPerLoad = 2;
+        function addItems(number, lastIndex) {
+        $.ajax({
+        url:'/a.php',
+        type:'GET',
+        dataType:'text',
+        success:function(r){
+        // alert(r);
+        var d=3;
+        eval('myPhotoBrowserStandalone' + d + " = $.photoBrowser({photos : ['images/pic2.jpg',] });");
+        var html = '';
+        for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+        var html = '<div class="intro_friends_item whitebg wrapper_main">'+
+                       '<div class="onepiece" style="border-bottom: solid 1px #e6e6e6;">'+
+                            '<div class="header_info cl">'+
+                                '<a href="javascript:;" class="external">'+
+                                '<span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>'+
+                                '</a>'+
+                                '<div class="info2 z">'+
+                                    '<div class="cl info21">'+
+                                        '<a href="javascript:;" class="nickname font14 z external colblue">冰淇淋</a>'+
+                                        '<span class="z male"></span>'+
+                                        '<div class="grade z cl">'+
+                                            '<div class="arrow-left z"></div>'+
+                                            '<div class="rect z font12 z">LV6</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<p class="font13">这家伙很懒，什么也没留下。</p>'+
+                                    '<div class="cl font12 aaa">'+
+                                        '<p class="z">关注：</p>'+
+                                        '<p class="z" style="margin-right:.3rem">25</p>'+
+                                        '<p class="z">粉丝：</p>'+
+                                        '<p class="z" style="margin-right:.3rem">25</p>'+
+                                        '<p class="z">分享：</p>'+
+                                        '<p class="z">25</p>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+                            '</div>'+
+                            '<ul class="pics pic_hot cl">'+
+                                '<li class="z pb-standalone" onclick="openPic(0,\'myPhotoBrowserStandalone2\')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+                                '<li class="z pb-standalone" onclick="openPic(1,\'myPhotoBrowserStandalone2\')" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>'+
+                                '<li class="z pb-standalone" onclick="openPic(2,\'myPhotoBrowserStandalone2\')" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>'+
+                            '</ul>'+
+                        '</div>'+
+                    '</div>';
+        }
+        $('.intro_friends').append(html);
+        }
+        });
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+            // 设置flag
+            loading = true;
+            setTimeout(function() {
+                loading = false;
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.intro_friends>.intro_friends_item').length;
+            }, 1000);
+        });
+
+        $.init();
+    </script>
+</body>
+</html>

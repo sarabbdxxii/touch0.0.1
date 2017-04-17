@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>首页</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="css/light7.min.css">
+        <link rel="stylesheet" href="css/light7-swiper.min.css">
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/pages.css" />
+    </head>
+    <body>
+        <!-- page 容器 -->
+        <div class="page">
+            <div class="download_tip cl font15">
+                <div class="z leftpart cl">
+                    <img class="z closebtn" onclick="closeDownloadTip()" src="images/close.png" alt="" />
+                    <img class="z yulin_icon" src="images/yulin.png" alt="" />
+                    <p class="z">有鱼、有邻、有达人</p>
+                </div>
+                <div class="z rightpart">立即下载</div>
+            </div>
+            <!-- 标题栏 -->
+            <div class="buttons-tab1 index">
+                <a href="javascript:;" class="tab-link1 active button font15 external" style="margin-right:5%">全部</a>
+                <a href="indexindex_2.html" class="tab-link1 button font15 external" style="margin-right:5%">关注</a>
+                <a href="indexindex_2.html" class="tab-link1 button font15 external">精选</a>
+                <a class="icon icon-search search_icon"></a>
+            </div>
+            <div class="content index on infinite-scroll pull-to-refresh-content" data-distance="100" data-ptr-distance="55">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div class="content-block">
+                    <div class="tabs wrapper_main">
+                        <!-- 全部 -->
+                        <div id="tab1" class="tab active">
+                            <!-- 一篇帖子 -->
+                            <div class="onepiece cl">
+                                <div class="header_info cl">
+                                    <a href="javascript:;" class="external">
+                                    <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                                    </a>
+                                    <div class="info2 z">
+                                        <div class="cl info21">
+                                            <a href="javascript:;" class="nickname font14 z external colblue" onclick="show_login_dialog('messge')">冰淇淋</a>
+                                            <div class="grade z cl">
+                                                <div class="arrow-left z"></div>
+                                                <div class="rect z font12 z">LV6</div>
+                                            </div>
+                                        </div>
+                                        <div class="cl font12 aaa">
+                                            <p class="z" style="margin-right:.3rem;">6-22</p>
+                                            <p class="z smaltx" onclick="show_login_dialog('您需要登录才可操作，确定登录吗？')">来自美人鱼</p>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                                </div>
+                                <a href="post_detail.html" class="external piecetext">
+                                <p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p>
+                                </a>
+                                <a href="post_detail.html" class="external piecetext main">
+                                <p class="piecetext main font14">大神们，我开缸大神们，</p>
+                                </a>
+                                <!-- <ul class="pics pic1">
+                                                                    <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                                </ul> -->
+                                <!-- <ul class="pics pic2 cl">
+                                                                    <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                                </ul> -->
+                                <!-- <ul class="pics pic3 cl">
+                                                                    <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z pb-standalone" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z pb-standalone" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                                </ul> -->
+                                <!-- <ul class="pics pic4 cl">
+                                                                    <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z pb-standalone" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z pb-standalone" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                                                                    <li class="z pb-standalone" style="background:url(images/pic4.jpg);background-size:cover;background-position:center center;"></li>
+                                </ul> -->
+                                <!-- 视频 -->
+                                <ul class="pics pic1 cl">
+                                    <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;">
+                                        <span class="dis_bk play_icon3" onclick="openPic(0,'myPhotoBrowserVideo')" ></span>
+                                    </li>
+                                </ul>
+                                <!-- 图标 -->
+                                <div class="options cl font12">
+                                    <span class="more_btn y" onclick="show_share()"></span>
+                                    <span class="num comment y">15</span>
+                                    <span class="comment_pic y open-popup open-about"></span>
+                                    <span class="num like y">2</span>
+                                    <span class="like_pic y" onclick="likeit(this)"></span>
+                                </div>
+                                <!-- 点赞 -->
+                                <div class="like_list cl">
+                                    <a class="external" href="javascript:;"><span class="like_pic liked z"></span></a>
+                                    <a class="external" href="javascript:;"><span class="z" style="width:.3rem;height:.1rem;"></span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">肖红英、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">光小星、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">温娟aaaaa、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">郝军维、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">肖红英、</span></a></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">光小星、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">温娟aaaaa、</span></a>
+                                    <a class="external colblue" href="javascript:;"><span class="like_name z font13">郝军维、</span></a>
+                                    <span class="z tips font13">等9人觉得很赞</span>
+                                </div>
+                                <!-- 评论 -->
+                                <div class="comment_list font13">
+                                    <div class="comments">
+                                        <span class="texts">
+                                        <a class="external colblue" href="javascript:;"><span class="like_name">冰淇淋：</span></a>
+                                        谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注
+                                        </span>
+                                    </div>
+                                    <div class="comments">
+                                        <span class="texts">
+                                        <a class="external colblue" href="javascript:;"><span class="like_name">冰淇淋：</span></a>
+                                        谢谢关注
+                                        </span>
+                                    </div>
+                                    <p class="show_all cl font12">
+                                    <a href="post_detail.html" class="external all_comment">
+                                    <span class="y">全部15条评论</span>
+                                    </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="onepiece cl">
+                                <div class="header_info cl">
+                                    <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                                    <div class="info2 z">
+                                        <div class="cl info21">
+                                            <p class="nickname font14 z">冰淇淋</p>
+                                            <div class="grade z cl">
+                                                <div class="arrow-left z"></div>
+                                                <div class="rect z font12 z">LV6</div>
+                                            </div>
+                                        </div>
+                                        <div class="cl font12 aaa">
+                                            <p class="z" style="margin-right:.3rem;">6-22</p>
+                                            <p class="z">来自美人鱼</p>
+                                        </div>
+                                    </div>
+                                    <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                                </div>
+                                <p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p>
+                                <p class="piecetext main font14">大神们，我开缸大神们，</p>
+                                <ul class="pics pic4 cl">
+                                    <li class="z pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                                    <li class="z pb-standalone" onclick="openPic(1,'myPhotoBrowserStandalone2')" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                                    <li class="z pb-standalone" onclick="openPic(2,'myPhotoBrowserStandalone2')" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                                    <li class="z pb-standalone" onclick="openPic(3,'myPhotoBrowserStandalone2')" style="background:url(images/pic4.jpg);background-size:cover;background-position:center center;"></li>
+                                    <a href="javascript:;" style="display:none" class="extra">+4</a>
+                                </ul>
+                                <!-- 图标 -->
+                                <div class="options cl font12">
+                                    <span class="more_btn y" onclick="show_share()"></span>
+                                    <span class="num comment y">15</span>
+                                    <span class="comment_pic y"></span>
+                                    <span class="num like y">2</span>
+                                    <span class="like_pic y" onclick="likeit(this)"></span>
+                                </div>
+                                <!-- 点赞 -->
+                                <div class="like_list cl">
+                                    <span class="like_pic liked z"></span>
+                                    <span class="z" style="width:.3rem;height:.1rem;"></span>
+                                    <span class="like_name z font13">肖红英、</span>
+                                    <span class="like_name z font13">光小星、</span>
+                                    <span class="like_name z font13">温娟aaaaa、</span>
+                                    <span class="like_name z font13">郝军维、</span>
+                                    <span class="like_name z font13">肖红英、</span>
+                                    <span class="like_name z font13">光小星、</span>
+                                    <span class="like_name z font13">温娟aaaaa、</span>
+                                    <span class="like_name z font13">郝军维、</span>
+                                    <span class="z tips font13">等9人觉得很赞</span>
+                                </div>
+                                <!-- 评论 -->
+                                <div class="comment_list font13">
+                                    <div class="comments">
+                                        <span class="texts">
+                                        <span class="like_name">冰淇淋：</span>
+                                        谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注
+                                        </span>
+                                    </div>
+                                    <div class="comments">
+                                        <span class="texts">
+                                        <span class="like_name">冰淇淋：</span>
+                                        谢谢关注
+                                        </span>
+                                    </div>
+                                    <p class="show_all cl font12"><span class="y">全部15条评论</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 加载提示符 -->
+                        <div class="infinite-scroll-preloader">
+                            <div class="preloader">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item active" href="#">
+                <span class="comm_icons icon-home1"></span>
+                <span class="tab-label">主页</span>
+                </a>
+                <a class="tab-item" href="#">
+                <span class="comm_icons icon-home2"></span>
+                <span class="tab-label">发现</span>
+                </a>
+                <a class="tab-item" href="#">
+                <span class="comm_icons"></span>
+                <span class="icon-post"></span>
+                <span class="tab-label">发布</span>
+                </a>
+                <a class="tab-item" href="#">
+                <span class="comm_icons icon-home3"></span>
+                <span class="tab-label">消息</span>
+                </a>
+                <a class="tab-item" href="#">
+                <span class="comm_icons icon-home4"></span>
+                <span class="tab-label">我的</span>
+                </a>
+            </nav>
+            <!-- 分享 -->
+            <div class="black" onclick="close_black()" style="display:none;"></div>
+            <div class="wechat_share" onclick="close_wechat_share()" style="display:none;"></div>
+            <div class="share_list">
+                <div class="share">
+                    <div class="line1 cl">
+                        <div class="bdsharebuttonbox">
+                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                            <a href="#" class="bds_twechat" onclick="wechat_share()" title="分享到微信">微信</a>
+                        </div>
+                    </div>
+                    <div class="line2 cl">
+                        <div class="z blo">
+                            <div class="share_item">
+                                <span class="innericon collect"></span>
+                            </div>
+                            <span class="text2 font13">收藏</span>
+                        </div>
+                        <div class="z blo">
+                            <div class="share_item">
+                                <span class="innericon inform"></span>
+                            </div>
+                            <span class="text2 font13">举报</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cancle font14" onclick="close_black(this)">取消</div>
+            </div>
+        </div>
+        <div class="popup popup-about">
+            <header class="bar bar-nav login_bar">
+                <a class="button button-link button-nav pull-left" href="javascript:;">
+                <span class="icon icon-left close-popup"></span>
+                </a>
+                <h1 class="title">评论</h1>
+            </header>
+            <div class="content">
+                <div class="ly_commend">
+                    <div class="cl advise_box">
+                        <span>@moumou</span>
+                        <textarea id="com_box" class="advise_text" placeholder="说说你的看法...."></textarea>
+                    </div>
+                    <div class="cl">
+                        <span class="z smile_icon"><img src="images/smile.png"/></span>
+                        <button class="com_btn y">发表评论</button>
+                    </div>
+                    <div class="cl face_show hide">
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                        <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-overlay modal-overlay-visible" style="display:none;"></div>
+        <div class="modal modal-in" style="display: none;margin-top: -50px;">
+            <div class="modal-inner">
+                <div class="modal_title">温馨提示</div>
+                <div class="modal-text">不良信息是指含有色情、暴力、广告或者其他骚扰你正常工作生活的内容。您是否举报？</div>
+                <input type="text" class="modal-text-input">
+            </div>
+            <div class="modal-buttons ">
+                <span class="modal-button color_normal" onclick="cancle_login()">再想想</span>
+                <span class="modal-button modal-button-bold" onclick="confirm_login()">举报</span>
+            </div>
+        </div>
+        <style>
+            .modal_title{ text-align: center; font-size: 0.8rem; margin-bottom: 0.5rem;}
+            .color_normal{ color:#3d4145;}
+        </style>
+        <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+        <script>
+        show_login_dialog()
+
+         $(document).on('click','.confirm-ok', function () {
+              $.confirm('Are you sure?', function () {
+                  $.alert('You clicked Ok button');
+              });
+          });
+                var myPhotoBrowserStandalone1 = $.photoBrowser({
+                    photos : [
+                        'images/pic1.jpg',
+                        'images/pic2.jpg',
+                        'images/pic3.jpg',
+                        'images/pic4.jpg',
+                        'images/pic5.jpg'
+                    ]
+                });
+                var myPhotoBrowserStandalone2 = $.photoBrowser({
+                    photos : [
+                        'images/avatar.jpg',
+                        'images/test_img.jpg',
+                        'images/test_img.jpg',
+                        'images/test_img.jpg',
+                        'images/test_img.jpg'
+                    ]
+                });
+                function openPic(index,name){
+                    eval(name).open(index);
+                }
+            //下拉刷新
+            $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+                setTimeout(function() {
+                    var cardHTML =  '<div class="onepiece cl">'+
+                                            '<div class="header_info cl">'+
+                                                    '<span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>'+
+                                                    '<div class="info2 z">'+
+                                                            '<div class="cl info21">'+
+                                                                    '<a href="javascript:;" class="nickname font14 z external colblue">冰淇淋11111</a>'+
+                                                                    '<div class="grade z cl">'+
+                                                                            '<div class="arrow-left z"></div>'+
+                                                                            '<div class="rect z font12 z">LV6</div>'+
+                                                                    '</div>'+
+                                                            '</div>'+
+                                                            '<div class="cl font12 aaa">'+
+                                                                    '<p class="z" style="margin-right:.3rem;">6-22</p>'+
+                                                                    '<p class="z">来自美人鱼</p>'+
+                                                            '</div>'+
+                                                    '</div>'+
+                                                    '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+                                            '</div>'+
+                                            '<a href="post_detail.html" class="external piecetext"><p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p></a>'+
+                                            '<a href="post_detail.html" class="external piecetext"><p class="piecetext main font14">大神们，我开缸大神们，</p></a>'+
+                                            '<ul class="pics pic1 cl">'+
+                                                    '<li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+                                                    '<a href="javascript:;" class="extra">+4</a>'+
+                                            '</ul>'+
+            '<!-- 图标 -->'+
+            '<div class="options cl font12">'+
+                '<span class="more_btn y" onclick="show_share()"></span>'+
+                '<span class="num comment y">15</span>'+
+                '<span class="comment_pic y open-popup open-about"></span>'+
+                '<span class="num like y">2</span>'+
+                '<span class="like_pic y" onclick="likeit(this)"></span>'+
+            '</div>'+
+            '<!-- 点赞 -->'+
+            '<div class="like_list cl">'+
+                '<span class="like_pic liked z"></span>'+
+                '<span class="z" style="width:.3rem;height:.1rem;"></span>'+
+                '<span class="like_name z font13">肖红英、</span>'+
+                '<span class="z tips font13">等9人觉得很赞</span>'+
+            '</div>'+
+            '<!-- 评论 -->'+
+            '<div class="comment_list font13">'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<p class="show_all cl font12"><span class="y">全部15条评论</span></p>'+
+            '</div>'+
+        '</div>';
+        $(e.target).find('.tab.active > .onepiece').replaceWith(cardHTML);
+        // done
+        $.pullToRefreshDone('.pull-to-refresh-content');
+        }, 2000);
+        });
+        //无限滚动加载
+        var loading = false;
+        var maxItems = 100;
+        var itemsPerLoad = 2;
+        function addItems(number, lastIndex) {
+        $.ajax({
+        url:'/a.php',
+        type:'GET',
+        dataType:'text',
+        success:function(r){
+        // alert(r);
+        var d=3;
+        eval('myPhotoBrowserStandalone' + d + " = $.photoBrowser({photos : ['images/pic2.jpg',] });");
+        var html = '';
+        for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+        var html = '<div class="onepiece cl">'+
+            '<div class="header_info cl">'+
+                '<span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>'+
+                '<div class="info2 z">'+
+                    '<div class="cl info21">'+
+                        '<a href="javascript:;" class="nickname font14 z external colblue">冰淇淋</a>'+
+                        '<div class="grade z cl">'+
+                            '<div class="arrow-left z"></div>'+
+                            '<div class="rect z font12 z">LV6</div>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="cl font12 aaa">'+
+                        '<p class="z" style="margin-right:.3rem;">6-22</p>'+
+                        '<p class="z">来自美人鱼</p>'+
+                    '</div>'+
+                '</div>'+
+                '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+            '</div>'+
+            '<a href="post_detail.html" class="external piecetext"><p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p></a>'+
+            '<a href="post_detail.html" class="external piecetext"><p class="piecetext main font14">大神们，我开缸大神们，</p></a>'+
+            '<ul class="pics pic1 cl">'+
+                '<li class="z pb-standalone" onclick="openPic(0,\'myPhotoBrowserStandalone3\')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+                '<a href="javascript:;" class="extra">+4</a>'+
+            '</ul>'+
+            '<!-- 图标 -->'+
+            '<div class="options cl font12">'+
+                '<span class="more_btn y" onclick="show_share()"></span>'+
+                '<span class="num comment y">15</span>'+
+                '<span class="comment_pic y open-popup open-about"></span>'+
+                '<span class="num like y">2</span>'+
+                '<span class="like_pic y" onclick="likeit(this)"></span>'+
+            '</div>'+
+            '<!-- 点赞 -->'+
+            '<div class="like_list cl">'+
+                '<span class="like_pic liked z"></span>'+
+                '<span class="z" style="width:.3rem;height:.1rem;"></span>'+
+                '<span class="like_name z font13">肖红英、</span>'+
+                '<span class="z tips font13">等9人觉得很赞</span>'+
+            '</div>'+
+            '<!-- 评论 -->'+
+            '<div class="comment_list font13">'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<p class="show_all cl font12"><span class="y">全部15条评论</span></p>'+
+            '</div>'+
+        '</div>';
+        }
+        $('.tab.active').append(html);
+        }
+        });
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+            // 设置flag
+            loading = true;
+            setTimeout(function() {
+                loading = false;
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.tab.active>.onepiece').length;
+            }, 1000);
+        });
+        /*播放视频*/
+        var myPhotoBrowserVideo = $.photoBrowser({
+            photos : [
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                },
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                },
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                }
+
+                /*{
+                    html: '<iframe src="images/test.mp4" frameborder="0" allowfullscreen></iframe>'
+                }*/
+
+            ],
+            theme: 'dark',
+            type: 'standalone'
+        });
+        $(document).on('click','.pb-standalone-video',function () {
+            myPhotoBrowserVideo.open();
+        });
+
+        $.init();
+        </script>
+    </body>
+</html>

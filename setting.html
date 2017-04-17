@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>设置</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">设置</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content inform setting">
+            <div class="list-block">
+                <div class="list_item cl">
+                    <div class="z rightpart">
+                        <a href="content_mng.html" class="toppart cl external">
+                            <p class="font15 text3 text4">内容管理</p>
+                        </a>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </div>
+                <div class="list_item cl bobtn">
+                    <div class="z rightpart">
+                        <a href="change_pwd.html" class="toppart cl external">
+                            <p class="font15 text3 text4">修改密码</p>
+                        </a>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </div>
+                <div class="list_item cl mtn_rem">
+                    <div class="z rightpart">
+                        <a href="yulin_standard.html" class="toppart cl external">
+                            <p class="font15 text3 text4">社区规范</p>
+                        </a>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </div>
+                <a href="javascript:;" class="blue_btn create-actions">退出登录</a>
+            </div>
+        </div>
+
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+         $(document).on('click','.create-actions', function () {
+              var buttons1 = [
+                {
+                  text: '要退出登录吗',
+                  label: true
+                },
+                {
+                  text: '退出登录',
+                  color: 'danger',
+                  onClick: function() {
+                    $.alert("你选择了“退出登录“");
+                  }
+                }
+              ];
+              var buttons2 = [
+                {
+                  text: '取消'
+                }
+              ];
+              var groups = [buttons1, buttons2];
+              $.actions(groups);
+          });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发现邻街-注册</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">选择喜欢的鱼</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content register">
+            <div class="class_type">
+                <div class="pop pop1 pop1_1">
+                    <p class="text1">龙鱼</p>
+                </div>
+                <div class="pop pop1 pop1_2">
+                    <p class="text1">魟鱼</p>
+                </div>
+                <div class="pop pop2 pop2_1">
+                    <p class="text1">虎鱼</p>
+                </div>
+                <div class="pop pop2 pop2_2">
+                    <p class="text1">罗汉鱼</p>
+                </div>
+                <div class="pop pop2 pop2_3">
+                    <p class="text1">神仙鱼</p>
+                </div>
+                <div class="pop pop2 pop2_4">
+                    <p class="text1">水草造景</p>
+                </div>
+                <div class="pop pop3 pop3_1">
+                    <p class="text1">锦鲤鱼</p>
+                </div>
+                <div class="pop pop4 pop4_1">
+                    <p class="text1">三湖慈鲷</p>
+                </div>
+                <div class="pop pop4 pop4_2">
+                    <p class="text1">观赏虾</p>
+                </div>
+                <div class="pop pop5 pop5_1">
+                    <p class="text1">鹦鹉鱼</p>
+                </div>
+                <div class="pop pop6 pop6_1">
+                    <p class="text1">两栖爬宠</p>
+                </div>
+                <div class="pop pop6 pop6_2">
+                    <p class="text1">孔雀鱼</p>
+                </div>
+                <div class="pop pop6 pop6_3">
+                    <p class="text1">其它</p>
+                </div>
+                <div class="pop pop7 pop7_1">
+                    <p class="text1">猛鱼</p>
+                </div>
+                <div class="pop pop7 pop7_2">
+                    <p class="text1">海水</p>
+                </div>
+                <div class="pop pop7 pop7_3">
+                    <p class="text1">金鱼</p>
+                </div>
+            </div>
+        </div>
+        <nav class="bar bar-tab">
+            <button class="next_btn">完成</button>
+        </nav>
+    </div>
+    <style>
+    html{font-size:20px}
+    @media only screen and (min-width:320px){html{font-size:17.064px!important}
+    }
+    @media only screen and (min-width:414px){html{font-size:22.08px!important}
+    }
+    @media only screen and (min-width:480px){html{font-size:25.6px!important}
+    }
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        var flag =1;
+        $('.pop').click(function(){
+            if(flag ==1){
+                $(this).addClass('on');
+                flag =0;
+            }else{
+                $(this).removeClass('on');
+                flag =1;
+            }
+
+        })
+    </script>
+</body>
+</html>

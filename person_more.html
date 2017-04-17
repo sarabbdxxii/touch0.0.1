@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻触屏版-个人中心</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/thinksns.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">相册</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content person_index" style="top:2.2rem;">
+            <ul class="more_pic cl">
+                <li class="z pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone1')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                <li class="z pb-standalone" onclick="openPic(1,'myPhotoBrowserStandalone1')" style="background:url(images/pic2.jpg);background-size:cover;background-position:center center;"></li>
+                <li class="z pb-standalone" onclick="openPic(2,'myPhotoBrowserStandalone1')" style="background:url(images/pic3.jpg);background-size:cover;background-position:center center;"></li>
+                <li class="z pb-standalone" onclick="openPic(3,'myPhotoBrowserStandalone1')" style="background:url(images/pic4.jpg);background-size:cover;background-position:center center;"></li>
+                <li class="z pb-standalone" onclick="openPic(4,'myPhotoBrowserStandalone1')" style="background:url(images/pic5.jpg);background-size:cover;background-position:center center;"></li>
+            </ul>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        var myPhotoBrowserStandalone1 = $.photoBrowser({
+            photos : [
+                'images/pic1.jpg',
+                'images/pic2.jpg',
+                'images/pic3.jpg',
+                'images/pic4.jpg',
+                'images/pic5.jpg'
+            ]
+        });
+        function openPic(index,name){
+            eval(name).open(index);
+        }
+    </script>
+</body>
+</html>

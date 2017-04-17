@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>首页-综合搜索</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page index_search">
+        <!-- 标题栏 -->
+        <div class="bar" style="position:fixed">
+          <div class="searchbar ff">
+            <a class="searchbar-cancel">取消</a>
+            <div class="search-input">
+              <label class="icon icon-search" for="search"></label>
+              <input type="search" id='search' placeholder='搜索内容/话题/鱼友...'/>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-tab1 index">
+            <a href="javascript:;" class="tab-link1 active button font15 external" style="margin-right:1%">综合</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">微帖</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">长帖</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">话题</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">商品</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">鱼友</a>
+            <a href="javascript:;" class="tab-link1 button font15 external" style="margin-right:1%">鱼友</a>
+        </div>
+        <!-- 这里是页面内容区 -->
+        <div class="content content_bg infinite-scroll" style="top:2.2rem;">
+            <!-- 商品列表 -->
+            <div class="yu_goods" style="margin-top:2.2rem">
+                <div class="goods_list cl">
+                    <div class="list_item2 z">
+                        <a href="" class="per_img" style="background:url(images/pic1.jpg) no-repeat center center; background-size:cover;"></a>
+                        <div class="goods_info">
+                            <p class="per_text">周一就买到鱼不知道怎样周一就买到鱼不知道怎</p>
+                            <p class="per_price">￥1999</p>
+                            <p class="cl">
+                                <span class="z per_adr addr">太原市小店区</span>
+                                <span class="y per_adr">8-23</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list_item2 z">
+                        <a href="" class="per_img" style="background:url(images/pic1.jpg) no-repeat center center; background-size:cover;"></a>
+                        <div class="goods_info">
+                            <p class="per_text">周一就买到鱼不知道怎样周一就买到鱼不知道怎</p>
+                            <p class="per_price">￥1999</p>
+                            <p class="cl">
+                                <span class="z per_adr addr">太原市小店区</span>
+                                <span class="y per_adr">8-23</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        var myPhotoBrowserStandalone2 = $.photoBrowser({
+            photos : [
+                'images/avatar.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg'
+            ]
+        });
+        function openPic(index,name){
+            eval(name).open(index);
+        }
+
+        //无限滚动加载
+        var loading = false;
+        var maxItems = 100;
+        var itemsPerLoad = 2;
+        function addItems(number, lastIndex) {
+        $.ajax({
+        url:'/a.php',
+        type:'GET',
+        dataType:'text',
+        success:function(r){
+        // alert(r);
+        var d=3;
+        eval('myPhotoBrowserStandalone' + d + " = $.photoBrowser({photos : ['images/pic2.jpg',] });");
+        var html = '';
+        for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+        var html = '<div class="onepiece cl">'+
+            '<div class="header_info cl">'+
+                '<span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>'+
+                '<div class="info2 z">'+
+                    '<div class="cl info21">'+
+                        '<a href="javascript:;" class="nickname font14 z external colblue">冰淇淋</a>'+
+                        '<div class="grade z cl">'+
+                            '<div class="arrow-left z"></div>'+
+                            '<div class="rect z font12 z">LV6</div>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="cl font12 aaa">'+
+                        '<p class="z" style="margin-right:.3rem;">6-22</p>'+
+                        '<p class="z">来自美人鱼</p>'+
+                    '</div>'+
+                '</div>'+
+                '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+            '</div>'+
+            '<a href="post_detail.html" class="external piecetext"><p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p></a>'+
+            '<a href="post_detail.html" class="external piecetext"><p class="piecetext main font14">大神们，我开缸大神们，</p></a>'+
+            '<ul class="pics pic1 cl">'+
+                '<li class="z pb-standalone" onclick="openPic(0,\'myPhotoBrowserStandalone3\')" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+            '</ul>'+
+            '<!-- 图标 -->'+
+            '<div class="options cl font12">'+
+                '<span class="more_btn y" onclick="show_share()"></span>'+
+                '<span class="num comment y">15</span>'+
+                '<span class="comment_pic y open-popup open-about"></span>'+
+                '<span class="num like y">2</span>'+
+                '<span class="like_pic y" onclick="likeit(this)"></span>'+
+            '</div>'+
+            '<!-- 点赞 -->'+
+            '<div class="like_list cl">'+
+                '<span class="like_pic liked z"></span>'+
+                '<span class="z" style="width:.3rem;height:.1rem;"></span>'+
+                '<span class="like_name z font13">肖红英、</span>'+
+                '<span class="z tips font13">等9人觉得很赞</span>'+
+            '</div>'+
+            '<!-- 评论 -->'+
+            '<div class="comment_list font13">'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<div class="comments">'+
+                    '<span class="texts">'+
+                    '<span class="like_name">冰淇淋：</span>谢谢关注'+
+                    '</span>'+
+                '</div>'+
+                '<p class="show_all cl font12"><span class="y">全部15条评论</span></p>'+
+            '</div>'+
+        '</div>';
+        }
+        $('.posts>.wrapper_main').append(html);
+        }
+        });
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+            // 设置flag
+            loading = true;
+            setTimeout(function() {
+                loading = false;
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.posts>.wrapper_main').length;
+            }, 1000);
+        });
+
+        $.init();
+    </script>
+</body>
+</html>

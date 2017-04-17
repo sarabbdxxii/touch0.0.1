@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>首页搜索</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page index_search">
+        <!-- 标题栏 -->
+        <div class="bar">
+          <div class="searchbar">
+            <a class="searchbar-cancel">取消</a>
+            <div class="search-input">
+              <label class="icon icon-search" for="search"></label>
+              <input type="search" id='search' placeholder='搜索内容/话题/鱼友...'/>
+            </div>
+          </div>
+        </div>
+        <!-- 这里是页面内容区 -->
+        <div class="content" style="top:2.2rem;">
+            <div class="tit_bar">热门搜索</div>
+            <div class="hot_search">
+                <div class="wrapper_main cl">
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                    <div class="z search_item">龙鱼</div>
+                </div>
+            </div>
+            <div class="tit_bar">历史搜索</div>
+            <div class="search_history">
+                <div class="his_item cl">
+                    <span class="z icon icon-clock"></span>
+                    <span class="z">龙鱼</span>
+                    <span class="y close2" onclick="close_history(this)"></span>
+                </div>
+                <div class="his_item cl">
+                    <span class="z icon icon-clock"></span>
+                    <span class="z">龙鱼</span>
+                    <span class="y close2" onclick="close_history(this)"></span>
+                </div>
+                <div class="his_item cl">
+                    <span class="z icon icon-clock"></span>
+                    <span class="z">龙鱼</span>
+                    <span class="y close2" onclick="close_history(this)"></span>
+                </div>
+                <div class="delete_btn cl" onclick="empty_history()">
+                    <span class="z delete"></span>
+                    <span class="y">清除所有历史记录</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻触屏版</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 搜索 -->
+        <div class="street_search cl">
+            <a href="" class="s_left"></a>
+            <div class="s_search_box add_style cl">
+                <span class="s_search_btn z"></span>
+                <input type="text" class="s_input z" placeholder="搜索商品"/>
+            </div>
+        </div>
+        <!-- 搜索 -->
+        <!-- 这里是页面内容区 -->
+        <div class="content goods_list infinite-scroll pull-to-refresh-content" data-distance="100" data-ptr-distance="55">
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <!--商品列表-->
+            <div class="goods_content cl">
+                <div class="goods_per">
+                    <a href="" class="per_img" style="background:url(images/test_img.jpg) no-repeat center center; background-size:contain;"></a>
+                    <div class="goods_info">
+                        <p class="per_text">周一就买到鱼不知道怎样 …</p>
+                        <p class="per_price">￥1999</p>
+                        <p class="cl">
+                            <span class="z per_adr">太原市小店区</span>
+                            <span class="y per_adr">8-23</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="goods_per">
+                    <a href="" class="per_img" style="background:url(images/test_img.jpg) no-repeat center center; background-size:contain;"></a>
+                    <div class="goods_info">
+                        <p class="per_text">周一就买到鱼不知道怎样 …</p>
+                        <p class="per_price">￥1999</p>
+                        <p class="cl">
+                            <span class="z per_adr">太原市小店区</span>
+                            <span class="y per_adr">8-23</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="goods_per">
+                    <a href="" class="per_img" style="background:url(images/test_img.jpg) no-repeat center center; background-size:contain;"></a>
+                    <div class="goods_info">
+                        <p class="per_text">周一就买到鱼不知道怎样 …</p>
+                        <p class="per_price">￥1999</p>
+                        <p class="cl">
+                            <span class="z per_adr">太原市小店区</span>
+                            <span class="y per_adr">8-23</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+            <!--商品列表end-->
+        </div>
+    </div>
+    <style>
+    .pull-to-refresh-content.content{ top:0;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        //下拉刷新
+        $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+            setTimeout(function() {
+                var cardHTML = '<div class="goods_per">' +
+                                  '<a href="" class="per_img" style="background:url(images/test_img.jpg) no-repeat center center; background-size:contain;"></a>' +
+                                    '<div class="goods_info">' +
+                                    '<p class="per_text">周一就买'+(Math.random()*1000000)+'</p>' +
+                                        '<p class="per_price">￥1999</p>'+
+                                        '<p class="cl">'+
+                                            '<span class="z per_adr">太原市小店区</span>'+
+                                            '<span class="y per_adr">8-23</span>'+
+                                        '</p>'+
+                                    '</p>'+
+                                    '</div>' +
+                                '</div>';
+
+                $(e.target).find('.goods_per').replaceWith(cardHTML);
+                // done
+                $.pullToRefreshDone('.pull-to-refresh-content');
+            }, 2000);
+        });
+        //无限滚动加载
+        var loading = false;
+        var maxItems = 100;
+        var itemsPerLoad = 2;
+        function addItems(number, lastIndex) {
+            var html = '';
+            for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                var html = '<div class="goods_per">' +
+                                '<a href="" class="per_img" style="background:url(images/test_img.jpg) no-repeat center center; background-size:contain;"></a>' +
+                                '<div class="goods_info">' +
+                                '<p class="per_text">周一就买到鱼怎样'+ i +'</p>' +
+                                    '<p class="per_price">￥1999</p>'+
+                                    '<p class="cl">'+
+                                        '<span class="z per_adr">太原市小店区</span>'+
+                                        '<span class="y per_adr">8-23</span>'+
+                                    '</p>'+
+                                '</p>'+
+                                '</div>' +
+                            '</div>';
+            }
+            $('.goods_content').append(html);
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            setTimeout(function() {
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.goods_per').length;
+            }, 1000);
+        });
+        $.init();
+    </script>
+</body>
+</html>

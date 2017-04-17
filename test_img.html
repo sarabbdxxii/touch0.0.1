@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      <div>
+        <img src="images/avatar.jpg" class="mapper" style="width:500px;height:500px;margin:100px" usemap="avatar" onclick="getPos(this,event);"/>
+      </div>
+        <map name="avatar" class="avatar">
+          <!-- <area shape="rect" coords="56,69,78,139" href="urlall.htm" target="_blank" alt="这里收集十万多个网址。" title="这里收集十万多个网址。"> -->
+        </map>
+        <img src="images/pic1.jpg" style="width:500px;height:500px;margin:100px" usemap="pic1" onclick="getPos(this,event);"/>
+        <map name="pic1" class="avatar"></map>
+      <script src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="mapper/mapper.js"></script>
+      <script type="text/javascript">
+
+          function getPos(o,e){
+              var usemap_att = o.getAttribute("usemap");
+              var map = $("."+usemap_att);
+              //alert(map.html());
+              var click_count = o.click_count ? o.click_count : 0;
+              alert(e.offsetX+":"+e.offsetY);
+              //表示设定热点的形状为矩形，左上角顶点坐标为（X1,y1），右下角顶点坐标为（X2,y2）
+              click_count ++;
+              o.click_count = click_count;
+              //alert(o.click_count);
+              if(o.click_count == 1){
+                //起始位置
+                o.x1 = e.offsetX;
+                o.y1 = e.offsetY;
+              }else if(o.click_count == 2){
+                //终点位置
+                o.x2 = e.offsetX;
+                o.y2 = e.offsetY;
+                //<area shape="rect" coords="x1, y1,x2,y2" href=url>
+                var coords = o.x1+','+o.y1+','+o.x2+','+o.y2;
+                alert(coords);
+                //$("p").append("<b>你好吗？</b>");
+                map.append('<area shape="rect" coords='+coords+' href="www.baidu.com" target="_blank" class="noborder icolor00ff00">');
+              }else{
+                o.click_count = 0;
+                o.x1 = o.x2 = o.y1 = o.y2 = 0;
+              }
+          }
+
+          //var click_count = 0;
+      </script>
+
+    </body>
+</html>

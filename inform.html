@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>系统通知</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">系统通知</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content inform pull-to-refresh-content infinite-scroll ">
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <div class="list-block">
+                <a href="javascript:;" class="list_item cl external">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="font15 text3 text4"><span class="colblue">[未读]&nbsp;&nbsp;</span>鱼邻小助手鱼邻小助手鱼邻小助手鱼邻小助手鱼邻小助手</p>
+                        </div>
+                        <p class="font14 text4 talk_content col9d font13">11-29  18:40</p>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </a>
+                <a href="javascript:;" class="list_item cl external">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="font15 text3 text4">  卖家拒绝了您的退款申请，请尽快联系卖家沟通或申请客服务入介入处理。
+                            </p>
+                            <p class="font15 text3 text4">订单号：18734177460987665</p>
+                        </div>
+                        <p class="font14 text4 talk_content col9d font13">11-29  18:40</p>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </a>
+                <a href="javascript:;" class="list_item cl external">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="font15 text3 text4"><span class="colblue">[未读]&nbsp;&nbsp;</span>鱼邻小助手</p>
+                        </div>
+                        <p class="font14 text4 talk_content col9d font13">11-29  18:40</p>
+                    </div>
+                    <img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />
+                </a>
+            </div>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+            setTimeout(function() {
+                var cardHTML =  '<div class="list-block">'+
+                                    '<a href="javascript:;" class="list_item cl external">'+
+                                        '<div class="z rightpart">'+
+                                            '<div class="toppart cl">'+
+                                                '<p class="font15 text3 text4">'+
+                                                '卖家拒绝了您的退款申请，请尽快联系卖家沟通或申请客服务入介入处理。'+(Math.random()*1000000)+
+                                                '</p>'+
+                                                '<p class="font15 text3 text4">订单号：18734177460987665</p>'+
+                                            '</div>'+
+                                            '<p class="font14 text4 talk_content col9d font13">11-29  18:40</p>'+
+                                        '</div>'+
+                                        '<img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />'+
+                                    '</a>'+
+                                '</div>';
+
+                $(e.target).find('.list-block > .list_item').replaceWith(cardHTML);
+                // done
+                $.pullToRefreshDone('.pull-to-refresh-content');
+            }, 2000);
+        });
+
+            var loading = false;
+            var maxItems = 100;
+
+            var itemsPerLoad = 2;
+
+            function addItems(number, lastIndex) {
+                    var html = '';
+                    for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                        html +='<a href="javascript:;" class="list_item cl external">'+
+                                    '<div class="z rightpart">'+
+                                        '<div class="toppart cl">'+
+                                            '<p class="font15 text3 text4">'+
+                                            '卖家拒绝了您的退款申请，请尽快联系卖家沟通或申请客服务入介入处理。'+i+
+                                            '</p>'+
+                                            '<p class="font15 text3 text4">订单号：18734177460987665</p>'+
+                                        '</div>'+
+                                        '<p class="font14 text4 talk_content col9d font13">11-29  18:40</p>'+
+                                    '</div>'+
+                                    '<img class="y right_arrow" src="images/right_icon.png" width="20" alt="" />'+
+                                '</a>';
+                    }
+                    $('.list-block').append(html);
+
+                }
+            addItems(itemsPerLoad, 0);
+
+
+            var lastIndex = 2;
+
+            $(document).on('infinite', '.infinite-scroll',function() {
+
+                // 如果正在加载，则退出
+                if (loading) return;
+
+                // 设置flag
+                loading = true;
+
+                setTimeout(function() {
+                    loading = false;
+
+                    if (lastIndex >= maxItems) {
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        $('.infinite-scroll-preloader').remove();
+                        return;
+                    }
+
+                    addItems(itemsPerLoad, lastIndex);
+                    lastIndex = $('.list-block .list_item').length;
+                }, 1000);
+            });
+
+        $.init();
+    </script>
+</body>
+</html>

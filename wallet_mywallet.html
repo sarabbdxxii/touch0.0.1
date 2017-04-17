@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的钱包</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav graybg">
+            <h1 class="title">我的钱包</h1>
+            <a href="" class="s_right1 col99">余额明细</a>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content graybg">
+          <div class="withdraw_box">
+            <div class="part1">
+              <img src="images/wallet_cash.png" alt="" />
+              <p class="tips2">可用余额</p>
+              <p class="statis">￥306.00</p>
+            </div>
+            <div class="part3">
+              <div class="sele_item cl">
+                <p class="z font14">我的鱼币</p>
+                <span class="icon icon-right y"></span>
+              </div>
+              <div class="sele_item cl">
+                <p class="z font14">鱼票兑换</p>
+                <span class="icon icon-right y"></span>
+              </div>
+              <!-- 未绑定银行卡 -->
+              <!-- <div class="sele_item cl">
+                <p class="z font14">绑定银行卡</p>
+                <span class="icon icon-right y"></span>
+              </div> -->
+              <!-- 已绑定银行卡 -->
+              <div class="sele_item cl">
+                <p class="z font14"><span class="wallet_card"></span>招商银行（尾号0088）</p>
+                <span class="icon icon-right y"></span>
+              </div>
+              <div class="sele_item cl">
+                <p class="z font14">修改支付密码</p>
+                <span class="icon icon-right y"></span>
+              </div>
+            </div>
+            <nav class="bar bar-tab">
+                <button class="next_btn">提现</button>
+            </nav>
+          </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+      $(document).on('click','.confirm-wechat', function () {
+      $.confirm('请先绑定提现到账的微信号', function () {
+          $.alert('You clicked Ok button');
+      });
+  });
+
+    </script>
+</body>
+</html>

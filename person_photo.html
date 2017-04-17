@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻触屏版-个人中心</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css" />
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav person_nav">
+            <a href="" class="s_left"></a>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content person_index">
+            <div class="per_head">
+                <div class="per_img">
+                    <img size="100" src="" class="images_icon">
+                    <div style="width: 100%; height: 40px; font-size: 20px; padding-top: 10px;">
+                        <span style="color: rgb(255, 255, 255); padding-right: 5px;">
+                            Shawn.C
+                        </span>
+                        <img src="http://cs.yulin.etwod.com/storage/app/h5/images/user/ic_man.png"
+                        style="height: 20px; padding-right: 5px;">
+                        <img src="http://cs.yulin.etwod.com/data/upload/2015/0715/18/55a6382990a51.png"
+                        style="height: 10px;">
+                    </div>
+                    <div class="span_l">
+                        关注&nbsp;21
+                        <span class="span_line">
+                            |
+                        </span>
+                        粉丝&nbsp;15
+                    </div>
+                    <div class="span_info">
+                        咯
+                    </div>
+                </div>
+            </div>
+            <div class="per_tab">
+                <a href="" class="tab_one">主页</a>
+                <a href="" class="tab_one">分享</a>
+                <a href="" class="tab_one on">相册</a>
+            </div>
+            <div class="per_photo mtn_rem">
+                <div class="p_top cl">
+                    <p class="z">
+                        <span>照片</span>
+                        <span>11</span>
+                    </p>
+                    <a href="" class="external y">更多</a>
+                </div>
+                <div class="cl">
+                    <span class="photo_l pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;"></span>
+                    <span class="photo_l pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;"></span>
+                    <span class="photo_l pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;"></span>
+                    <span class="photo_l pb-standalone" onclick="openPic(0,'myPhotoBrowserStandalone2')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;"></span>
+                </div>
+            </div>
+            <div class="per_photo mtn_rem">
+                <div class="p_top cl">
+                    <p class="z">
+                        <span>视频</span>
+                        <span>11</span>
+                    </p>
+                    <a href="" class="external y">更多</a>
+                </div>
+                <div class="cl">
+                    <span class="photo_l pb-standalone" onclick="openPic(0,'myPhotoBrowserVideo')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;">
+                        <span class="dis_bk play_icon1"></span>
+                    </span>
+                    <span class="photo_l pb-standalone" onclick="openPic(1,'myPhotoBrowserVideo')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;">
+                        <span class="dis_bk play_icon1"></span>
+                    </span>
+                    <span class="photo_l pb-standalone" onclick="openPic(2,'myPhotoBrowserVideo')" style="background: url(images/avatar.jpg) no-repeat center center;
+    background-size: cover;">
+                        <span class="dis_bk play_icon1"></span>
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        var myPhotoBrowserStandalone2 = $.photoBrowser({
+            photos : [
+                'images/test.mp4',
+                'images/test.mp4',
+                'images/test_img.jpg',
+                'images/test_img.jpg',
+                'images/test_img.jpg'
+            ]
+        });
+
+        function openPic(index,name){
+            eval(name).open(index);
+        }
+
+
+        var myPhotoBrowserVideo = $.photoBrowser({
+            photos : [
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                },
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                },
+                {
+                    html: '<video src="images/test.mp4" controls="controls" width="100%">'
+                }
+
+                /*{
+                    html: '<iframe src="images/test.mp4" frameborder="0" allowfullscreen></iframe>'
+                }*/
+
+            ],
+            theme: 'dark',
+            type: 'standalone'
+        });
+        $(document).on('click','.pb-standalone-video',function () {
+            myPhotoBrowserVideo.open();
+        });
+    </script>
+</body>
+</html>

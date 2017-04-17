@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>勋章馆</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">勋章馆</h1>
+            <a href="" class="s_right1 color_h">我的任务</a>
+        </header>
+        <!-- 签到页面 -->
+        <div class="content">
+            <div class="task_main">
+                <div class="task_tab_line cl">
+                    <p class="z task_1 active"><span class="task_n">我的勋章</span></p>
+                    <p class="z task_1"><span class="task_n">全部勋章</span></p>
+                </div>
+                <div class="task_all">
+                    <div class="task_show medal_show cl">
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                    </div>
+                    <div class="task_show cl medal_show hide">
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                        <div class="medal_head z">
+                            <p><img src="images/test5.png" /></p>
+                            <p class="color_b medal_name">签到达人</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+    //tab切换
+    function task_tab(task_per_tab,task_per_show){
+        jQuery(task_per_tab).each(function(index, el) {
+            jQuery(this).bind('click', function(event) {
+                jQuery(task_per_show).eq(index).show().siblings().hide();
+                jQuery(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+    }
+    task_tab(".task_1",".task_show");
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<include file="../Public/w3g_header" />
+<link href="{:APPS_URL}/wap/_static/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body{background-color: #f8f8f8;}
+  .z {float:left;}
+  .y {float:right;}
+  .cl:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+  .cl {zoom:1;}
+</style>
+<div id="content">
+    <div id="weiba" data-title="发新帖" class="panel" data-selected="true"  data-menu="msgmenu">
+        <header>
+            <div id="header-buttons">
+                <a href="javascript:history.go(-1);">
+                    <div id="back" class="header-menu-link" data-back="false">
+                    </div>
+                </a>
+				<div class="header-menu-link" id="hmp-send">
+                    <a class="sendBtn disable" onClick="doWeibaPost()" id="postbut" href="javascript:;">发布</a>
+                </div>
+            </div>
+            <h1 class="hasback" onclick="if(confirm('您确定取消发布吗？')){window.location.href='http://yulinapp.com/index.php?app=wap&mod=Index&act=index';}">
+                发新帖
+            </h1>
+        </header>
+
+      <div class="weibaPost">
+      	<form method="post" action="{:U('wap/Weiba/doPost')}" id="doWeibaPost">
+        <php>if(empty($weiba_id)):</php>
+          <div class="pure-form send_box">
+            <div class="ts-select" onclick="open_soci()">
+                <span class="z choose_soci">选择社区</span>
+                <span class="y arrow_r"></span>
+            </div>
+            <script>
+                function open_soci(){
+                    var pop = document.getElementById('pop_content2');
+                    pop.style.display = "block";
+                }
+            </script>
+          </div>
+        <php>else:</php>
+          <input name="weiba_id" id="weiba_id" type="hidden" value="{$weiba_id}" />
+        <php>endif;</php>
+          <div class="pure-form send_box">
+            <input type="text" id="title" name="title" class="ts-text" placeholder="输入帖子标题">
+          </div>
+          <div class="pure-form send_box">
+          <textarea class="ts-textarea" name="content" id="post-content" rows="4" placeholder="输入帖子内容"></textarea>
+          </div>
+          <div class="ts-footer">
+              <!-- 表情 --><a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+              <!-- 图片 --><a class="icon imgbutton ts-listen" data-listen="weibo-upload-img" data-for="ts-upload-img-box" id="new-weibo-upload"><i class="fa-btn fa-btn-picture"></i></a>
+          </div>
+          <div id="ts-upload-img-box"></div>
+        </form>
+      </div>
+    </div>
+<include file="../Public/w3g_footer" />
+<script type="text/javascript">
+function doWeibaPost(){
+	var weiba_id = $('#weiba_id').val();
+	var title = $.trim($('#title').val());
+	var content = $.trim($('#post-content').val());
+	var imageIds = '';
+	$('#ts-upload-img-box:first .file_list_view').each(function(i, el){
+		imageIds = $(el).attr('data-id')+','+imageIds;
+	});
+
+	if(!weiba_id || weiba_id=='0'){
+		$.ui.showMask("请选择社区", true);
+	}else if(!title){
+		$('#title').focus();
+	}else if(!content){
+		$('#post-content').focus();
+	}else{
+		$.post(U('wap/Weiba/doPost'), {
+			weiba_id: weiba_id,
+			title   : title,
+			content : content,
+			imageIds: imageIds
+		}, function(data){
+			if(data.status == 1){
+				$('#title').val('');
+				$('#post-content').val('');
+				$('#ts-upload-img-box').empty();
+				$.ui.showMask('发布成功', true);
+				window.location.href = U('wap/Weiba/postDetail', ['id='+data.data]);
+			}else{
+				$.ui.showMask(typeof data=='string'?data:data.info,true);
+			}
+		}, 'json');
+	}
+}
+</script>
+<div class="pop_content2" id="pop_content2" style="display:none;">
+    <header class="pop_header cl">
+        <span class="closethis_pop z" onclick="close_soci()">关闭</span>
+        <script>
+            function close_soci(){
+                var pop = document.getElementById('pop_content2');
+                pop.style.display = "none";
+            }
+        </script>
+        <span class="thetitle">选择社区</span>
+    </header>
+    <div class="pop_main">
+        <div class="cl interval">
+            <span class="z">已关注</span>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+        <div class="cl interval">
+            <span class="z">未关注</span>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+        <div class="cl soci_item">
+            <span class="z soci_pic" style="background:url(images/picc.jpg) no-repeat center center;background-size:cover;"></span>
+            <div class="y soci_word cl">
+                <p class="text11">龙鱼</p>
+                <p class="text22">山不在高，有佩则名，水不在深水，有龙则灵…</p>
+            </div>
+        </div>
+    </div>
+</div>

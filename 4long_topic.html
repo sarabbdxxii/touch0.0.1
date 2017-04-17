@@ -1,0 +1,709 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <title>鱼邻</title>
+    <!--<base href="http://yulinapp.com/storage/app/wap/" />-->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" href="http://yulinapp.com/storage/app/wap/css/pure.css">
+    <link rel="stylesheet" href="http://yulinapp.com/storage/app/wap/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="http://yulinapp.com/storage/app/wap/css/pureUI.css?t=1.18">
+    <link rel="stylesheet" type="text/css" href="http://yulinapp.com/storage/app/wap/css/ts.css"/>
+
+    <!--TS-U function-->
+    <script type="text/javascript">
+        var SITE_URL  = 'http://yulinapp.com';
+        //载入函数
+        var U = function(url, params) {
+            var website = SITE_URL+'/index.php';
+            url = url.split('/');
+            if(url[0]=='' || url[0]=='@')
+                url[0] = APPNAME;
+            if (!url[1])
+                url[1] = 'Index';
+            if (!url[2])
+                url[2] = 'index';
+            website = website+'?app='+url[0]+'&mod='+url[1]+'&act='+url[2];
+            if(params) {
+                params = params.join('&');
+                website = website + '&' + params;
+            }
+            return website;
+        };
+        var _static = 'http://yulinapp.com/storage/app/wap';
+    </script>
+    <script src="http://yulinapp.com/storage/app/wap/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://yulinapp.com/storage/app/wap/js/appframework.js"></script>
+    <script src="http://yulinapp.com/storage/app/wap/js/jquery.tap.min.js"></script>
+    <script src="http://yulinapp.com/storage/app/wap/js/iscroll.js"></script>
+    <script src="http://yulinapp.com/storage/app/wap/js/zepto.js"></script>
+
+    <script src="http://yulinapp.com/storage/app/wap/js/ui4jq.js"></script>
+    <script src="http://yulinapp.com/storage/app/wap/js/basic.js?t=1.03"></script>
+    <script src="http://yulinapp.com/storage/app/wap/js/app.js?t=1.06-dev"></script>
+
+<script>
+/**
+ * 全局变量
+ */
+var SITE_URL  = 'http://yulinapp.com';
+var UPLOAD_URL= 'http://static2.yulinapp.com/data/upload';
+var THEME_URL = 'http://yulinapp.com/addons/theme/stv1/_static';
+var APPNAME   = 'wap';
+var MID       = '483793';
+var UID       = '483793';
+var initNums  =  '300';
+var SYS_VERSION = '4.3.4'
+var ISWAP = 1;
+// Js语言变量
+var LANG = new Array();
+</script>
+<script src="http://yulinapp.com/data/lang/public_zh-cn.js?v=4.3.4"></script><script src="http://yulinapp.com/data/lang/wap_zh-cn.js?v=4.3.4"></script><script type="text/javascript" src="http://yulinapp.com/storage/app/wap/js/form.js?v=4.3.4"></script>
+<script type="text/javascript" src="http://yulinapp.com/storage/app/wap/js/core.js?v=4.3.4"></script>
+<script type="text/javascript" src="http://yulinapp.com/addons/theme/stv1/_static/js/module.js?v=4.3.4"></script>
+<script src="http://yulinapp.com/addons/theme/stv1/_static/js/js.php?t=js&f=jquery.form.js,common.js,module.js,module.common.js,jwidget_1.0.0.js,jquery.atwho.js,jquery.caret.js,ui.core.js,plugins/core.comment.js,plugins/core.digg.js&v=4.3.4.js"></script>
+<script src="http://yulinapp.com/addons/theme/stv1/_static/js/plugins/core.comment.js?v=4.3.4"></script>
+<script src="http://yulinapp.com/addons/theme/stv1/_static/js/plugins/core.digg.js?v=4.3.4"></script>
+</head>
+<body>
+<div id="header">
+    <div id="header-buttons">
+        <div id="back" class="header-menu-link"></div>
+        <div id="messageLink" class="header-menu-link"><a href="http://yulinapp.com/index.php?app=wap&mod=Index&act=msgbox"><i class="num"></i></a></div>
+        <div id="menuLink" class="header-menu-link"></div>
+    </div>
+    <h1>
+        <!--鱼邻-->
+        <img src="http://yulinapp.com/storage/app/wap/img/sys/logo.png" alt="鱼邻">
+    </h1>
+</div>
+<div id="layout">
+    <!-- Menu toggle -->
+    <!--<a id="menuLink" class="menu-link">-->
+        <!-- Hamburger icon -->
+        <!--<span></span>-->
+    <!--</a>-->
+    <div class="topic_list_bar" style="position:absolute; top:100%; left:0; width:100%; height:100%; z-index:9999; display:none; background:#fff;">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="javascript:;" class="s_left external close_button">关闭</a>
+            <h1 class="title">话题</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="topic_list">
+            <form action="" id="form">
+                <div class="search_box">
+                    <div class="searchbar">
+                        <div class="search-input">
+                            <label class="icon-search" for="search"></label>
+                            <input type="search" id='search' placeholder='搜索话题'/>
+                            <label class="icon icon-remove1 hide close_btn" onclick="clearContent($(this),$('#search'))"></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="list" style="width:100%; height:100%; overflow-x:hidden; overflow-y:scroll;">
+                    <!-- 热门话题 -->
+                    <div class="list_title">热门话题</div>
+                    <ul>
+                        <li id="match0">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">0</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match1">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">1</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+
+                        <li id="match2">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">2</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match3">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">3</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match4">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">4</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match5">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">1</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match6">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">2</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match7">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">3</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match8">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">4</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match9">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">1</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match10">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">2</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match11">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">3</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match12">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3 text_aa">4</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 最新话题 -->
+                    <div class="list_title">最新话题</div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="friend_list_bar" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:999999; display:none; background:#fff;">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="javascript:;" class="s_left external close_button">关闭</a>
+            <h1 class="title">@联系人</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="topic_list">
+            <form action="" id="form">
+                <div class="search_box">
+                    <div class="searchbar">
+                        <div class="search-input">
+                            <label class="icon-search" for="search"></label>
+                            <input type="search" id='search1' placeholder='搜索话题'/>
+                            <label class="icon icon-remove1 hide close_btn"  onclick="clearContent($(this),$('#search1'))"></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="list1" style="width:100%; height:100%; overflow-x:hidden; overflow-y:scroll;">
+                    <ul>
+                        <li>
+                            <a href="" class="list_item cl">
+                                <div class="z friend_head"><img src="images/pic5.jpg" alt="" /></div>
+                                <div class="z cl rightone">
+                                    <p class="frient_text text_aa">魟運當002</p>
+                                    <p class="frient_content">炫·水族创意工作室:魟鱼繁殖，</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="list_item cl">
+                                <div class="z friend_head"><img src="images/pic5.jpg" alt="" /></div>
+                                <div class="z cl rightone">
+                                    <p class="frient_text text_aa">魟運當001</p>
+                                    <p class="frient_content">炫·水族创意工作室:魟鱼繁殖，</p>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </form>
+            <style>
+                #list1 ul li{ border:none;}
+                .list_item{ width:100%; padding:0.5em; display:block;}
+                .list_item .friend_head{ width:2em; height:2em; border-radius: 50%; overflow:hidden;}
+                .list_item .rightone{ margin-left:0.8em; border-bottom: 1px solid #e6e6e6; width:88%;}
+                .list_item .frient_text{ font-size: 15px; color:#0C0C0C;}
+                .list_item .frient_content{ font-size:13px; color:#666; line-height: 25px;}
+                .friend_head img{ width:100%;}
+
+            </style>
+        </div>
+    </div>
+
+
+<div id="main">
+<link href="http://yulinapp.com/apps/wap/_static/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body{background-color: #f8f8f8;}
+</style>
+<div id="content">
+    <div id="weiba" data-title="发新帖" class="panel" data-selected="true"  data-menu="msgmenu">
+        <header>
+            <div id="header-buttons">
+                <a href="javascript:history.go(-1);">
+                    <div id="back" class="header-menu-link" data-back="false">
+                    </div>
+                </a>
+                <div class="header-menu-link" id="hmp-send">
+                    <a class="sendBtn disable" onClick="doWeibaPost()" id="postbut" href="javascript:;">发布</a>
+                </div>
+            </div>
+            <h1 class="hasback" onclick="if(confirm('您确定取消发布吗？')){window.location.href='http://yulinapp.com/index.php?app=wap&mod=Index&act=index';}">
+                发新帖
+            </h1>
+        </header>
+
+      <div class="weibaPost">
+        <form method="post" action="http://yulinapp.com/index.php?app=wap&mod=Weiba&act=doPost" id="doWeibaPost">
+                  <div class="pure-form send_box">
+            <select name="weiba_id" id="weiba_id" class="ts-select">
+            <option value="0">请选择社区</option>
+                        <optgroup label="兴趣" disabled>兴趣</optgroup>
+                <option value="93">龙鱼</option><option value="92">虎鱼</option><option value="89">水草造景</option><option value="91">魟鱼</option><option value="90">罗汉鱼</option><option value="85">三湖慈鲷</option><option value="81">神仙鱼</option><option value="88">锦鲤鱼</option><option value="87">海水鱼</option><option value="83">猛鱼</option><option value="86">鹦鹉鱼</option><option value="84">孔雀鱼</option><option value="82">金鱼</option><option value="95">水族器材</option><option value="94">两栖爬宠</option><option value="80">其它鱼类</option>            <optgroup label="地域" disabled>地域</optgroup>
+                <option value="79">广东鱼友</option><option value="77">北京鱼友</option><option value="78">山东鱼友</option><option value="76">河北鱼友</option><option value="74">山西鱼友</option><option value="75">辽宁鱼友</option><option value="70">天津鱼友</option><option value="73">江苏鱼友</option><option value="67">河南鱼友</option><option value="69">黑龙江鱼友</option><option value="64">陕西鱼友</option><option value="66">上海鱼友</option><option value="72">福建鱼友</option><option value="68">内蒙古鱼友</option><option value="59">新疆鱼友</option><option value="65">吉林鱼友</option><option value="62">四川鱼友</option><option value="71">浙江鱼友</option><option value="60">甘肃鱼友</option><option value="61">安徽鱼友</option><option value="56">云南鱼友</option><option value="54">青海鱼友</option><option value="52">重庆鱼友</option><option value="57">湖南鱼友</option><option value="48">其它地区鱼友</option><option value="49">港澳台鱼友</option><option value="53">宁夏鱼友</option><option value="51">海南鱼友</option><option value="63">广西鱼友</option><option value="55">江西鱼友</option><option value="50">贵州鱼友</option><option value="58">湖北鱼友</option>            </select>
+          </div>
+                  <div class="pure-form send_box">
+            <input type="text" id="title" name="title" class="ts-text" placeholder="输入帖子标题">
+          </div>
+          <div class="pure-form send_box">
+          <textarea class="ts-textarea" name="content" id="post-content" rows="4" placeholder="输入帖子内容"></textarea>
+          </div>
+          <div class="ts-footer">
+              <!-- 表情 --><a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+              <!-- 图片 --><a class="icon imgbutton ts-listen" data-listen="weibo-upload-img" data-for="ts-upload-img-box" id="new-weibo-upload"><i class="fa-btn fa-btn-picture"></i></a>
+              <!-- @ -->
+              <a id="friend_light"  class="icon atbutton ts-listen" data-listen="weibo-atwho-show" data-for="new-weibo-textarea"><i class="fa-btn fa-btn-at"></i></a>
+                <!-- 话题 -->
+                <a id="topic_light" class="icon topicbutton "><i class="fa-btn fa-btn-topic"></i></a>
+          </div>
+          <div id="ts-upload-img-box"></div>
+        </form>
+      </div>
+    </div>
+        <!--sys-->
+        <!--new weibo panel-->
+        <div id="new-weibo" data-title="发分享"  data-footer="none" class="panel TS-post-panel">
+            <header>
+                <div id="header-buttons">
+                    <div class="header-menu-link" id="hmp-cancel" onclick="if(confirm('您确定取消发布吗？')){window.location.href='http://yulinapp.com/index.php?app=wap&mod=Index&act=index';}">
+                        <a >取消</a>
+                    </div>
+                    <div class="header-menu-link" id="hmp-send">
+                        <!--<a class="ts-listen sendBtn disable fc4" data-listen="weibo-dopost-true">发送</a>-->
+                        <a class="ts-listen sendBtn" data-listen="weibo-dopost-true">发送</a>
+                    </div>
+                </div>
+                <h1 style="text-align:center;padding-left:0;">
+                    发分享
+                </h1>
+            </header>
+            <iframe src="http://yulinapp.com/index.php?app=wap&mod=Index&act=ajax_iframe" id="ajax_iframe"></iframe>
+            <div class="pure-form send_box">
+                <textarea name="new-webo-content" id="new-weibo-textarea" oninput="TS.app.weibo.listen.checknums(true, this, '', true);" onpropertychange="TS.app.weibo.listen.checknums(true, this, '', true);" class="ts-textarea ts-listen" rows="4" placeholder="这一刻，我想说......" data-listen="weibo-checknums-true"></textarea>
+                <div model-node="numsLeft" class="num">300</div>
+            </div>
+            <div class="ts-footer">
+                <!-- 图片 --><a class="icon imgbutton ts-listen" data-listen="weibo-upload-img" data-for="ts-upload-img-box" id="new-weibo-upload"><i class="fa-btn fa-btn-picture"></i></a>
+                <!-- @ --><a class="icon atbutton ts-listen" data-listen="weibo-atwho-show" data-for="new-weibo-textarea"><i class="fa-btn fa-btn-at"></i></a>
+                <!-- 话题 -->
+                <a class="icon topicbutton ts-listen" data-listen="weibo-topic-show" data-for="new-weibo-textarea"><i class="fa-btn fa-btn-topic"></i></a>
+                <!-- 表情 -->
+                <a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+                <!-- <a class="icon pure-button pure-button-primary ts-listen" data-listen="weibo-dopost-true">发送</a> -->
+            </div>
+            <div id="ts-upload-img-box"></div>
+        </div>
+        <!--精选分享-->
+        <div id="new-channel-weibo" data-title="发分享"  data-footer="none" class="panel TS-post-panel">
+            <header>
+                <div id="header-buttons">
+                    <div class="header-menu-link" id="hmp-cancel">
+                        <a class="ts-listen" data-listen="weibo-goback-true">取消</a>
+                    </div>
+                    <div class="header-menu-link" id="hmp-send">
+                        <a class="ts-listen sendBtn disable fc4" data-listen="weibo-feedpost-">发送</a>
+                    </div>
+                </div>
+                <h1 style="text-align:center;padding-left:0;">
+                    发分享
+                </h1>
+            </header>
+            <iframe src="http://yulinapp.com/index.php?app=wap&mod=Index&act=ajax_iframe_channel" id="ajax_iframe_channel"></iframe>
+            <div class="pure-form send_box">
+                <p class="channel_type">投稿到－</p>
+                <textarea name="new-webo-content" id="new-channel-textarea" class="ts-textarea ts-listen" rows="4" placeholder="这一刻，我想说......" data-listen="weibo-checknums-true"></textarea>
+                <div model-node="numsLeft" class="num">300</div>
+            </div>
+            <div class="ts-footer">
+                <!-- 图片 --><a class="icon imgbutton ts-listen" data-listen="weibo-upload-img" data-for="ts-upload-img-box_channel" id="new-weibo-upload"><i class="fa-btn fa-btn-picture"></i></a>
+                <!-- @ --><a class="icon atbutton ts-listen" data-listen="weibo-atwho-show" data-for="new-channel-textarea"><i class="fa-btn fa-btn-at"></i></a>
+                <!-- 话题 --><a class="icon topicbutton ts-listen" data-listen="weibo-topic-show" data-for="new-channel-textarea"><i class="fa-btn fa-btn-topic"></i></a>
+                <!-- 表情 --><a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+                <!-- <a class="icon pure-button pure-button-primary ts-listen" data-listen="weibo-dopost-true">发送</a> -->
+            </div>
+            <div id="ts-upload-img-box_channel"></div>
+        </div>
+        <!--reply panel-->
+        <div id="reply" data-title="发评论" data-footer="none" class="panel TS-post-panel" data-load="focus">
+            <header>
+                <div id="header-buttons">
+                    <div class="header-menu-link" id="hmp-cancel">
+                        <a class="ts-listen" data-listen="weibo-goback-true">取消</a>
+                    </div>
+                    <div class="header-menu-link" id="hmp-send">
+                        <a id="ts-reply-submit" class="ts-listen sendBtn disable fc4" data-listen="weibo-doreply-list">发送</a>
+                    </div>
+                </div>
+                <h1 style="text-align:center;padding-left:0;">
+                    发评论
+                </h1>
+            </header>
+            <div class="pure-form send_box">
+                <textarea name="reply-content" id="reply-textarea" class="ts-textarea ts-listen" rows="4" placeholder="写评论......" data-listen="weibo-checknums-true"></textarea>
+                <div model-node="numsLeft" class="num">300</div>
+                <div class="ckb">
+
+                    <label id="toShare"><input type="checkbox" class="checkbox" id="ifShareFeed_reply" name="ifShareFeed" value="1">同时转发到我的分享</label>
+
+
+                    <label id="toOrigin" style="display: none;"><input type="checkbox" class="checkbox" id="comment_old_reply" name="comment_old" value="1" />同时评论给原文作者</label>
+
+                </div>
+            </div>
+            <div class="ts-footer">
+                <a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+                <!-- <a id="ts-reply-submit" class="icon pure-button pure-button-primary ts-listen" data-listen="weibo-doreply-list">发送</a> -->
+            </div>
+        </div>
+
+        <!--reply panel-->
+        <div id="replyD" data-title="发评论" data-footer="none" class="panel TS-post-panel" data-load="focus">
+            <header>
+                <div id="header-buttons">
+                    <div class="header-menu-link" id="hmp-cancel">
+                        <a class="ts-listen" data-listen="weibo-goback-true">取消</a>
+                    </div>
+                    <div class="header-menu-link" id="hmp-send">
+                        <a id="ts-reply-submit" class="ts-listen sendBtn disable fc4" data-listen="weibo-doreply2reply-list">发送</a>
+                    </div>
+                </div>
+                <h1 style="text-align:center;padding-left:0;">
+                    发评论
+                </h1>
+            </header>
+            <div class="pure-form send_box">
+                <textarea name="reply-content" id="reply-textareaD" class="ts-textarea ts-listen" rows="4" placeholder="写评论......" data-listen="weibo-checknums-true"></textarea>
+                <div model-node="numsLeft" class="num">300</div>
+                <div class="ckb">
+
+                    <label><input type="checkbox" class="checkbox" id="ifShareFeed_replyD" name="ifShareFeed" value="1">同时转发到我的分享</label>
+
+
+                    <label><input type="checkbox" class="checkbox" id="comment_old_replyD" name="comment_old" value="1" />同时评论给原文作者</label>
+
+                </div>
+            </div>
+            <div class="ts-footer">
+                <a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+                <!-- <a id="ts-reply-submit" class="icon pure-button pure-button-primary ts-listen" data-listen="weibo-doreply-list">发送</a> -->
+            </div>
+        </div>
+
+        <!--retweet panel-->
+        <div id="retweet" data-title="转发分享" data-footer="none" class="panel TS-post-panel">
+            <header>
+                <div id="header-buttons">
+                    <div class="header-menu-link" id="hmp-cancel">
+                        <a class="ts-listen" data-listen="weibo-goback-true">取消</a>
+                    </div>
+                    <div class="header-menu-link" id="hmp-send">
+                        <a class="ts-listen sendBtn disable fc4" data-listen="weibo-doretweet-list">发送</a>
+                    </div>
+                </div>
+                <h1 style="text-align:center;padding-left:0;">
+                    转发分享
+                </h1>
+            </header>
+            <div class="pure-form send_box">
+                <textarea name="retweet-content" id="retweet-textarea" class="ts-textarea ts-listen" rows="4" placeholder="你想说点什么......" data-listen="weibo-checknums-true"></textarea>
+                <div model-node="numsLeft" class="num">300</div>
+                <div class="ckb">
+
+                    <label><input type="checkbox" class="checkbox" id="comment_old_retweet" name="comment_old" value='1'>同时作为给<font id="towho">原作者</font>的评论发布</label>
+
+                </div>
+            </div>
+            <div class="ts-footer">
+                <a class="icon facelistbutton ts-listen" data-listen="weibo-facelist-show"><i class="fa-btn fa-btn-smile"></i></a>
+                <!-- <a class="icon pure-button pure-button-primary ts-listen" data-listen="weibo-doretweet-list">发送</a> -->
+            </div>
+        </div>
+
+        <!--pic panel-->
+        <div id="pic" data-title="图片预览" data-footer="none" class="panel TS-post-panel" data-footer="none" data-load="TS.app.weibo.func.picViewInit();">
+            <div id="pic-view"></div>
+            <div id="pic-footer">
+                <div id="pic-footer-left" class="fa fa-angle-left ts-listen" data-listen="weibo-picview-prev"></div>
+                <div id="pic-footer-center">
+                    <span id="pic-footer-now">0</span>
+                    /
+                    <span id="pic-footer-all">0</span>
+                </div>
+                <div id="pic-footer-right" class="fa fa-angle-right ts-listen" data-listen="weibo-picview-next"></div>
+            </div>
+        </div>
+
+        <!--video panel-->
+        <div id="video" data-title="视频" data-footer="none" class="panel" data-footer="none" data-load="TS.app.weibo.func.videViewInit();" data-unload="$('#videoview').html('');">
+            <div id="videoview"></div>
+        </div>
+
+        <!--message panel-->
+        <div id="new-message" data-title="发私信" data-footer="none" class="panel" data-footer="none" data-load="TS.app.weibo.func.newMessage.bind();" data-unload="TS.app.weibo.func.newMessage.unbind();">
+            <div class="pure-form pure-g">
+                <div class="new-message-input">
+                    <input class="pure-input-1" id="new-message-reciver" type="text" placeholder="收件人"></input>
+                    <div id="msg-userlist">
+                        <!-- <div class="msg-userlist-item">hello,world.</div> -->
+                    </div>
+                </div>
+                <div class="new-message-input"><textarea class="pure-input-1" id="new-message-content" placeholder="私信内容..." name="content"></textarea></div>
+                <div class="new-message-input"><button class="pure-button pure-button-primary pure-u-1" id="new-message-send" type="button">发送</button></div>
+            </div>
+        </div>
+
+<!--pureUI panel-->
+
+    </div><!--content-->
+</div><!--main-->
+        <script>
+            (function(){
+                TS.cache.profile = {
+                    uid:'',
+                    uname:'',
+                    email:'',
+                    avatar_original:'',
+                    avatar_small:''
+                };
+//                $(document).on("touchmove",".pic-view-img",function(e){
+//                        console.log(e);
+//                });
+            })();
+
+        </script>
+
+</div>
+    <div class="postentry"></div>
+    <div id="pure-shadow"></div>
+    <div id="footer"></div>
+    <div id="custom"></div>
+
+
+
+
+</body>
+</html>
+<style>
+    /* 话题 */
+    .z {float:left;}
+    .y {float:right;}
+    .cl:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+    .cl {zoom:1;}
+    .s_left{ line-height: 44px; font-size:14px; color:#333;}
+    .bar {background: #fff;  position: absolute; right: 0; left: 0;z-index: 10; height: 44px;  padding-right: .5em;padding-left: .5em;border-bottom: 1px solid #e7e7e7; -webkit-backface-visibility: hidden; backface-visibility: hidden;}
+    .title { position: absolute; left:50%; display: block;width: 50%;padding: 0;margin: 0; font-size: 18px; font-weight: 500; line-height: 44px; color: #262626; text-align: center;white-space: nowrap; top:0; margin-left:-25%;}
+    .icon-search{ width:6%; height:20px; display:block; background:url(images/seerch_button.png) no-repeat center center; float:left; margin-top:-2px;}
+    .searchbar { height: 1em; padding: 8px;-webkit-box-align: center;-ms-flex-align: center;
+    -webkit-align-items: center;  align-items: center; background:#f9f9f9; margin:8px 0; font-size: 13px; border-radius: 5px; position:relative;}
+
+    .topic_list{ background:#fff; padding-top:44px;}
+    .topic_list ul li{ width:100%; border-bottom: 1px solid #eee;}
+    .topic_list .s_icon2{ width:0.8em; height:2.8em; background:url(images/right_icon.png) no-repeat center center;margin:0 0.6em 0 0.5em; background-size: contain;}
+    .topic_list .t_left{ margin:0.35em 0 0.3em 0.6em; width:85%;}
+    .topic_list .text1{ width:100%; font-size: 15px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+    .topic_list .text2{ font-size: 13px; color:#999; margin-top:0.2rem;}
+    .topic_list .list_title{ width:100%; height:1.3em; background:#f0eff4; line-height: 1.3em; padding-left: 0.4em; color:#999; font-size:13px; padding:0.4em 0.6em;}
+    .topic_list .search_box{ width:93%; margin:0 auto; overflow:hidden;}
+    .topic_list .searchbar .search-input input{ border:none; background:#f9f9f9;width:84%; height:100%; display:block; border:none; box-sizing: border-box;margin-left: 2%; float:left; outline:none;}
+    a{-webkit-tap-highlight-color: transparent;}
+    .search-input .icon-remove1 { right: 0.5em; left: auto; background: url(images/close_btn.png) no-repeat center center; width: 20px; height: 20px; position:absolute; top:5px; display:none;}
+
+
+    </style>
+<script type="text/javascript">
+/*话题弹出收回*/
+$('#topic_light').click(function(){
+    $(".topic_list_bar").show();
+    $(".topic_list_bar").animate({
+        top: "0"
+    }, 300 );
+});
+/*联系人弹出收回*/
+$('#friend_light').click(function(){
+    $(".friend_list_bar").show();
+    $(".friend_list_bar").animate({
+        top: "0"
+    }, 300 );
+});
+$(".close_button").click(function(){
+    $(".topic_list_bar,.friend_list_bar").hide();
+    $(".topic_list_bar,.friend_list_bar").animate({
+        top: "100%"
+    }, 300 );
+})
+
+
+(function($) {
+    jQuery.expr[':'].Contains = function(a, i, m) {
+        return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+    };
+    function filterList(header, list, search_id) {
+        $(search_id).change(function() {
+            var filter = $(this).val();
+            if (filter) {
+                $matches = $(list).find('.text_aa:Contains(' + filter + ')').parents('li');
+                $('li', list).not($matches).slideUp();
+                $matches.slideDown();
+            } else {
+                $(list).find("li").slideDown();
+            }
+            /*搜索值为空时标题和清空按钮隐藏*/
+            if ($(this).val()=='') {
+                $(".list_title").show();
+                $('.close_btn').hide();
+            }else{
+                $(".list_title").hide();
+                $('.close_btn').show();
+            }
+            return false;
+        }).keyup(function() {
+            $(this).change();
+        });
+    }
+    $(function() {
+        filterList($("#form"), $("#list"),$("#search"));
+        filterList($("#form"), $("#list1"),$("#search1"));
+    });
+} (jQuery));
+/*清空搜索框*/
+function clearContent(self,fathernode){
+    self.siblings(fathernode).val('');
+    $("#macth_line").hide();
+    $(fathernode).keyup();
+    $('.close_btn').hide();
+    $(".list_title").show();
+}
+
+
+
+function doWeibaPost(){
+    var weiba_id = $('#weiba_id').val();
+    var title = $.trim($('#title').val());
+    var content = $.trim($('#post-content').val());
+    var imageIds = '';
+    $('#ts-upload-img-box:first .file_list_view').each(function(i, el){
+        imageIds = $(el).attr('data-id')+','+imageIds;
+    });
+
+    if(!weiba_id || weiba_id=='0'){
+        $.ui.showMask("请选择社区", true);
+    }else if(!title){
+        $('#title').focus();
+    }else if(!content){
+        $('#post-content').focus();
+    }else{
+        $.post(U('wap/Weiba/doPost'), {
+            weiba_id: weiba_id,
+            title   : title,
+            content : content,
+            imageIds: imageIds
+        }, function(data){
+            if(data.status == 1){
+                $('#title').val('');
+                $('#post-content').val('');
+                $('#ts-upload-img-box').empty();
+                $.ui.showMask('发布成功', true);
+                window.location.href = U('wap/Weiba/postDetail', ['id='+data.data]);
+            }else{
+                $.ui.showMask(typeof data=='string'?data:data.info,true);
+            }
+        }, 'json');
+    }
+}
+</script>

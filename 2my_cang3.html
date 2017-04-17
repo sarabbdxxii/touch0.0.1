@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的收藏——商品</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <a class="icon icon-search pull-right colblue2 open-panel"></a>
+            <h1 class="title">我的收藏</h1>
+        </header>
+        <div class="choice_tab" style="position:fixed; top:2.2rem; background:#f9f9f9;">
+            <div class="tab_nr">
+                <a href="" class="external s_tab">微贴</a>
+                <a href="" class="external s_tab">长贴</a>
+                <a href="" class="external s_tab on">商品</a>
+            </div>
+        </div>
+        <div class="content community1 hot_post infinite-scroll pull-to-refresh-content">
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <!-- 标题栏 -->
+            <div class="conten-block whitebg">
+                <div class="cang_goods_list">
+                    <div class="cang_goods_item cl">
+                        <div class="wrapper_main">
+                            <a href="javascript:;" class="goods_pic z" style="background:url(images/pic3.jpg) center center;background-size:cover;"></a>
+                            <div class="goods_info y cl">
+                                <p class="font13 col66 texts">极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯</p>
+                                <div class="cl bot_info">
+                                    <p class="price colred z">￥398.00</p>
+                                    <span class="y more_btn2" onclick="show_share()"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cang_goods_item cl">
+                        <div class="wrapper_main">
+                            <a href="javascript:;" class="goods_pic z" style="background:url(images/pic3.jpg) center center;background-size:cover;"></a>
+                            <div class="goods_info y cl">
+                                <p class="font13 col66 texts">极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯</p>
+                                <div class="cl bot_info">
+                                    <p class="price colred z">￥398.00</p>
+                                    <span class="y more_btn2" onclick="show_share()"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 分享 -->
+        <div class="black" onclick="close_black()" style="display:none;"></div>
+        <div class="wechat_share" onclick="close_wechat_share()" style="display:none;"></div>
+        <div class="share_list">
+            <div class="share">
+                <div class="line1 cl">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                        <a href="#" class="bds_twechat" onclick="wechat_share()" title="分享到微信">微信</a>
+                    </div>
+                </div>
+                <div class="line2 cl">
+                    <div class="z blo">
+                        <div class="share_item">
+                            <span class="innericon collect"></span>
+                        </div>
+                        <span class="text2 font13">收藏</span>
+                    </div>
+                    <div class="z blo">
+                        <div class="share_item">
+                            <span class="innericon inform"></span>
+                        </div>
+                        <span class="text2 font13">举报</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cancle font14" onclick="close_black(this)">取消</div>
+        </div>
+    </div>
+
+    <style>
+    .pull-to-refresh-layer{ height:2rem;}
+    .choice_tab .s_tab{width:33%;}
+    .hot_post .onepiece .header_info .avatar{ width:1.9rem;height:1.9rem;}
+    .content.community1.hot_post{ z-index: -1; top:2.2rem;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+    var myPhotoBrowserStandalone2 = $.photoBrowser({
+        photos : [
+            'images/avatar.jpg',
+            'images/test_img.jpg',
+            'images/test_img.jpg',
+            'images/test_img.jpg',
+            'images/test_img.jpg'
+        ]
+    });
+
+    function openPic(index,name){
+        eval(name).open(index);
+    }
+    //下拉刷新
+    $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+        setTimeout(function() {
+            var cardHTML =  '<div class="cang_goods_item cl">'+
+                                '<div class="wrapper_main">'+
+                                    '<a href="javascript:;" class="goods_pic z" style="background:url(images/pic3.jpg) center center;background-size:cover;"></a>'+
+                                    '<div class="goods_info y cl">'+
+                                        '<p class="font13 col66 texts">极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯</p>'+
+                                        '<div class="cl bot_info">'+
+                                            '<p class="price colred z">￥398.00</p>'+
+                                            '<span class="y more_btn2" onclick="show_share()"></span>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+
+            $(e.target).find('.cang_goods_item').replaceWith(cardHTML);
+            // done
+            $.pullToRefreshDone('.pull-to-refresh-content');
+        }, 2000);
+    });
+    //无限滚动加载
+    var loading = false;
+    var maxItems = 100;
+    var itemsPerLoad = 2;
+
+    function addItems(number, lastIndex) {
+            var html = '';
+            for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                html += '<div class="cang_goods_item cl">'+
+                                '<div class="wrapper_main">'+
+                                    '<a href="javascript:;" class="goods_pic z" style="background:url(images/pic3.jpg) center center;background-size:cover;"></a>'+
+                                    '<div class="goods_info y cl">'+
+                                        '<p class="font13 col66 texts">极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯极光只鱼LED灯</p>'+
+                                        '<div class="cl bot_info">'+
+                                            '<p class="price colred z">￥398.00</p>'+
+                                            '<span class="y more_btn2" onclick="show_share()"></span>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+            }
+            $('.cang_goods_list').append(html);
+
+        }
+    addItems(itemsPerLoad, 0);
+    var lastIndex = 2;
+    $(document).on('infinite', '.infinite-scroll',function() {
+        // 如果正在加载，则退出
+        if (loading) return;
+
+        // 设置flag
+        loading = true;
+
+        setTimeout(function() {
+            loading = false;
+
+            if (lastIndex >= maxItems) {
+                $.detachInfiniteScroll($('.infinite-scroll'));
+                $('.infinite-scroll-preloader').remove();
+                return;
+            }
+
+            addItems(itemsPerLoad, lastIndex);
+            lastIndex = $('.cang_goods_item').length;
+        }, 1000);
+    });
+    $.init();
+    </script>
+</body>
+</html>

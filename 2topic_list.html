@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发现邻街-注册</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">话题</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content topic_list">
+            <form action="" id="form">
+                <div class="search_box">
+                    <div class="searchbar">
+                        <div class="search-input">
+                            <label class="icon icon-search" for="search"></label>
+                            <input type="search" id='search' placeholder='搜索话题'/>
+                            <label class="icon icon-remove1 hide" id="close_btn" onclick="clearContent($(this))"></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="list">
+                    <!-- 热门话题 -->
+                    <div class="list_title">热门话题</div>
+                    <div id="macth_line" class="hide topic_new">
+                        <a href="" class="cl">
+                            <div class="z t_left">
+                                <p class="text11">#<span id="macth_box"></span>#</p>
+                            </div>
+                            <span class="s_icon2 y"></span>
+                            <span class="y s_new">新话题</span>
+                        </a>
+                    </div>
+                    <ul>
+                        <li id="match0">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3">0</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match1">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3">1</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match2">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3">2</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match3">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3">3</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                        <li id="match4">
+                            <a href="" class="cl">
+                                <div class="z t_left">
+                                    <p class="text1">#<span class="text3">4</span>#</p>
+                                    <p class="text2">146条讨论</p>
+                                </div>
+                                <span class="s_icon2 y"></span>
+                                <div style="clear:both;"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 最新话题 -->
+                    <div class="list_title">最新话题</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+    (function($) {
+        jQuery.expr[':'].Contains = function(a, i, m) {
+            return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
+        };
+        function filterList(header, list) {
+            $("#search").change(function() {
+                var filter = $(this).val();
+                if (filter) {
+                    $matches = $(list).find('.text3:Contains(' + filter + ')').parents('li');
+                    $('li', list).not($matches).slideUp();
+                    $matches.slideDown();
+                } else {
+                    $(list).find("li").slideDown();
+                }
+                /*搜索值为空时标题和清空按钮隐藏*/
+                if ($(this).val()=='') {
+                    $(".list_title").show();
+                    $('#close_btn').hide();
+                }else{
+                    $(".list_title").hide();
+                    $('#close_btn').show();
+                }
+                return false;
+            }).keyup(function() {
+                $(this).change();
+            });
+        }
+        $(function() {
+            filterList($("#form"), $("#list"));
+        });
+    } (jQuery));
+    /*清空搜索框*/
+    function clearContent(self){
+        self.siblings('#search').val('');
+        $("#macth_line").hide();
+        $("#search").keyup();
+        $('#close_btn').hide();
+        $(".list_title").show();
+    }
+    </script>
+</body>
+</html>

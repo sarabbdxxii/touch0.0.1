@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻直播界面</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-live_btn-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="live_content" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;">
+                <div class="cl">
+                    <div class="z">
+                        <div class="host_info cl">
+                            <span class="z avatar2" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;"></span>
+                            <div class="z more_info">
+                                <p class="host_name">星华妃</p>
+                                <p>山西太原</p>
+                            </div>
+                        </div>
+                        <div class="host_info fish_bill">
+                            <div class="z more_info">
+                                 鱼票796
+                            </div>
+                        </div>
+                    </div>
+                    <div class="z watcher">
+                        <p>77776</p>
+                        <p>观看</p>
+                    </div>
+                    <div class="y">
+                        <div class="cl avatar_list">
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                        </div>
+                        <div class="host_info fish_bill live_tag">
+                            <div class="z more_info">
+                                 鱼邻直播
+                            </div>
+                        </div>
+                        <p class="live_id">ID:79677</p>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div class="gift_list">
+                    <div class="host_info big gift_item cl" onclick="send_gift(this)"><!--
+                        <div class="left_sc z"></div> -->
+                        <span class="z avatar2" style="background-image:url(images/pic3.jpg);"></span>
+                        <div class="z more_info">
+                            <p>小攀龙</p>
+                            <p style="color:#FACB38">送了我一个小海螺</p>
+                        </div>
+                        <!-- <div class="right_sc z"></div> -->
+                        <div class="agift" style="background-image:url(images/gift1.png);"></div>
+                    </div>
+                    <div class="host_info big gift_item cl" onclick="send_gift(this)">
+                        <span class="z avatar2" style="background-image:url(images/pic3.jpg);"></span>
+                        <div class="z more_info">
+                            <p>小攀龙</p>
+                            <p style="color:#FACB38">送了我一个小海螺</p>
+                        </div>
+                        <div class="agift" style="background:url(images/gift2.png) no-repeat center center;background-size:cover;"></div>
+                    </div>
+                </div>
+                <div class="scroll_msg">
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level1" style="display:inline-block">LV1</div>小攀龙：我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level2">LV2</div>小攀龙：我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level3">LV3</div>小攀龙：你的鱼好牛……</span>
+                    </div>
+                    <div class="sys_msg">直播消息：一道金光闪过，鱼饵不好吃进入了直播间</div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level4">LV4</div>小攀龙：你的鱼好牛……</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level5">LV5</div>小攀龙：我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level6">LV6</div>小攀龙：我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level7">LV7</div>小攀龙：你的鱼好牛……</span>
+                    </div>
+                    <div class="sys_msg">直播消息：一道金光闪过，鱼饵不好吃进入了直播间</div>
+                    <div class="cl pop_msg">
+                        <span class="z colwhite font14 textx"><div class="z level_part level8">LV8</div>小攀龙：你的鱼好牛……</span>
+                    </div>
+                </div>
+                <div class="display_bar cl">
+                    <div class="live_goods"></div>
+                    <div class="wrapper_main">
+                        <span class="z func_icon icon5"></span>
+                        <span class="y func_icon icon4" onclick="show_share()"></span>
+                        <span class="y func_icon icon3">
+                            <div class="heart">77998</div>
+                        </span>
+                        <span class="y func_icon icon1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 分享 -->
+        <div class="black" onclick="close_black()" style="display:none;"></div>
+        <div class="share_list">
+            <div class="share">
+                <div class="line1 cl">
+                    <div class="bdsharebuttonbox bdshare-button-style0-16">
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cancle font14" onclick="close_black(this)">取消</div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/swiper3.0.8.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+</body>
+</html>

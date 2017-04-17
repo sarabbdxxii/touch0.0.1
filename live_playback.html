@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻直播回放</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-live_btn-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="live_content" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;">
+                <video id="audio" width="375" height="716" controls  style="position:absolute;top:-2.4rem;left:0">
+                	<source src="http://static2.yulinapp.com/data/video/lubo/qianhuzhuayu.mp4" type="video/mp4">
+                </video>
+                <div class="cl">
+                    <div class="z">
+                        <div class="host_info cl">
+                            <span class="z avatar2" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;"></span>
+                            <div class="z more_info">
+                                <div class="z">
+                                    <p class="host_name">星华妃</p>
+                                    <p>山西太原</p>
+                                </div>
+                                <div class="z pay_attention2" onclick="payAttention(this)">关注</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="y">
+                        <div class="cl avatar_list">
+                            <span class="y avatar_item" style="background-image:url(images/icon7.png);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/icon4.png);" onclick="show_share()"></span>                        </div>
+                        <div class="host_info fish_bill live_tag">
+                            <div class="z more_info">
+                                 鱼邻直播
+                            </div>
+                        </div>
+                        <p class="live_id">ID:79677</p>
+                    </div>
+                </div>
+
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <!-- 分享 -->
+        <div class="black" onclick="close_black()" style="display:none;"></div>
+        <div class="share_list">
+            <div class="share">
+                <div class="line1 cl">
+                    <div class="bdsharebuttonbox bdshare-button-style0-16">
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cancle font14" onclick="close_black(this)">取消</div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/swiper3.0.8.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        function payAttention(self){
+            $(self).fadeOut();
+            $.toast("关注成功");
+        }
+    </script>
+</body>
+</html>

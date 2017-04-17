@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的粉丝</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">粉丝</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content msg_contact inform comment_me all_concerned infinite-scroll">
+            <div class="bar bar-header-secondary">
+                <div class="searchbar">
+                    <a class="searchbar-cancel">取消</a>
+                    <div class="search-input">
+                        <label class="icon icon-search" for="search"></label>
+                        <input type="search" id='search' onkeyup="showClearBtn(this)" placeholder='搜索'/>
+                        <a href="javascript:;" style="display:none" onclick="clearInput(this)" class="clear_btn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-block contacts-block">
+                <div class="list_item person cl">
+                    <div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>
+                    <div class="y cl rightone">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="z font15 text3 text4">爱忧伤</p>
+                            <span class="z msg_time text4 col9d font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66 font13">这家伙很懒，什么也没留下</p>
+                    </div>
+                    <div class="y concerned not_concerned font12" onclick="toggleConcerned(this)">+关注</div>
+                    </div>
+                </div>
+                <div class="list_item person cl">
+                    <div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>
+                    <div class="y cl rightone">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="z font15 text3 text4">爱忧伤</p>
+                            <span class="z msg_time text4 col9d font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66 font13">这家伙很懒，什么也没留下</p>
+                    </div>
+                    <div class="y concerned font12" onclick="toggleConcerned(this)">已关注</div>
+                    </div>
+                </div>
+                <div class="list_item person cl">
+                    <div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>
+                    <div class="y cl rightone">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="z font15 text3 text4">爱忧伤</p>
+                            <span class="z msg_time text4 col9d font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66 font13">这家伙很懒，什么也没留下</p>
+                    </div>
+                    <div class="y concerned font12" onclick="toggleConcerned(this)">已关注</div>
+                    </div>
+                </div>
+                <div class="list_item person cl">
+                    <div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>
+                    <div class="y cl rightone">
+                    <div class="z rightpart">
+                        <div class="toppart cl">
+                            <p class="z font15 text3 text4">爱忧伤</p>
+                            <span class="z msg_time text4 col9d font12">11-29  18:40</span>
+                        </div>
+                        <p class="font14 text4 talk_content col66 font13">这家伙很懒，什么也没留下</p>
+                    </div>
+                    <div class="y concerned font12" onclick="toggleConcerned(this)">已关注</div>
+                    </div>
+                </div>
+            </div>
+            <!-- preloader -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        /*$(".person").click(function(){
+            //打开个人中心页
+            window.location.href = 'person_index.html';
+            return false;
+        });*/
+
+        var loading = false;
+        var maxItems = 100;
+
+        var itemsPerLoad = 2;
+
+        function addItems(number, lastIndex) {
+                var html = '';
+                for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                    html += '<div class="list_item person cl">'+
+                                '<div class="z icon2"><img src="images/pic5.jpg" alt="" /></div>'+
+                                '<div class="y cl rightone">'+
+                                '<div class="z rightpart">'+
+                                    '<div class="toppart cl">'+
+                                        '<p class="z font15 text3 text4">爱忧伤</p>'+
+                                        '<span class="z msg_time text4 col9d font12">11-29  18:40</span>'+
+                                    '</div>'+
+                                    '<p class="font14 text4 talk_content col66 font13">这家伙很懒，什么也没留下</p>'+
+                                '</div>'+
+                                '<div class="y concerned font12" onclick="toggleConcerned(this)">已关注</div>'+
+                                '</div>'+
+                            '</div>';
+                }
+                $('.contacts-block').append(html);
+
+            }
+        addItems(itemsPerLoad, 0);
+
+
+        var lastIndex = 2;
+
+        $(document).on('infinite', '.infinite-scroll',function() {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            setTimeout(function() {
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.contacts-block .list_item').length;
+            }, 1000);
+        });
+        $.init();
+    </script>
+</body>
+</html>

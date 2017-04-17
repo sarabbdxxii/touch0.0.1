@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>绑定银行卡</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav graybg">
+            <h1 class="title">绑定银行卡</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content graybg">
+          <div class="withdraw_box">
+            <div class="part3">
+              <div class="sele_item bindcard cl" style="margin-top:0;border-top:none;">
+                <p class="z font15 linename">发卡银行</p>
+                <p class="z font12 aaa">请选择发卡银行</p>
+                <span class="icon icon-right y"></span>
+              </div>
+              <div class="sele_item bindcard cl">
+                <p class="z font15 linename">银行卡号</p>
+                <input type="text" class="z font12" placeholder="请填写您的银行卡号" />
+              </div>
+              <div class="sele_item bindcard cl">
+                <p class="z font15 linename">预留手机号</p>
+                <input type="text" class="z font12" placeholder="请填写您银行卡预留手机号" />
+                <!-- <a href="javascript:;" class="z getidcode font12">获取验证码</a> -->
+                <span class="countdown font14" onclick="countDown(60)">60</span>
+              </div>
+              <div class="sele_item bindcard cl">
+                <p class="z font15 linename">验证码</p>
+                <input type="text" class="z font12" placeholder="请输入您手机收到的验证码" />
+              </div>
+            </div>
+            <div class="confirm_btn">确认提现</div>
+            <div class="tips">
+              <p>提现成功后，钱款会在24小时内汇入您的银行账户中。</p>
+              <p>如有疑问，请联系工作人员。</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+    function countDown(num){
+      setTimeout(function(){
+        num -= 1;
+        if(num >= 0){
+          $('.countdown').html(num);
+          countDown(num);
+        }
+      }, 1000);
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>直播列表</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-live_btn-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <h1 class="title">鱼邻直播</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content whitebg">
+            <!-- 幻灯 -->
+            <div class="slider_img">
+                <div id="banner" class="swiper-container-horizontal" style="overflow:hidden;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg);">
+                        </div>
+                    </div>
+                    <div class="pagination swiper-pagination-bullets"></div>
+                </div>
+            </div>
+            <!-- 幻灯end -->
+            <div class="live_list">
+                <div class="live_listitem colwhite cl" style="background:url(images/avatar.jpg) center center;background-size:cover;">
+                    <div class="live_btn z"><span class="blue_point"></span>&nbsp;&nbsp;直播</div>
+                    <p class="z text7">12548人在看</p>
+                    <span class="y font12">山西太原</span>
+                    <span class="y icon_location"></span>
+                    <div class="bottom_bar cl">
+                        <span class="z icon_avatar" style="background:url(images/avatar.jpg) center center;background-size:cover;"></span>
+                        <div class="text_part z">
+                            <p class="font14 co00">快来看老司机直播如何给龙鱼治疑难杂症</p>
+                            <p class="font11 col66">素颜小公举彤彤</p>
+                        </div>
+                        <div class="y">
+                            <span class="icon_heart"></span>
+                            <p class="col66">3.5万</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="live_listitem colwhite cl" style="background:url(images/avatar.jpg) center center;background-size:cover;">
+                    <div class="live_btn z"><span class="blue_point"></span>&nbsp;&nbsp;直播</div>
+                    <p class="z text7">12548人在看</p>
+                    <span class="y font10">山西太原</span>
+                    <span class="y icon_location"></span>
+                    <div class="bottom_bar cl">
+                        <span class="z icon_avatar" style="background:url(images/avatar.jpg) center center;background-size:cover;"></span>
+                        <div class="text_part z">
+                            <p class="font14 co00">快来看老司机直播如何给龙鱼治疑难杂症</p>
+                            <p class="font11 col66">素颜小公举彤彤</p>
+                        </div>
+                        <div class="y">
+                            <span class="icon_heart"></span>
+                            <p class="col66">3.5万</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/swiper3.0.8.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        window.onload = function() {
+            var mySwiper2 = new Swiper('#banner',{
+                autoplay:5000,
+                visibilityFullFit : true,
+                loop:true,
+                pagination : '.pagination',
+            });
+        }
+    </script>
+</body>
+</html>

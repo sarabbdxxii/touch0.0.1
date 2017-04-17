@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>签到</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 签到页面 -->
+        <div class="content post_sign">
+            <header class="bar bar-nav person_nav cl">
+                <a href="" class="sign_left sign_size z"><span>返回</span></a>
+                <a href="" class="sign_right sign_size y"><span>帮助</span></a>
+            </header>
+            <div class="sign_con">
+                <p class="pop1 y">1234<span class="dis_bk">成长值</span></p>
+                <p class="grade_show" style="width:100%;"><img src="images/test1111.png" width="100%" /></p>
+                <div class="sign_tab cl">
+                    <span class="tab_click icon1"></span>
+                    <span class="tab_click icon2"></span>
+                    <span class="tab_click icon3"></span>
+                </div>
+                <div class="sign_tab_show">
+                    已连续签到 <span>20天</span>，领先 <span>75%</span> 的鱼友
+                </div>
+            </div>
+            <div class="sign_tan sign_tan1 hide">
+                <div class="sign_box">
+                    <p class="line1">美滋滋的睡了一整天</p>
+                    <p class="line2">奖励</p>
+                    <p class="line2"><span class="mrm">10成长值</span><span>5贝壳</span></p>
+                    <button class="sur_btn">确定</button>
+                </div>
+            </div>
+            <div class="sign_tan sign_tan2 hide">
+                <div class="sign_box">
+                    <p class="line3">今天已经签到了，明天再来吧</p>
+                    <button class="sur_btn">确定</button>
+                </div>
+            </div>
+            <img src="images/background.png" class="post_bg" />
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        $('.tab_click').one("click",function(){
+            var self = $(this).siblings();
+            $(this).addClass('on');
+            $('.sign_tan1').fadeIn('fast', function() {
+                $(this).click(function(){
+                    $(this).fadeOut('fast');
+                })
+            });
+            $(self).unbind('click').click(function(e){
+                $('.sign_tan2').fadeIn('fast', function() {
+                    $(this).click(function(){
+                        $(this).fadeOut('fast');
+                    })
+                });
+            });
+        })
+        $('.sur_btn').bind("click",function(event){
+            $('.sign_tan').fadeOut('fast');
+            event.stopPropagation();    //  阻止事件冒泡
+        });
+    </script>
+</body>
+</html>

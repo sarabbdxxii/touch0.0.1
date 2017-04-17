@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发现邻街-注册</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">注册</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content register">
+            <div class="post_pic cl post_file">
+                <ul class="upload_container cl">
+                    <li class="post_list1">
+                        <div class="pic_img">
+                            <input id="Filedata" name="Filedata" class="s_picture" type="file" multiple="multiple" accept="image/jpeg,image/png,image/gif,image/bmp">
+                            <input id="Fileurl" type="hidden" value="/index.php/Mobile/thread/upload/sitemark/longyu.html">
+                        </div>
+                    </li>
+                </ul>
+                <span class="post_text">上传头像</span>
+            </div>
+            <div class="message_info">
+                <p class="message_line cl">
+                    <span class="z">昵称</span>
+                    <input type="text" placeholder="必选" class="z input_box" />
+                </p>
+                <p class="message_line cl">
+                    <span class="z">密码</span>
+                    <input id="eye_pwd" type="password" placeholder="必选" class="z input_box" />
+                    <span class="y eye_btn"></span>
+                </p>
+                <div class="message_line cl bor_none">
+                    <span class="z">性别</span>
+                    <div class="z sel_sex cl">
+                        <div class="radio_s">
+                            <p class="radio_pic"></p>
+                            <span>男</span>
+                        </div>
+                        <div class="radio_s">
+                            <p class="radio_pic radio_pic1"></p>
+                            <span>女</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="bar bar-tab">
+            <button class="next_btn">下一步</button>
+        </nav>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/uploadimg.js' charset='utf-8'></script>
+    <script>
+    /*密码可见眼睛*/
+    $(".eye_btn").click(function(){
+        if($('.eye_btn').hasClass("on")){
+            $(this).removeClass("on");
+            document.getElementById("eye_pwd").type = 'password';
+        }else{
+            $(this).addClass("on");
+            document.getElementById("eye_pwd").type = 'text';
+        }
+    })
+    /*性别选择*/
+    $('.radio_pic').click(function() {
+        $(this).addClass('on').parents('.radio_s').siblings().find('.radio_pic').removeClass('on');
+    });
+    //上传图片
+    ET_UPLOAD_IMG.init($("#Filedata"),$(".upload_container"),$("#Fileurl").val());
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>提到我的</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">提到我的</h1>
+        </header>
+        <!-- 标题栏 -->
+        <div class="content mentioned_me pull-to-refresh-content infinite-scroll " data-distance="100" data-ptr-distance="55">
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <div class="content-block">
+                <div class="tabs wrapper_main">
+                    <!-- 全部 -->
+                    <div id="tab1" class="tab active">
+                        <!-- 一篇帖子 -->
+                        <div class="onepiece cl">
+                            <div class="header_info cl">
+                                <a href="javascript:;" class="external"><span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span></a>
+                                <div class="info2 z">
+                                    <div class="cl info21">
+                                        <a href="javascript:;" class="nickname font14 z external">冰淇淋</a>
+                                        <div class="grade z cl">
+                                            <div class="arrow-left z"></div>
+                                            <div class="rect z font12 z">LV6</div>
+                                        </div>
+                                    </div>
+                                    <div class="cl font12 aaa">
+                                        <p class="z" style="margin-right:.3rem;">6-22</p>
+                                        <p class="z smaltx">来自美人鱼</p>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                            </div>
+                            <a href="javascript:;" class="external piecetext">
+                                <p class="piecetext font14"> 侄女儿。如果您觉得条美鱼，美哒美哒美美的</p>
+                            </a>
+                            <a href="javascript:;" class="external piecetext main">
+                                <p class="piecetext main font14">大神们，我开缸大神们，</p>
+                            </a>
+                            <ul class="pics pic1">
+                                <li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>
+                            </ul>
+                            <!-- 图标 -->
+                            <div class="options cl font12">
+                                <span class="more_btn y" onclick="show_share()"></span>
+                                <span class="num comment y">15</span>
+                                <span class="comment_pic y open-popup open-about" onclick="commend_box(1,'张三')"></span>
+                                <span class="num like y">2</span>
+                                <span class="like_pic y" onclick="likeit(this)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+        <!-- 分享 -->
+        <div class="black" onclick="close_black()" style="display:none;"></div>
+        <div class="share_list">
+            <div class="share">
+                <div class="line1 cl">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                    </div>
+                </div>
+
+                <div class="line2 cl">
+                    <div class="z blo">
+                        <div class="share_item">
+                            <span class="innericon collect"></span>
+                        </div>
+                        <span class="text2 font13">收藏</span>
+                    </div>
+                    <div class="z blo">
+                        <div class="share_item">
+                            <span class="innericon inform"></span>
+                        </div>
+                        <span class="text2 font13">举报</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cancle font14" onclick="close_black(this)">取消</div>
+        </div>
+    </div>
+    <div class="popup popup-about">
+        <header class="bar bar-nav login_bar">
+            <a class="button button-link button-nav pull-left" href="javascript:;">
+              <span class="icon icon-left close-popup"></span>
+            </a>
+            <h1 class="title">评论</h1>
+        </header>
+        <div class="content">
+            <div class="ly_commend">
+                <div class="cl advise_box">
+                    <textarea id="com_box" class="advise_text"></textarea>
+                </div>
+                <div class="cl">
+                    <span class="z smile_icon"><img src="images/smile.png"/></span>
+                    <button class="com_btn y">发表评论</button>
+                </div>
+                <div class="cl face_show hide">
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                    <span class="z face_icon"><img src="images/test_face.png"/></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+            setTimeout(function() {
+                var cardHTML =  '<div class="onepiece cl">'+
+                                    '<div class="header_info cl">'+
+                                        '<a href="javascript:;" class="external"><span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span></a>'+
+                                        '<div class="info2 z">'+
+                                            '<div class="cl info21">'+
+                                                '<a href="javascript:;" class="nickname font14 z external">冰淇淋</a>'+
+                                                '<div class="grade z cl">'+
+                                                    '<div class="arrow-left z"></div>'+
+                                                    '<div class="rect z font12 z">LV6</div>'+
+                                                '</div>'+
+                                            '</div>'+
+                                            '<div class="cl font12 aaa">'+
+                                                '<p class="z" style="margin-right:.3rem;">6-22</p>'+
+                                                '<p class="z smaltx">来自美人鱼</p>'+
+                                            '</div>'+
+                                        '</div>'+
+                                        '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+                                    '</div>'+
+                                    '<a href="javascript:;" class="external piecetext">'+
+                                        '<p class="piecetext font14">'+
+                                        '侄女儿。如果您觉得条美鱼，美哒美哒美美的'+(Math.random()*1000000)+
+                                        '</p>'+
+                                    '</a>'+
+                                    '<a href="javascript:;" class="external piecetext main">'+
+                                        '<p class="piecetext main font14">大神们，我开缸大神们，</p>'+
+                                    '</a>'+
+                                    '<ul class="pics pic1">'+
+                                        '<li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+                                    '</ul>'+
+                                    '<div class="options cl font12">'+
+                                        '<span class="more_btn y" onclick="show_share()"></span>'+
+                                        '<span class="num comment y">15</span>'+
+                                        '<span class="comment_pic y open-popup open-about" onclick="commend_box(1,\'张三\')"></span>'+
+                                        '<span class="num like y">2</span>'+
+                                        '<span class="like_pic y" onclick="likeit(this)"></span>'+
+                                    '</div>'+
+                                '</div>';
+
+                $(e.target).find('.tab.active > .onepiece').replaceWith(cardHTML);
+                // done
+                $.pullToRefreshDone('.pull-to-refresh-content');
+            }, 2000);
+        });
+
+        var loading = false;
+        var maxItems = 100;
+
+        var itemsPerLoad = 2;
+
+        function addItems(number, lastIndex) {
+                var html = '';
+                for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                    html += '<div class="onepiece cl">'+
+                                '<div class="header_info cl">'+
+                                    '<a href="javascript:;" class="external"><span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span></a>'+
+                                    '<div class="info2 z">'+
+                                        '<div class="cl info21">'+
+                                            '<a href="javascript:;" class="nickname font14 z external">冰淇淋</a>'+
+                                            '<div class="grade z cl">'+
+                                                '<div class="arrow-left z"></div>'+
+                                                '<div class="rect z font12 z">LV6</div>'+
+                                            '</div>'+
+                                        '</div>'+
+                                        '<div class="cl font12 aaa">'+
+                                            '<p class="z" style="margin-right:.3rem;">6-22</p>'+
+                                            '<p class="z smaltx">来自美人鱼</p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>'+
+                                '</div>'+
+                                '<a href="javascript:;" class="external piecetext">'+
+                                    '<p class="piecetext font14">'+
+                                    '侄女儿。如果您觉得条美鱼，美哒美哒美美的'+i+
+                                    '</p>'+
+                                '</a>'+
+                                '<a href="javascript:;" class="external piecetext main">'+
+                                    '<p class="piecetext main font14">大神们，我开缸大神们，</p>'+
+                                '</a>'+
+                                '<ul class="pics pic1">'+
+                                    '<li class="z pb-standalone" style="background:url(images/pic1.jpg);background-size:cover;background-position:center center;"></li>'+
+                                '</ul>'+
+                                '<div class="options cl font12">'+
+                                    '<span class="more_btn y" onclick="show_share()"></span>'+
+                                    '<span class="num comment y">15</span>'+
+                                    '<span class="comment_pic y open-popup open-about" onclick="commend_box(1,\'张三\')"></span>'+
+                                    '<span class="num like y">2</span>'+
+                                    '<span class="like_pic y" onclick="likeit(this)"></span>'+
+                                '</div>'+
+                                '</div>';
+                }
+                 $('.tab.active').append(html);
+
+            }
+            addItems(itemsPerLoad, 0);
+
+
+            var lastIndex = 2;
+
+            $(document).on('infinite', '.infinite-scroll',function() {
+
+                // 如果正在加载，则退出
+                if (loading) return;
+                // 设置flag
+                loading = true;
+
+                setTimeout(function() {
+                    loading = false;
+
+                    if (lastIndex >= maxItems) {
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        $('.infinite-scroll-preloader').remove();
+                        return;
+                    }
+
+                    addItems(itemsPerLoad, lastIndex);
+                    lastIndex = $('.tab.active>.onepiece').length;
+                }, 1000);
+            });
+        $.init();
+    </script>
+</body>
+</html>

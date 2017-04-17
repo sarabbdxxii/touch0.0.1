@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>冒泡</title>
+        <meta charset="utf-8">
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function () {
+            $("div li").click(function (e) {
+                alert("我是li"); return false;
+            })
+            $("div ul").click(function (e) { //这个e其实就是event 是一个事件的对象
+                alert("我是ul"); e.stopPropagation(); //e.stopPropagation();就是阻止冒泡，如果不写这句，在弹出 “我是li”后就会弹出“我是ul”，然后就会弹出“我是div”。在这里添加了e.stopPropagation();之后，“我是div”就不会弹出来了。因为已经被阻止了。其实这句也可也用 return false来替代
+            })
+            $("div").click(function (e) {
+                alert("我是div");
+            })
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <!-- li在ul里，ul在div中，只要点击了li，也就是点击了ul,也就是点击了div。在上面的函数中，先弹出 “我是li”然后弹出“我是ul”，最后弹出“我是div” 一层一层的冒泡，而阻止冒泡的方式就是调用 事件的对象来调用stopPropagation()方法。这个事件的对象就是函数的参数 e 这个e的名字可以随便取-->
+                <li>请点击我</li>
+            </ul>
+        </div>
+    </body>
+</html>

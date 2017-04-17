@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发现邻街-登录</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 这里是页面内容区 -->
+        <div class="content login_con">
+            <form action="">
+                <div class="login_logo"><img src="images/yulin_logo.png" /></div>
+                <div class="input_box cl">
+                    <input type="text" class="phone_box width80 z" placeholder="请输入用户名" />
+                    <span class="y mtn_rem hide clear_btn"><img src="images/close_btn.png" /></span>
+                </div>
+                <div class="input_box">
+                    <input type="password" class="phone_box width80 z" placeholder="请输入密码" />
+                    <span class="y mtn_rem hide clear_btn"><img src="images/close_btn.png" /></span>
+                </div>
+                <button class="login_btn">登录</button>
+                <div class="login_text cl">
+                    <a href="" class="z">新用户注册</a>
+                    <a href="" class="y">忘记密码?</a>
+                </div>
+                <div class="line_info">
+                    <span class="line_text">社交账号</span>
+                </div>
+                <div class="qq_logo">
+                    <a href=""><img src="images/qq_logo.png" width="57" /></a>
+                    <span><img src="images/blank.png"/></span>
+                    <a href=""><img src="images/weixin_icon.png" width="57" /></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        /*清除按钮*/
+        $(".phone_box").focus(function(){
+            if($(this).val!==""){
+                $(this).siblings(".clear_btn").show();
+            }
+            $('.clear_btn').click(function() {
+                $(this).siblings('.phone_box').val("");
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>

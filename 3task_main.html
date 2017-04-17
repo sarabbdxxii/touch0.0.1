@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>任务中心</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">任务中心</h1>
+            <a href="" class="s_right1 color_h">我的勋章</a>
+        </header>
+        <!-- 签到页面 -->
+        <div class="content">
+            <div class="task_main">
+                <div class="task_tab_line cl">
+                    <p class="z task_1 active"><span class="task_n">每日任务</span></p>
+                    <p class="z task_1"><span class="task_n">主线任务</span></p>
+                </div>
+                <div class="task_all">
+                    <div class="task_show">
+                        <div class="line_all cl">
+                            <div class="line_1 z">
+                                <p>发布1条以上原创微帖子 <span class="color_b"><img src="images/finish_icon.png" alt="" height="12" />（0/1）</span></p>
+                                <p>发布1条以上原创微帖子</p>
+                                <p>奖励：经验值 <span class="color_b"> +0 </span>  点 /贝壳 <span class="color_b"> +3 </span> 点</p>
+                            </div>
+                        </div>
+                        <div class="line_all cl">
+                            <div class="line_1 z">
+                                <p>发布1条以上原创微帖子 <span class="color_b">（0/1）</span></p>
+                                <p>发布1条以上原创微帖子</p>
+                                <p>奖励：经验值 <span class="color_b"> +0 </span>  点 /贝壳 <span class="color_b"> +3 </span> 点</p>
+                            </div>
+                        </div>
+                        <div class="line_all cl">
+                            <div class="line_1 z">
+                                <p>发布1条以上原创微帖子 <span class="color_b">（0/1）</span></p>
+                                <p>发布1条以上原创微帖子</p>
+                                <p>奖励：经验值 <span class="color_b"> +0 </span>  点 /贝壳 <span class="color_b"> +3 </span> 点</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="task_show hide">
+                        <div class="line_all cl">
+                            <div class="line_1 z">
+                                <p>发布1条以上原创微帖子 <span class="color_b">（0/1）</span></p>
+                                <p>发布1条以上原创微帖子</p>
+                                <p>奖励：经验值 <span class="color_b"> +0 </span>  点 /贝壳 <span class="color_b"> +3 </span> 点</p>
+                            </div>
+                            <div class="line_2 y">
+                                <img src="images/test5.png" width="100%" />
+                            </div>
+                        </div>
+                        <div class="line_all cl">
+                            <div class="line_1 z">
+                                <p>发布1条以上原创微帖子 <span class="color_b">（0/1）</span></p>
+                                <p>发布1条以上原创微帖子</p>
+                                <p>奖励：经验值 <span class="color_b"> +0 </span>  点 /贝壳 <span class="color_b"> +3 </span> 点</p>
+                            </div>
+                            <div class="line_2 y">
+                                <img src="images/test5.png" width="100%" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+    //tab切换
+    function task_tab(task_per_tab,task_per_show){
+        jQuery(task_per_tab).each(function(index, el) {
+            jQuery(this).bind('click', function(event) {
+                jQuery(task_per_show).eq(index).show().siblings().hide();
+                jQuery(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+    }
+    task_tab(".task_1",".task_show");
+    </script>
+</body>
+</html>

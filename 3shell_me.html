@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的贝壳</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a href="" class="s_left"></a>
+            <h1 class="title">我的贝壳</h1>
+        </header>
+        <div class="content infinite-scroll">
+            <div class="shell_me">
+                <div class="top_detail">
+                    <a href="" class="shell_link">贝壳规则</a>
+                    <p class="shell_font shell_l"><span>440</span>贝壳</p>
+                    <p class="cl shell_l">
+                        <span class="z">贝壳可以兑换礼物，赶紧积攒吧~</span>
+                        <span class="z go_dui" onclick="show_login_dialog()">去兑换</span>
+                    </p>
+                </div>
+                <a href="" class="cl fixed_line">
+                    <span class="z color_b">贝壳明细</span>
+                    <span class="y color_h cl">
+                        <span class="z">更多</span>
+                        <img class="z next_button" src="images/hui_next.png" height="13"/>
+                    </span>
+                </a>
+                <div class="list_detali">
+                    <ul>
+                        <li class="cl">
+                            <div class="z left_text">
+                                <p class="line_text">点赞</p>
+                                <p><span>12-8</span><span>12:17</span></p>
+                            </div>
+                            <div class="y right_text">+1</div>
+                        </li>
+                        <li class="cl">
+                            <div class="z left_text">
+                                <p class="line_text">点赞</p>
+                                <p><span>1天前</span><span>12:17</span></p>
+                            </div>
+                            <div class="y right_text">+1</div>
+                        </li>
+                        <li class="cl">
+                            <div class="z left_text">
+                                <p class="line_text">点赞</p>
+                                <p><span>1天前</span><span>12:17</span></p>
+                            </div>
+                            <div class="y right_text">+1</div>
+                        </li>
+                        <li class="cl">
+                            <div class="z left_text">
+                                <p class="line_text">点赞</p>
+                                <p><span>1天前</span><span>12:17</span></p>
+                            </div>
+                            <div class="y right_text">+1</div>
+                        </li>
+                        <li class="cl">
+                            <div class="z left_text">
+                                <p class="line_text">点赞</p>
+                                <p><span>1天前</span><span>12:17</span></p>
+                            </div>
+                            <div class="y right_text">+1</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay modal-overlay-visible" style="display:none;"></div>
+    <div class="modal modal-in" style="display: none;margin-top: -50px;">
+        <div class="modal-inner">
+            <div class="modal-text">去下载鱼邻APP兑换礼物咯~</div>
+        </div>
+        <div class="modal-buttons ">
+            <span class="modal-button color_h" onclick="cancle_login()">稍后再说</span>
+            <span class="modal-button modal-button-bold color_normal" onclick="confirm_login()">点击下载</span>
+        </div>
+    </div>
+    <style>
+        .modal_title{ text-align: center; font-size: 0.8rem; margin-bottom: 0.5rem;}
+        .color_normal{ color:#333;}
+        .modal-inner{ padding:1.3rem; font-size: 0.7rem;}
+        .modal-inner,.modal-button{ background:#fff;}
+        .modal-button{ font-size: 0.7rem; height:2rem; line-height: 2rem;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        //计算滚动容器的高度
+        var detail_h = $(document).height()-234;
+        $(".list_detali").height(detail_h);
+    </script>
+</body>
+</html>
