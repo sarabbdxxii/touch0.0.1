@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>直播提醒</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/light7-swiper.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <h1 class="title">某某的直播</h1>
+            <a class="icon icon-shares pull-right"></a>
+        </header>
+        <div class="content live_con">
+            <div class="price_pop_add">
+                <div class="price_part1">
+                    <div id="live_banner" class="swiper-container-horizontal">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide pb-standalone-video" onclick="openPic(1,'myPhotoBrowserStandalone')">
+                                <img src="images/avatar.jpg" width="100%" />
+                            </div>
+                            <div class="swiper-slide pb-standalone-video" onclick="openPic(2,'myPhotoBrowserStandalone')">
+                                <img src="images/avatar.jpg" width="100%" />
+                            </div>
+                            <div class="swiper-slide pb-standalone-video" onclick="openPic(3,'myPhotoBrowserStandalone')">
+                                <img src="images/avatar.jpg" width="100%" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="price_part3">起拍价￥1000000.00</div>
+                <div class="price_part2">
+                    <ul class="cl">
+                        <li>
+                            <p class="text_info1">￥800</p>
+                            <p class="text_info2">起拍价</p>
+                        </li>
+                        <li>
+                            <p class="text_info1">￥800</p>
+                            <p class="text_info2">加价幅度</p>
+                        </li>
+                        <li>
+                            <p class="text_info1">￥800</p>
+                            <p class="text_info2">邮费</p>
+                        </li>
+                        <li>
+                            <p class="text_info1">是</p>
+                            <p class="text_info2">包活包损</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price_pop_inner">
+                    <div class="price_content">
+                        <p class="price_pop_text"><span>【名称】</span>武级美拉B级金龙</p>
+                        <p class="price_pop_text"><span>【规格】</span>26公分</p>
+                        <p class="price_pop_text"><span>【商品编码/芯片码】</span>F222</p>
+                        <p class="price_pop_text"><span>【描述】</span>古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,到货时跳伤一根尾鳍，正在恢复中，不严重影响整体美观古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美</p>
+                    </div>
+                    <div class="img_list">
+                        <img src="images/avatar.jpg" alt="" />
+                        <img src="images/avatar.jpg" alt="" />
+                        <img src="images/avatar.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="download_tip cl font15" style="position:absolute;bottom:0;left:0;top:auto;">
+            <div class="z leftpart cl">
+                <img class="z closebtn" onclick="closeDownloadTip()" src="images/close.png" alt="">
+                <img class="z yulin_icon" src="images/yulin.png">
+                <p class="z">有鱼、有邻、有达人</p>
+            </div>
+            <div class="z rightpart">立即下载</div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/swiper3.0.8.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+    window.onload = function() {
+        var mySwiper2 = new Swiper('#live_banner',{
+            autoplay:5000,
+            visibilityFullFit : true,
+            loop:true,
+            pagination : '.pagination',
+        });
+    }
+
+    function openPic(index,name){
+        eval(name).open(index);
+    }
+
+
+    var myPhotoBrowserVideo = $.photoBrowser({
+        photos : [
+            {
+                html: '<video src="http://static3.yulinapp.com/2017/0620/source/5948cdbee42ef.mp4" controls="controls" width="100%">'
+            },{
+                html: '<img src="https://static2.yulinapp.com/2017/0618/13/59460da67fe335cfd946.jpg"  width="100%">'
+            },
+            {
+                html: '<img src="https://static2.yulinapp.com/2017/0618/13/59460da67fe335cfd946.jpg"  width="100%">'
+            },
+            {
+                html: '<img src="https://static2.yulinapp.com/2017/0618/13/59460da67fe335cfd946.jpg"  width="100%">'
+            },
+        ],
+        theme: 'dark',
+        type: 'standalone'
+    });
+    $(document).on('click','.pb-standalone-video',function () {
+        myPhotoBrowserVideo.open();
+    });
+
+    </script>
+</body>
+</html>

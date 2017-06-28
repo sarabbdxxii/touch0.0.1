@@ -1,4 +1,4 @@
-/* CSS Document */
+ CSS Document */
 * {word-wrap:break-word;}
 body { background: #ededed; font-family:"Microsoft Yahei";}
 body,input,button,select,textarea {font:12px Microsoft Yahei;color:#444;}
@@ -28,6 +28,7 @@ label {cursor:pointer;}
 .mbn_rem{ margin-bottom: 0.5rem;}
 .mtn_rem{ margin-top: 0.5rem;}
 .wrapper_main{width:94.1%;margin:0 auto;}
+.m0a{margin:0 auto!important;}
 /*字体大小*/
 .font10{font-size: .5rem;}
 .font12{font-size: .6rem;}
@@ -45,22 +46,25 @@ label {cursor:pointer;}
 .col9d{color: #9d9d9d;}
 .col99{color:#999;}
 .colwhite{color:#fff;}
+.colbb{color:#bbb;}
 /*链接蓝色*/
 a.colblue{color:#4C7AAD;}
 /*背景颜色*/
 .whitebg{background:#fff!important;}
 .graybg{background:#f9f9f9!important;}
+.f5bg{background:#f5f5f5!important;}
 /*行间距*/
 .smaltx{line-height: .8rem;}
 
 /*帖子头部*/
 .onepiece{padding: .5rem 0 .75rem 0;}
+.onepiece.newstyle{background:#fff;padding:.3rem 3% .6rem 3%;margin-bottom: .6rem;}
 .onepiece .header_info{padding-bottom: .4rem;}
 .onepiece .header_info .avatar{display:inline-block; width:1.9rem;height:1.9rem;border-radius: 100%;overflow: hidden;}
 .onepiece .header_info .info2{margin-left: .4rem;}
-.onepiece .header_info a{color:#4C7AAD;}
-.onepiece .header_info .nickname{color:#4C7AAD; line-height: 0.9rem;}
-.onepiece .attention{border:solid 1px #4C7AAD;border-radius: 3px; padding:0.1rem 0.3rem;}
+.onepiece .header_info a{color:#0196E6;}
+.onepiece .header_info .nickname{color:#0073B1; line-height: 0.9rem;}
+.onepiece .attention{border:solid 1px #0196E6;border-radius: 2em; padding:0.1rem 0.3rem;}
 .grade{margin-top: .15rem; margin-left: .45rem;}
 .grade .arrow-left{width:0;height:0;border-top: 3px solid transparent; border-right: 4px solid #017EC0;border-bottom: 3px solid transparent;margin-top: .13rem;}
 .grade .rect{height:.6rem;width:1.2rem;background:#017EC0; border-radius: 2px; color: #fff; line-height: .6rem; text-align: center; font-size: 8px;}
@@ -70,7 +74,7 @@ a.colblue{color:#4C7AAD;}
 .onepiece .options span{margin:0 .2rem;}
 .onepiece .options .more_btn{width:.75rem;height:1rem;background:url(../images/more_btn.png) no-repeat; background-size: contain;}
 .onepiece .options .num{ color:#B2B2B2;}
-.onepiece .options .comment_pic{width:.75rem;height:1rem;background:url(../images/comend_icon.png) no-repeat; background-size: contain;}
+.onepiece .options .comment_pic{width:.75rem;height:1rem;background:url(../images/icon-comment.png) no-repeat; background-size: contain;}
 .onepiece .options .eye_pic{width:.75rem;height:1rem;background:url(../images/eye.png) no-repeat; background-size: contain;margin-top: .05rem;}
 
 .onepiece .header_info  .header_style2 span{margin:0 .2rem;}
@@ -79,14 +83,17 @@ a.colblue{color:#4C7AAD;}
 .onepiece .header_info  .header_style2 .comment_pic{width:.75rem;height:1rem;background:url(../images/comend_icon.png) no-repeat; background-size: contain;}
 .onepiece .header_info  .header_style2 .eye_pic{width:.75rem;height:1rem;background:url(../images/eye.png) no-repeat; background-size: contain;margin-top: .05rem;}
 /*点赞*/
-.onepiece .like_pic{width:.75rem;height:.8rem;background:url(../images/zan.png) no-repeat; background-size: contain;}
+.onepiece .like_pic{width:.8rem;height:.8rem;background:url(../images/zan.png) no-repeat; background-size: contain;}
 .onepiece .like_pic.liked{background:url(../images/s_zan.png) no-repeat; background-size: contain;}
-.onepiece .like_list{width:100%;background:#f9f9f9;border-bottom: solid 1px #e6e6e6; padding:.25rem .4rem;}
-.onepiece .like_name{color:#4C7AAD; line-height: 1rem;}
+.onepiece .like_list{width:100%;/*background:#f9f9f9;border-bottom: solid 1px #e6e6e6;*/ padding:.25rem .4rem;border-top: solid 1px #ddd;}
+.onepiece .like_name{color:#0073B1; line-height: 1rem;}
+.onepiece .like-avatar{display:inline-block;width:1.5rem;height:1.5rem;margin:.3rem .35rem 0 0;}
+.onepiece .like-avatar img{width:1.5rem;height:1.5rem;border-radius: 50%;}
+.onepiece .right-icon{width:.7rem;height:.7rem;background:url(../images/right_icon.png);background-size: cover;margin:.6rem .4rem;}
 .onepiece .like_name a{color:#4C7AAD;}
 .onepiece .tips{color:#8f8f8f;}
 /*评论*/
-.onepiece .comment_list{background:#f9f9f9;padding:.25rem .4rem;}
+.onepiece .comment_list{/*background:#f9f9f9;*/padding:.25rem .4rem;}
 .onepiece .comment_list .comments{margin-bottom: .1rem;}
 .onepiece .comment_list .comments img{ width:20px;}
 .onepiece .comment_list .texts{color:#00001C; line-height: 1rem;}
@@ -224,7 +231,7 @@ a.colblue{color:#4C7AAD;}
 
 /*帖子*/
 /*首页*/
-.onepiece{border-bottom: solid 1px #e6e6e6;}
+/*.onepiece{border-bottom: solid 1px #e6e6e6;}*/
 .onepiece .piecetext{color:#000;}
 .onepiece .piecetext.main{color:#454545; margin-top: .3rem;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 5;overflow: hidden;}
 .onepiece .pics{margin-top: .3rem;position: relative;}
@@ -286,3 +293,22 @@ a.colblue{color:#4C7AAD;}
 .wenxin_img{max-width: 100%; height: auto;}
 .weixin-tip{ position: fixed; left:0; top:0; bottom:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80);  height: 100%; width: 100%; z-index: 10000;}
 .weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}
+
+.info_head{ position:relative;}
+.addv_icon{ position:absolute; bottom:0; right:0.2rem; width:0.7rem!important; height:0.7rem!important;}
+/* 底部download */
+.download_tip{width:100%;height:2.5rem;color:#fff;text-align: center;line-height: 2.5rem;position:fixed;z-index: 9999;top:0;left:0;}
+.download_tip .leftpart{width:68%;height:2.5rem; background-color: #5F646E;}
+.download_tip .leftpart .closebtn{width:.8rem;height:.8rem;margin:.8rem 5.6% .8rem 2.7%;}
+.download_tip .leftpart .yulin_icon{width:1.6rem;height:1.6rem;margin:.5rem 2% 0 0;}
+.download_tip .rightpart{width:32%;height:2.5rem; background-color: #00A0E9;}
+.content.index.on{padding-top: 2.5rem;}
+.play_icon3{ background:url(../images/bofang.png) no-repeat center center;background-size:contain; position:absolute; top:50%; margin-top:-1.25rem; left:50%; margin-left:-1.25rem; width:2.5rem; height:2.5rem;}
+/*向右图标（小的）*/
+.common-right-icon{display:inline-block;height:.6rem;width:.64rem;background:url(../images/right_icon.png);background-size: cover;}
+/*蒙层背景*/
+.shadow_bg{ width:100%; height:100%; background:rgba(0,0,0,.4); position:fixed; top:0; left:0; z-index: 99; display:none;}
+
+/*关注、取消关注按钮*/
+.all_concerned .concerned{border-radius:2em;width:2.8rem;height:1.3rem;background-color: #fff;color:#bbb;text-align: center;line-height: 1.2rem;margin-top: .8rem;margin-right: .5rem;border:solid 1px #bbb;}
+.all_concerned .not_concerned{border:solid 1px #0196E6;color:#0196E6;background-color: #fff;}

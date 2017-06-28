@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>完善个人资料</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <a class="icon icon-left pull-left open-panel"></a>
+            <h1 class="title">直播预告</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content predict_con">
+            <div class="top-tab">
+                <span class="tab-item on">直播预告</span>
+                <span class="tab-item">已订阅</span>
+            </div>
+            <div class="pre-main">
+                <div class="predict">
+                    <div class="pre-pic" style="background:url(images/pic2.jpg)center center;background-size:cover;">
+                        <div class="white-layer"></div>
+                        <div class="live-tip">直播</div>
+                    </div>
+                    <div class="pre-con">
+                        <div class="wrapper">
+                            <p class="text1">现场直播龙鱼手术精彩不能错过播龙鱼手术</p>
+                            <div class="user-info cl">
+                                <img src="images/avatar.jpg" class="z avatar" alt="" />
+                                <span class="z user-name">丢丢小怪物</span>
+                            </div>
+                            <div class="live-info cl">
+                                <span class="z text2">今天 15:21 开播</span>
+                                <span class="y notice" onclick="noticeme($(this))">开播提醒</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="predict">
+                    <div class="pre-pic" style="background:url(images/pic2.jpg)center center;background-size:cover;">
+                        <div class="white-layer"></div>
+                        <div class="live-tip">直播</div>
+                    </div>
+                    <div class="pre-con">
+                        <div class="wrapper">
+                            <p class="text1">现场直播龙鱼手术精彩不能错过播龙鱼手术</p>
+                            <div class="user-info cl">
+                                <img src="images/avatar.jpg" class="z avatar" alt="" />
+                                <span class="z user-name">丢丢小怪物</span>
+                            </div>
+                            <div class="live-info cl">
+                                <span class="z text2">今天 15:21 开播</span>
+                                <span class="y notice ordered" onclick="noticeme($(this))">已订阅</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="predict">
+                    <div class="pre-pic" style="background:url(images/pic2.jpg)center center;background-size:cover;">
+                        <div class="white-layer"></div>
+                        <div class="live-tip">直播</div>
+                    </div>
+                    <div class="pre-con">
+                        <div class="wrapper">
+                            <p class="text1">现场直播龙鱼手术精彩不能错过播龙鱼手术</p>
+                            <div class="user-info cl">
+                                <img src="images/avatar.jpg" class="z avatar" alt="" />
+                                <span class="z user-name">丢丢小怪物</span>
+                            </div>
+                            <div class="live-info cl">
+                                <span class="z text2">今天 15:21 开播</span>
+                                <span class="y notice" onclick="noticeme($(this))">开播提醒</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="predict">
+                    <div class="pre-pic" style="background:url(images/pic2.jpg)center center;background-size:cover;">
+                        <div class="white-layer"></div>
+                        <div class="live-tip">直播</div>
+                    </div>
+                    <div class="pre-con">
+                        <div class="wrapper">
+                            <p class="text1">现场直播龙鱼手术精彩不能错过播龙鱼手术</p>
+                            <div class="user-info cl">
+                                <img src="images/avatar.jpg" class="z avatar" alt="" />
+                                <span class="z user-name">丢丢小怪物</span>
+                            </div>
+                            <div class="live-info cl">
+                                <span class="z text2">今天 15:21 开播</span>
+                                <span class="y notice" onclick="noticeme($(this))">开播提醒</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="predict">
+                    <div class="pre-pic" style="background:url(images/pic2.jpg)center center;background-size:cover;">
+                        <div class="white-layer"></div>
+                        <div class="live-tip">直播</div>
+                    </div>
+                    <div class="pre-con">
+                        <div class="wrapper">
+                            <p class="text1">现场直播龙鱼手术精彩不能错过播龙鱼手术</p>
+                            <div class="user-info cl">
+                                <img src="images/avatar.jpg" class="z avatar" alt="" />
+                                <span class="z user-name">丢丢小怪物</span>
+                            </div>
+                            <div class="live-info cl">
+                                <span class="z text2">今天 15:21 开播</span>
+                                <span class="y notice" onclick="noticeme($(this))">开播提醒</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        /*清除按钮*/
+        $(".clear-input").click(function(){
+            $(".name-input").val("");
+        });
+        $(".exp-item").click(function(){
+            $(this).find(".exp-grade").toggleClass('selected');
+        });
+        /*直播开播提醒*/
+        function noticeme(that){
+            if(!that.hasClass('ordered')){
+                that.addClass('ordered');
+                that.text("已订阅");
+            }
+        }
+    </script>
+</body>
+</html>

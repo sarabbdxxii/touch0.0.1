@@ -164,7 +164,7 @@
 .register .mtw{ margin-top:1rem;}
 .register .line_box{ width:100%; height:2rem; background:#fff; margin-bottom: 0.5rem;}
 .register .phone_box{ width:100%; height:2rem; border:none; padding:0 5%; font-size: 0.7rem;}
-.register .yanz_box{ width:40%; height:2rem; border:none; padding:0 5%;font-size: 0.7rem;}
+.register .yanz_box,.register .yanz_fond{ width:45%; height:2rem; border:none; padding:0 5%;font-size: 0.7rem;}
 .register .yanz_btn{ width:30%; height:1.6rem; border-radius: 5px; background:#0296E6; text-align: center; line-height: 1.4rem; margin-top:0.2rem; float:right; border:none; color:#fff; margin-right:3%; font-size: 0.75rem;}
 .register .yanz_btn.on{ background:#bbb;}
 .register .r_info{ width:80%; position:absolute; bottom:3.5rem; left:10%; font-size: 0.6rem; color:#bbb; text-align: center; line-height: 1.2rem; font-size: 0.65rem;}
@@ -526,3 +526,83 @@
 
 .wallet_activeline{position: absolute; display: block; left: 0px; top: -1px; width:16.7%; height: 45px; border: 1px solid rgba(82, 168, 236, .8); border: 1px solid #00ffff\9; border-radius: 2px; visibility: hidden; -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); background:url(../images/line.gif) no-repeat center center;}
 
+
+
+.live_con .top_img{ width:100%; height:11.5rem; background-size: cover; background-repeat:no-repeat; background-position: center center;}
+.live_con .top_time{ width:100%; height:2.5rem; background:#0196E6;}
+.live_con .time_left{ margin-left:3%; line-height: 2.5rem; color:#fff; font-size:0.75rem;}
+.live_con .time_right{ margin-right:3%; width:4.1rem; height:1.3rem; border-radius: 2em; background:#fff; line-height: 1.3rem; text-align: center; color:#0196E6; margin-top:0.6rem;}
+.live_con .time_right1{ margin-right:3%; width:4.1rem; height:1.3rem; border-radius: 2em; background:#fff; line-height: 1.3rem; text-align: center; color:#bbb; margin-top:0.6rem;}
+.live_con .live_info{ width:100%; padding-bottom: 0.5rem; background:#fff;}
+.live_con .bor_bottom{ border-bottom: 1px solid #ddd; padding:0.4rem 0;}
+.live_con .info_inner{ width:93.6%; margin:0 auto;}
+.live_con .info_head img{ width:2rem; height:2rem; border-radius: 100%; display:block;}
+.live_con .info_text{ color:#333; font-size: 0.75rem; line-height: 2rem; margin-left:0.5rem;overflow:hidden;text-overflow: ellipsis;white-space: nowrap; width:80%;}
+.live_con .con_text{ overflow:hidden;text-overflow: ellipsis;display: -webkit-box;
+-webkit-line-clamp: 2;-webkit-box-orient: vertical; font-size:0.7rem; color:#999; line-height: 1rem; padding-top:0.4rem;}
+.live_con .goods_list{ width:100%; margin-top:0.5rem; background:#fff;}
+.live_con .goods_list ul li{ width:93.6%; margin:0 auto; border-bottom:1px solid #ddd; padding:0.6rem 0;}
+.live_con .num_icon{ width:1rem; height:1rem; border-radius: 100%; background:#0196E6; color:#fff; text-align: center; line-height: 1rem; margin-top:1.5rem;}
+.live_con .goods_img{width:4rem; height:4rem; margin-left:0.5rem;}
+.live_con .text1{ width:100%;  font-size: 0.75rem; color:#333; margin-left:0.5rem; overflow:hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.live_con .text2{ color:#FF0707; font-size: 0.8rem; margin:0.85rem 0 0 0.5rem; width:60%;}
+
+.live_con .time_right_add{ margin-right:3%; width:4.1rem; height:1.3rem; border-radius: 2em; background:#fff; line-height: 1.3rem; text-align: center; color:#FFB359; margin-top:0.6rem;}
+.live_con .top_time_add{ width:100%; height:2.5rem; background:#FFB359;}
+.live_con .num_icon_add{ width:1rem; height:1rem; border-radius: 100%; background:#FFB359; color:#fff; text-align: center; line-height: 1rem; margin-top:1.5rem;}
+.live_con .part{ float:left; text-align: center; height:1.7rem; border-right:1px solid #ddd; font-size: 0.6rem; box-sizing: border-box;}
+.live_con .line1{ color:#FF0707;}
+.live_con .line2{ color:#bbb; margin-top:0.2rem;}
+.live_con .part4{ border-right:none;}
+@media (min-width: 376px) and (max-width: 414px) {
+  .live_con .part{ padding:0 3.5%; margin-top: 0.4rem;}
+  .live_con .text_con{ width:68%;}
+}
+@media (min-width: 321px) and (max-width: 376px) {
+  .live_con .part{ padding:0 3.5%; margin-top: 0.4rem;}
+  .live_con .text_con{ width:68%;}
+}
+@media screen and (max-width: 320px) {
+  .live_con .part{ padding:0 1%; margin-top: 0.4rem;}
+  .live_con .text_con{ width:62%;}
+}
+
+#live_banner{ width:100%; height:12rem; overflow:hidden;}
+.price_pop_add{ width:100%; background:#fff; z-index:99999;}
+.price_pop_add .price_part1{width:100%; height:100%;}
+.price_pop_add .price_part2{ width:100%;height:3rem; background:#f5f5f5;}
+.price_pop_add .price_part2 ul li{ float:left; width:25%; height:3rem; background:url(images/tab_line2.png) no-repeat center right; }
+.price_pop_add .price_part2 ul li:last-child{ background:none;}
+.price_pop_add .price_part2 .text_info1{ color:#FF0707; font-size:0.7rem; text-align: center; margin-top:0.5rem;}
+.price_pop_add .price_part2 .text_info2{ color:#bbb; font-size:0.65rem; text-align: center; margin-top:0.1rem;}
+.price_pop_add .price_part3{ width:100%; height:2.5rem; background:#fff; color:#FF1010; font-size: 0.8rem; line-height: 2.5rem; padding-left:3%; box-sizing: border-box;}
+.price_pop_add .price_pop_text{ font-size: 0.8rem; color:#666; line-height: 1.2rem;}
+.price_pop_add .price_pop_inner{ width:100%; height:100%; overflow-y: scroll; margin-top:0.5rem;}
+.price_pop_add .price_content{ width:94%;margin:0 auto 0.5rem;}
+.price_pop_add .slider_tip{ width:1.5rem; height:10.5rem; background:rgba(0,0,0,0.6); position:absolute; top:10%; right:0; z-index:999; color:#fff; font-size:0.65rem; padding:0.45rem;}
+.price_pop_add .img_list img{ width:100%; display:block;}
+
+/* 微信支付弹窗 */
+.change_num{ width:100%; padding:0.2rem 0; background:#fff; }
+.change_num .user_icon{ width:2rem; height:2rem; margin-left:3%;}
+.change_num .user_text{ font-size: 0.75rem; color:#333; line-height: 2rem; margin-left:0.5rem;}
+.change_num .user_label{ padding:0.1rem 0.2rem; color:#fff; background:#c8c8c8; font-size:0.5rem; margin:0.55rem 0 0 0.7rem;}
+.change_num .user_label.on{ background:#017EC0;}
+.change_num .user_btn{ width:4rem; height:1.5rem; border-radius: 2em; border:1px solid #999; text-align: center; line-height: 1.5rem; color:#333; font-size: 0.65rem; margin:0.25rem 3% 0 0;}
+.change_box{ width:12.25rem; height:11.4rem; border-radius: 3px; background:#fff; position: absolute; top:50%; left:50%; margin-top:-5.7rem; margin-left:-6.125rem; z-index:9999; display:none;}
+
+.change_box .change_title{ font-size: 0.8rem; text-align: center; color:#333; font-size: 0.75rem; margin:0.9rem 0 1.2rem;}
+.change_box .change_input{ width:9.2rem; height:1.8rem; border-bottom: 1px solid #ddd; margin:0 auto; padding-left:0.5rem; line-height: 2rem;}
+.change_box .change_input input{ border:none; font-size:0.65rem; color:#999;}
+.change_box .change_info{ color:#999; font-size: 0.6rem; text-align: right; margin:0.2rem 1.5rem 0 0;}
+.change_box .submit_btn{ width:4.2rem; height:1.6rem; border:1px solid #999; color:#333; text-align: center; line-height: 1.5rem;font-size: 0.7rem; background:none; border-radius: 2em; margin:0.9rem auto; display:block;}
+.change_box .close_btn{ position:absolute; top:0.5rem; right:0.8rem; }
+.change_box .close_btn img{ width:0.6rem; height:0.6rem;}
+.change_erwm{ width:8.3rem; height:11rem; background:#fff;border-radius: 5px; position:absolute; top:50%; left:50%; margin-top:-5.5rem; margin-left:-4.15rem; background:#fff; z-index: 999; display:none;}
+.change_erwm img{ width:6.9rem; height:7.5rem; margin:0.5rem auto; display:block;}
+.change_erwm .erwm_txt{ color:#333; text-align: center; line-height: 1rem;}
+.price_tip{ width:12.25rem; height:4.9rem; background:#fff; position:absolute;top:50%; left:50%; margin-top:-2.5rem; margin-left:-6.1rem; z-index:999; border-radius: 3px; overflow:hidden; display:none;}
+.price_tip .text1{font-size: 0.6rem; text-align: center; margin-top:1.2rem;}
+.price_tip .text1 .color_r{ color:red;}
+.price_tip .text_btn{width:100%; height:2rem; position:absolute; bottom:0; left:0; border-top:1px solid #ddd; font-size: 0.7rem;}
+.price_tip .text_btn span{ display:block; width:50%; text-align: center; border-right:1px solid #ddd; color:#0096E6;line-height: 2rem; box-sizing: border-box; float:left;}

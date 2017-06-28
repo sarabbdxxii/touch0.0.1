@@ -21,86 +21,76 @@
         <!-- 标题栏 -->
         <header class="bar bar-nav">
             <a class="icon icon-left pull-left open-panel"></a>
-            <h1 class="title">帖子详情</h1>
+            <h1 class="title">详情</h1>
             <a class="icon icon-shares pull-right" onclick="show_share()"></a>
         </header>
         <!-- 这里是页面内容区 -->
-        <div class="content whitebg post_detail infinite-scroll pull-to-refresh-content">
+        <div class="content f5bg post_detail infinite-scroll pull-to-refresh-content">
             <div class="pull-to-refresh-layer">
                 <div class="preloader"></div>
                 <div class="pull-to-refresh-arrow"></div>
             </div>
-            <div class="wrapper_main">
-                <div class="onepiece cl" style="border-bottom:none">
-                    <div class="header_info cl">
-                        <a href="javascript:;" class="external">
-                            <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
-                        </a>
-                        <div class="info2 z">
-                            <div class="cl info21">
-                                <a href="javascript:;" class="nickname colblue font14 z external">冰淇淋</a>
-                                <div class="grade z cl">
-                                    <div class="arrow-left z"></div>
-                                    <div class="rect z font12 z">LV6</div>
-                                </div>
-                            </div>
-                            <div class="cl font12 aaa from">
-                                <p class="z from_time">6-22</p>
-                                <p class="z">来自美人鱼</p>
+            <div class="onepiece cl newstyle" style="border-bottom:none">
+                <div class="header_info cl">
+                    <a href="javascript:;" class="external">
+                        <span class="avatar z" style="background:url(images/avatar.jpg);background-size:cover;background-position: center center;"></span>
+                    </a>
+                    <div class="info2 z">
+                        <div class="cl info21">
+                            <a href="javascript:;" class="nickname colblue font14 z external">冰淇淋</a>
+                            <div class="grade z cl">
+                                <div class="arrow-left z"></div>
+                                <div class="rect z font12 z">LV6</div>
                             </div>
                         </div>
-                        <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
+                        <div class="cl font12 aaa from">
+                            <p class="z from_time">6-22</p>
+                            <p class="z">来自美人鱼</p>
+                        </div>
                     </div>
-                    <a href="javascript:;" class="external">
-                        <p class="content_text 9e font14">
-                            这个很好哦真的我不骗你哦这个很好哦真的我不骗你哦这个很好哦真的我不骗你哦<span class="maintext">#养鱼实属不易#</span>
-                        </p>
-                    </a>
-                    <div class="pic_list">
-                        <img class="pb-standalone" src="images/pic1.jpg" width="100%" alt="" />
-                        <img class="pb-standalone" src="images/pic2.jpg" width="100%" alt="" />
-                    </div>
-                    <!-- 社区 -->
-                    <div class="community cl">
-                        <a href="javascript:;" class="external">
-                            <div class="logo z" style="background:url(images/commu.png);background-size:contain;"></div>
-                            <div class="introduce z">
-                                <p class="font15 co00" style=" width:1.7rem">龙鱼</p>
-                                <p class="font12 9e" style="margin-top:.2rem">成员&nbsp;6664&nbsp;&nbsp;帖子&nbsp;243315</p>
-                            </div>
-                            </a>
-                        <div class="attentionx font14 y 9e" onclick="payAttention(this)">未关注</div>
-                    </div>
-
-                    <!-- 点赞列表 -->
-                    <div class="like_list2 cl">
-                        <p class="z aaa font14">喜欢</p>
-                        <div class="y line"></div>
-                    </div>
-                    <div class="like_people cl">
-                        <a href="javascript:;" class="z like_count person external" style="background:url(images/avatar.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
-                        <a href="javascript:;" class="z like_count person external" style="background:url(images/pic5.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
-                        <div class="z like_count font14">0</div>
-                    </div>
+                    <a href="javascript:;" class="y attention font12" onclick="attention(this)">+关注</a>
                 </div>
+                <a href="javascript:;" class="external">
+                    <p class="content_text 9e font14">
+                        这个很好哦真的我不骗你哦这个很好哦真的我不骗你哦这个很好哦真的我不骗你哦<span class="maintext">#养鱼实属不易#</span>
+                    </p>
+                </a>
+                <div class="pic_list">
+                    <img class="pb-standalone" src="images/pic1.jpg" width="100%" alt="" />
+                    <img class="pb-standalone" src="images/pic2.jpg" width="100%" alt="" />
+                </div>
+            </div>
+            <!-- 社区 -->
+            <div class="wrapper_main">
+                <div class="community cl">
+                    <a href="javascript:;" class="external">
+                        <div class="logo z" style="background:url(images/commu.png);background-size:contain;"></div>
+                        <div class="introduce z">
+                            <p class="font15 co00" style=" width:1.7rem">龙鱼</p>
+                            <p class="font12 colbb" style="margin-top:.2rem">成员&nbsp;6664&nbsp;&nbsp;帖子&nbsp;243315</p>
+                        </div>
+                        </a>
+                    <div class="attentionx font14 y colbb" onclick="payAttention(this)">进入<span class="common-right-icon"></span></div>
+                </div>
+            </div>
+            <!-- 点赞列表 -->
+            <div class="like_people whitebg cl">
+                <a href="javascript:;" class="z like_count person external" style="background:url(images/avatar.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
+                <a href="javascript:;" class="z like_count person external" style="background:url(images/pic5.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
+                <a href="javascript:;" class="z like_count person external" style="background:url(images/avatar.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
+                <a href="javascript:;" class="z like_count person external" style="background:url(images/pic5.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
+                <a href="javascript:;" class="z like_count person external" style="background:url(images/pic5.jpg) no-repeat;background-size:cover;background-position:center center;"></a>
+                <span class="y colbb font14 count-like">72人喜欢<span class="common-right-icon"></span></span>
             </div>
             <!-- 回复模板 -->
             <div class="pc_reply">
-                <div class="weiba-sort">
-                    <span class="right">
-                        排序方式：
-                        <a href="javascript" class="hide">赞</a>
-                        <a href="javascript" class="current">时间</a>
-                    </span>
-                    <span class="z reply_count">
-                        共有：
-                        <span class="reply_count">5</span>
-                        条回复
-                    </span>
+                <div class="weiba-sort cl">
+                    <span class="icon-comment z"></span>
+                    <span class="z text-com">3条评论</span>
                 </div>
                 <div class="weiba-com" id="commentlist_1222005">
                     <div class="list" id="item_21194253">
-                         <dl model-node="comment_list">
+                        <dl model-node="comment_list">
                             <dt>
                                 <a href="http://yulinapp.com/index.php?app=w3g&mod=Index&act=profile&uid=2603643">
                                     <img width="50" height="50" src="http://uc.longyu.cc//avatar.php?uid=2603643&amp;size=small&amp;time=1479005052">
@@ -108,20 +98,19 @@
                             </dt>
                             <dd>
                                 <p class="cont mb5 cl info1">
-                                    <a href="javascript:;" class="z">A乔峰</a>
-                                    <span class="date z">11月10日 09:36</span>
-                                    <span class="floor">#1</span>
+                                    <a href="javascript:;" class="z name-com font14">A乔峰</a>
                                 </p>
-                                <p class="det-c z">不咬水草吗</p>
+                                <p class="det-c z">回复&nbsp;<a href="javascript:;" class="name-com external">哎哟我去</a>：不咬水草吗</p>
                             </dd>
                         </dl>
-                        <p class="info textR">
+                        <p class="info textR cl">
+                            <span class="z">10分钟前</span>
                             <span>
                                 <span id="digg21194253" rel="0" class="hide">
                                     <a href="javascript:;" onclick="addDigg(21194253)">赞</a>
                                 </span>
                                 <i class="vline hide">|</i>
-                                <a href="javascript:void(0)" event-args="weiba_id=81&amp;post_id=1222005&amp;post_uid=0&amp;to_reply_id=21194253&amp;to_uid=2603643&amp;to_comment_uname=A乔峰&amp;feed_id=103004&amp;comment_id=1512375&amp;addtoend=1" event-node="reply_reply" class="open-popup open-about" ><i class="ico-reply"></i>回复</a>
+                                <a href="javascript:void(0)" event-args="weiba_id=81&amp;post_id=1222005&amp;post_uid=0&amp;to_reply_id=21194253&amp;to_uid=2603643&amp;to_comment_uname=A乔峰&amp;feed_id=103004&amp;comment_id=1512375&amp;addtoend=1" event-node="reply_reply" class="open-popup open-about" ><i class="ico-reply"></i><span class="icon-reply"></span>回复</a>
                             </span>
                         </p>
                     </div>
@@ -134,20 +123,19 @@
                             </dt>
                             <dd>
                                 <p class="cont mb5 cl info1">
-                                    <a href="javascript:;" class="z">A乔峰</a>
-                                    <span class="date z">11月10日 09:36</span>
-                                    <span class="floor">#1</span>
+                                    <a href="javascript:;" class="z name-com font14">A乔峰</a>
                                 </p>
-                                <p class="det-c z">不咬水草吗</p>
+                                <p class="det-c z">回复&nbsp;<span class="name-com">哎哟我去</span>：不咬水草吗</p>
                             </dd>
                         </dl>
-                        <p class="info textR">
+                        <p class="info textR cl">
+                            <span class="z">10分钟前</span>
                             <span>
                                 <span id="digg21194253" rel="0" class="hide">
                                     <a href="javascript:;" onclick="addDigg(21194253)">赞</a>
                                 </span>
                                 <i class="vline hide">|</i>
-                                <a href="javascript:void(0)" event-args="weiba_id=81&amp;post_id=1222005&amp;post_uid=0&amp;to_reply_id=21194253&amp;to_uid=2603643&amp;to_comment_uname=A乔峰&amp;feed_id=103004&amp;comment_id=1512375&amp;addtoend=1" event-node="reply_reply" class="open-popup open-about"><i class="ico-reply"></i>回复</a>
+                                <a href="javascript:void(0)" event-args="weiba_id=81&amp;post_id=1222005&amp;post_uid=0&amp;to_reply_id=21194253&amp;to_uid=2603643&amp;to_comment_uname=A乔峰&amp;feed_id=103004&amp;comment_id=1512375&amp;addtoend=1" event-node="reply_reply" class="open-popup open-about" ><i class="ico-reply"></i><span class="icon-reply"></span>回复</a>
                             </span>
                         </p>
                     </div>

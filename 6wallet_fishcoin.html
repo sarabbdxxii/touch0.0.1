@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼币充值</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <div class="shadow_bg" onclick="fadeOut(this)"></div>
+        <header class="bar bar-nav">
+            <h1 class="title">鱼币充值</h1>
+        </header>
+        <div class="content">
+            <div class="wallet_mycoin">
+                <div class="change_num cl">
+                    <img src="images/test1.png" class="z user_icon" />
+                    <span class="z user_text">tom先森</span>
+                    <span class="z user_label">默认</span>
+                    <span id="user_btn" class="y user_btn" onclick="fadeIn('.change_box')">更换账号</span>
+                </div>
+                <!-- 更换账号 -->
+                <form>
+                    <div class="change_box">
+                        <p class="change_title">请输入您要充值的帐号</p>
+                        <p class="change_input"><input type="text" placeholder="输入用户名" /></p>
+                        <p class="change_input"><input type="text" placeholder="输入密码" /></p>
+                        <p class="change_info">验证成功可更换充值帐号</p>
+                        <button class="submit_btn" onclick="fadeOut('.change_box')">确定</button>
+                        <span id="close_btn" class="close_btn" onclick="fadeOut('.change_box')"><img src="images/close2.png"/></span>
+                    </div>
+                </form>
+                <div class="change_erwm">
+                    <p><img src="images/erwm_test.png" /></p>
+                    <p class="erwm_txt">长按识别二维码</p>
+                    <p class="erwm_txt">关注公众号才可以充值鱼币</p>
+                </div>
+                <div class="price_tip">
+                    <p class="text1">您将要为<span class="color_r">Tom先森</span>充值<span class="color_r">66</span>鱼币</p>
+                    <p class="text_btn">
+                        <span onclick="fadeOut('.price_tip')">取消</span>
+                        <span>充值</span>
+                    </p>
+                </div>
+                <div class="mycoin_list">
+                    <ul>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">60</span>
+                            <span class="z span_add">赠送6鱼币</span>
+                            <span class="y span3" onclick="fadeIn('.price_tip')">¥ 6.00</span>
+                        </li>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">120</span>
+                            <span class="z span_add">赠送12鱼币</span>
+                            <span class="y span3">¥ 12.00</span>
+                        </li>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">300</span>
+                            <span class="z span_add">赠送30鱼币</span>
+                            <span class="y span3">¥ 30.00</span>
+                        </li>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">500</span>
+                            <span class="z span_add">赠送50鱼币</span>
+                            <span class="y span3">¥ 50.00</span>
+                        </li>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">1280</span>
+                            <span class="z span_add">赠送128鱼币</span>
+                            <span class="y span3">¥ 128.00</span>
+                        </li>
+                        <li class="cl">
+                            <span class="z span1"></span>
+                            <span class="z span2">6180</span>
+                            <span class="z span_add">赠送618鱼币</span>
+                            <span class="y span3">¥ 618.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-about">
+        <div class="wallet_paytitle">
+            <p>请输入支付密码</p>
+            <span class="w_close close-popup"></span>
+        </div>
+        <p class="wallet_ptext">需要支付<span>¥300.00</span></p>
+        <div class="wallet_pswbox">
+            <input type="tel" class="pwd_input" maxlength="6" />
+            <ul class="wallet_password">
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <span class="wallet_activeline"></span>
+            </ul>
+        </div>
+        <p class="psw_info">请仔细确认您购买的鱼币。</p>
+    </div>
+    <style>
+    .popup{ top:7rem;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        /*弹框隐藏显示*/
+        function fadeIn(fadebox){
+            $(fadebox).fadeIn();
+            $('.shadow_bg').fadeIn();
+        }
+        function fadeOut(fadebox){
+            $('.change_erwm,.change_box,.price_tip').fadeOut();
+            $(fadebox).fadeOut();
+            $('.shadow_bg').fadeOut();
+        }
+        /*支付密码获取焦点的效果*/
+        $('.pwd_input').focus(function(event) {
+            $('.wallet_activeline').attr("style","visibility:visible");
+            $('.wallet_activeline').css('left',0);
+        });
+        /*支付密码输入时的效果*/
+        $('.pwd_input').keyup(function(event){
+            var num = $('.pwd_input').val().length;
+            var li_length = $('.wallet_password li').width();
+            $(".wallet_password li").each(function(index, el) {
+                if(index<num){
+                    if(num==6){
+                        $(this).find("i").attr("style","visibility:visible");
+                        $('.wallet_activeline').attr("style","");
+                    }else{
+                        $(this).find("i").attr("style","visibility:visible");
+                        $('.wallet_activeline').attr("style","visibility:visible");
+                        $('.wallet_activeline').css('left',li_length*num+2);
+                    }
+                }
+            });
+        });
+        /*支付密码删除时的效果*/
+        $(document).keydown(function (e) {
+            var num = $('.pwd_input').val().length;
+            if (e.keyCode == 8) {
+                $(".wallet_password li").each(function(index, el) {
+                    if(index+1>=num){
+                        if(num==1){
+                            $('.wallet_activeline').css('left',0);
+                        }
+                        $(this).find("i").attr("style","");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

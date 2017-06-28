@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>登录</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 这里是页面内容区 -->
+        <div class="content login_con">
+            <!-- <a href="javascript:;" class="close-login y"></a> -->
+            <form action="">
+                <div class="login_logo"><img src="images/yulin-logo.png" /></div>
+                <div class="input-box cl">
+                    <img src="images/icon-account.png" class="log-icon z" alt="" />
+                    <input type="text" class="log-input z" placeholder="手机号/用户名/龙巅账号" />
+                </div>
+                <div class="input-box on cl">
+                    <img src="images/icon-lock.png" class="log-icon z" alt="" />
+                    <input type="text" class="log-input z" placeholder="输入密码" />
+                </div>
+                <button class="login_btn">登录</button>
+                <div class="option-box cl">
+                    <a class="z external leftone" href="javascript:;">新用户注册</a>
+                    <a class="z external" href="javascript:;">忘记密码</a>
+                </div>
+                <div class="login-tip">
+                    <div class="line"></div>
+                    <div class="text">社交账号登录</div>
+                    <div class="line"></div>
+                </div>
+                <div class="login-type-box cl">
+                    <!-- <a href="javascript:;" class="z external"><img class="login-type-img" src="images/qq2.png" alt="" /></a> -->
+                    <a href="javascript:;" class="y external"><img class="login-type-img" src="images/wechat.png" alt="" /></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        /*清除按钮*/
+        $(".phone_box").focus(function(){
+            if($(this).val!==""){
+                $(this).siblings(".clear_btn").show();
+            }
+            $('.clear_btn').click(function() {
+                $(this).siblings('.phone_box').val("");
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>
