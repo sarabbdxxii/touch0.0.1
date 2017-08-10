@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>投票系统-报名</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/LArea.css" />
+<link rel="stylesheet" href="css/vote.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <h1 class="title">报名</h1>
+            <span id="vote_info" class="s_right1">报名须知</span>
+        </header>
+        <div class="content">
+            <form action="">
+                <textarea class="vote_apart1" placeholder="描述您的爱鱼特征、优势等，限制300字"></textarea>
+                <div class="vote_apart2">
+                    <div class="cl">
+                        <span class="z text_line1">组别</span>
+                        <span class="y common-right-icon"></span>
+                        <span class="y text_line2">
+                            <input style="width:100px;" id="demo1" type="text" placeholder="请选择组别"  value="" class="input_box">
+                            <input id="value1" type="hidden" value="0,0">
+                        </span>
+                    </div>
+                </div>
+                <div class="vote_upload">
+                    <div id="upload">
+                        <div id="filePickerid">
+                            <img id="resultImage"/>
+                            <div id="preview" class="cl">
+                                <div class="add_pic">
+                                    <img src="images/add_pic.png" style="width:100%;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vote_apart3">
+                    报名后无法修改内容，请确保信息，图片无误
+                </div>
+                <button class="vote_abtn">提交</button>
+            </form>
+        </div>
+        <div class="vote_shadow1">
+            <img id="close_btn" src="images/icon-clear.png"/>
+            <p>1、不得盗用他人作品</p>
+            <p>2、禁止使用PS进行修改</p>
+            <p>3、未按照要求填写信息的将取消比赛资格</p>
+            <p>4、每位选手每个大组限提交三个参赛作品</p>
+            <p>5、至少有一张照片中含有您的用户名信息</p>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/h5upload1.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/LArea.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/LAreaData1.js' charset='utf-8'></script>
+    <script>
+        /*上传图片插件*/
+        window.zp=window.Zepto = Zepto
+        zp.fileUpload({ filebutton: "#filePickerid", previewZoom: "#preview" });
+
+        var post_with = parseInt($(window).width())*0.3;
+        $("#preview img").width(post_with);
+        $("#preview img").height(post_with);
+
+        /*二级弹框效果*/
+        var area1 = new LArea();
+        area1.init({
+            'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+            'valueTo': '#value1', //选择完毕后id属性输出到该位置
+            'keys': {
+                id: 'id',
+                name: 'name'
+            }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+            'type': 1, //数据源类型
+            'data': LAreaData //数据源
+        });
+        area1.value=[0,0];//控制初始位置，注意：该方法并不会影响到input的value
+        /*报名须知*/
+        $('#vote_info').click(function(event) {
+            $('.vote_shadow1').fadeIn( function() {
+                $(this).click(function(event) {
+                    $(this).fadeOut();
+                });
+                $('.close_btn').click(function(event) {
+                    $(this).fadeOut();
+                });
+            });
+        });
+</script>
+</body>
+</html>

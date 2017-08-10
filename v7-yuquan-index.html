@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼圈首页</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <div class="content v7-yuquan2 infinite-scroll">
+            <div>
+                <div id="swipper_yuquan" class="yuquan2_box" style="width:100%; overflow:hidden;">
+                    <div class="swiper-wrapper index-top cl" style="width:130%;">
+                        <div class="z blocka swiper-slide">
+                            <img class="img" src="images/pic2.jpg" alt="" />
+                            <div class="b_text">1111</div>
+                            <!-- <p class="text1">今日更新:2000</p> -->
+                        </div>
+                        <div class="z blocka swiper-slide">
+                            <img class="img" src="images/pic2.jpg" alt="" />
+                            <p class="b_text">龙鱼龙鱼龙鱼</p>
+                            <!-- <p class="text1">今日更新:2000</p> -->
+                        </div>
+                        <div class="z blocka swiper-slide">
+                            <img class="img" src="images/pic2.jpg" alt="" />
+                            <p class="b_text">龙鱼龙鱼龙鱼</p>
+                            <!-- <p class="text1">今日更新:2000</p> -->
+                        </div>
+                        <div class="z blocka swiper-slide">
+                            <img class="img" src="images/pic2.jpg" alt="" />
+                            <p class="b_text">龙鱼龙鱼龙鱼</p>
+                            <!-- <p class="text1">今日更新:2000</p> -->
+                        </div>
+
+                        <a href="" class="z blocka swiper-slide external">
+                            <img src="images/more_link_btn.png" width="100%" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="compre">
+                    <div class="post-list">
+                        <div class="post-item">
+                            <p class="text2">看着他们什么烦恼都没有了</p>
+                            <p class="text3">看着他们什么烦恼都没有了看着他们什么烦恼都没有了</p>
+                            <div class="cl pics">
+                                <img class="z pic" src="images/pic4.jpg" alt="" />
+                                <img class="z pic" src="images/pic4.jpg" alt="" />
+                                <img class="y pic" src="images/pic4.jpg" alt="" />
+                            </div>
+                            <div class="post-info cl">
+                                <div class="z cl">
+                                    <img src="images/pic2.jpg" class="z avatar" alt="" />
+                                    <span class="z text4">丢丢小怪物</span>
+                                    <img class="z bigv" src="images/addv_icon.png" alt="" />
+                                </div>
+                                <div class="y actions cl">
+                                    <span class="z like_pic"></span>
+                                    <span class="z">133</span>
+                                    <span class="z comment_pic"></span>
+                                    <span class="z">133</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-item">
+                            <p class="text2">看着他们什么烦恼都没有了</p>
+                            <p class="text3">看着他们什么烦恼都没有了看着他们什么烦恼都没有了</p>
+                            <div class="cl pics">
+                                <img class="z pic" src="images/pic4.jpg" alt="" />
+                                <img class="z pic" src="images/pic4.jpg" alt="" />
+                                <img class="y pic" src="images/pic4.jpg" alt="" />
+                            </div>
+                            <div class="post-info cl">
+                                <div class="z cl">
+                                    <img src="images/pic2.jpg" class="z avatar" alt="" />
+                                    <span class="z text4">丢丢小怪物</span>
+                                    <img class="z bigv" src="images/addv_icon.png" alt="" />
+                                </div>
+                                <div class="y actions cl">
+                                    <span class="z like_pic"></span>
+                                    <span class="z">133</span>
+                                    <span class="z comment_pic"></span>
+                                    <span class="z">133</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- preloader -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 没有数据缺省页 -->
+            <div class="circle_null" style="display:none;">
+                <img src="images/null_tip.png" width="100%" />
+                <p class="null_text">还没有加入鱼圈</p>
+                <a href="" class="external enter_circle">快速加入鱼圈</a>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/swiper3.0.8.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        /*滑动*/
+        window.onload = function() {
+            var mySwiper1 = new Swiper('#swipper_yuquan',{
+                freeMode : true,
+                slidesPerView : 'auto',
+            });
+        }
+        $('.enter-btn').click(function(){
+            $(this).addClass('joined');
+        });
+
+        var loading = false;
+        var maxItems = 100;
+
+        var itemsPerLoad = 2;
+
+        function addItems(number, lastIndex) {
+              $.ajax({
+                url:'/a.php',
+                type:'GET',
+                dataType:'text',
+                success:function(r){
+                    var html = '';
+                    for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                        html += '<div class="post-item">'+
+                                    '<p class="text2">看着他们什么烦恼都没有了</p>'+
+                                    '<p class="text3">看着他们什么烦恼都没有了看着他们什么烦恼都没有了</p>'+
+                                    '<div class="cl pics">'+
+                                        '<img class="z pic" src="images/pic4.jpg" alt="" />'+
+                                        '<img class="z pic" src="images/pic4.jpg" alt="" />'+
+                                        '<img class="y pic" src="images/pic4.jpg" alt="" />'+
+                                    '</div>'+
+                                    '<div class="post-info cl">'+
+                                        '<div class="z cl">'+
+                                            '<img src="images/pic2.jpg" class="z avatar" alt="" />'+
+                                            '<span class="z text4">丢丢小怪物</span>'+
+                                            '<img class="z bigv" src="images/addv_icon.png" alt="" />'+
+                                        '</div>'+
+                                        '<div class="y actions cl">'+
+                                            '<span class="z like_pic"></span>'+
+                                            '<span class="z">133</span>'+
+                                            '<span class="z comment_pic"></span>'+
+                                            '<span class="z">133</span>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+                                }
+                                $('.post-list').append(html);
+                            }
+                        });
+        }
+        addItems(itemsPerLoad, 0);
+        var lastIndex = 2;
+        $(document).on('infinite', '.infinite-scroll',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            setTimeout(function() {
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                addItems(itemsPerLoad, lastIndex);
+                lastIndex = $('.post-list .post-item').length;
+            }, 1000);
+        });
+        $.init();
+    </script>
+</body>
+</html>

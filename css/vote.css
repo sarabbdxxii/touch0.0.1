@@ -1,0 +1,53 @@
+.bar-tab .tab-item{font-size: .8rem; color:#333;}
+.bar-tab .tab-item.active{color:#0096E6;}
+.bar-tab{border-top: none;padding-right: .6rem;}
+
+/* 投票报名样式 */
+.vote_apart1{ width: 100%; height: 8.5rem; background:#fff; display: block; border:none; font-size: 0.72rem; padding:0.4rem 0.5rem; overflow: hidden; box-sizing: border-box;}
+.vote_apart2{ width:100%; height:2.5rem; margin:0.4rem 0; background:#fff; font-size: 0.72rem;color:#333;}
+.vote_apart2 .text_line1{ line-height: 2.5rem; margin-left:0.5rem;}
+.vote_apart2 .text_line2 .input_box{ line-height: 2.5rem; height:2.5rem; font-size: 0.72rem; border:none; text-align: right;}
+.vote_apart2 .common-right-icon{ width:0.8rem; height:0.9rem; margin:0.8rem 0.5rem  0 0.3rem; }
+.vote_apart3{ width:100%; height:2.5rem; background:#f9f9f9; color:#333; font-size: 0.65rem; text-align: center; line-height: 2.5rem; margin-bottom: 2.5rem;}
+.vote_abtn{ width:100%; height:2.5rem; background:#0096E6; text-align: center;line-height: 2.5rem; color:#fff; border:none; position: fixed; bottom: 0; font-size: 0.8rem;}
+.vote_upload{ width:100%; background:#fff; margin-top:0.4rem;}
+.vote_upload #preview { padding-left:3.5%; width:100%; box-sizing: border-box; padding-top:0.5rem;}
+.vote_upload #preview img { width: 30%; /* float: left; margin-right:1.5%; margin-bottom: 0.5rem; */ display:block;}
+.vote_upload .add_pic{ float:left;width:30%; position:relative; margin-bottom: 0.5rem;}
+.vote_shadow1{ width:100%; height:100%; position:fixed; background:rgba(0,0,0,0.8)  center top no-repeat; z-index: 9999; top:0; left:0; display:none; padding:20% 8% 0 10%;}
+.vote_shadow1 #close_btn{ position:absolute; top:5%; right:10%;}
+.vote_shadow1 p{ color:#fff; font-size: 0.8rem; line-height: 2rem }
+
+.img_close{ width:1rem; height:1rem; position:absolute; top:-0.5rem; right:-0.2rem; background:url(../../images/img_delate.png) no-repeat center center; background-size: cover;}
+/* 投票详情样式 */
+.vote_shadow{ width:100%; height:100%; position:fixed; background:rgba(0,0,0,0.4) url(../../images/weixin.png) center top no-repeat; z-index: 9999; background-size:cover; display:none;}
+.bar .icon-voteshares { display: inline-block; height: 1.5rem; width: 1.5rem;
+    background: url(../../images/share_btn.png) no-repeat; background-size: contain;
+    margin-top: .4rem;}
+.voteshow_banner{ width:100%; height:18.75rem; position:relative; background-position: center; background-size:cover;}
+.voteshow_banner .voteshow_num{ width:2rem; height:2rem; background:url(../../images/voteflag_bg.png) center no-repeat; background-size: contain; position:absolute; top:0; left:0.6rem; color:#fff; text-align: center; padding-top: 0.4rem; }
+.voteshow_banner .voteline{ width:100%; height:2.5rem; background:rgba(0,0,0,0.4); position:absolute; bottom:0;}
+.voteshow_banner .voteline p{ width:33.333%; float:left; text-align: center; font-size: 0.7rem;}
+.voteshow_banner .voteline .name_info{ color:#fff;}
+.voteshow_banner .voteline .name{ color:#bbb; margin-right:0.2rem;}
+.voteshow_banner .tabbtn1{ margin-top:0.8rem;}
+.voteshow_banner .tabbtn2{ margin-top:0.8rem; border-left:1px solid #fff; border-right:1px solid #fff;}
+.voteshow_banner .tabbtn3 .inner_btn{ width:4.7rem; height:1.5rem; display:block; border:1px solid #0196E6; color:#0196E6; text-align: center; line-height: 1.5rem; font-size: 0.6rem; margin:0.5rem auto 0; background:#fff;}
+.voteshow_content{ background:#fff; width:100%; margin-top:0.5rem; color:#666; font-size: 0.7rem;}
+.voteshow_content .text_info{ padding:0.5rem;}
+.voteshow_content img{ width:100%; display:block; margin-bottom:0.6rem;}
+
+.vote_judge{ width:100%; background:#fff; position:relative;}
+.vote_judge .vote_score{ width:7.35rem; height:1.8rem; background:url(../../images/votenum.png) no-repeat top left; background-size:contain; color:#fff; text-align: center; line-height: 1.8rem; font-size: 0.72rem;}
+.vote_judge .judge_list { font-size: 0.7rem; color:#333; width:90%; margin:0 auto; padding:0.5rem 0;}
+.vote_judge .vote_line{ width: 0.1rem; height:1rem; background:url(../../images/vote_line.png) repeat-y top left; background-size:contain; margin:0.5rem 0;}
+.vote_judge .score_info{ font-size: 0.65rem;}
+.vote_judge .score_t{ margin-bottom: 0.3rem; font-size: 0.72rem;}
+.vote_judge .mlm{ margin-left:0.6rem;}
+.vote_judge .color_z{ color:#FFB359;}
+
+/* 投票登录 */
+.login_btn{ width:6.7rem; height:1.9rem; border-radius: 5px; border:2px solid #f4de70; line-height: 1.7rem; text-align: center; font-size: 0.8rem; position:absolute; bottom:20%; color:#f4de70; left:50%; margin-left:-3.35rem;}
+.vote_inner{ width:100%; position:relative;}
+.btn1{ left:1.4rem; margin-left:auto;}
+.btn2{ right:1.4rem; left:auto;}

@@ -8,6 +8,7 @@
 .icon-home3{ background:url(../images/bottom_icon3.png) no-repeat center center; background-size: contain; }
 .icon-home4{ background:url(../images/bottom_icon4.png) no-repeat center center; background-size: contain; }
 .icon-post{ width: 2.5rem; height:2.5rem; background:url(../images/post_btn.png) no-repeat center center; background-size: contain; display:block; position:absolute; top:-0.9rem; left:50%; margin-left:-1.25rem;}
+.search_icon{ width:1rem; height:1rem; background:url(../images/search_btn.png) no-repeat center center; background-size: contain; margin:0.6rem 0.3rem 0 0;}
 .tab-item.active .icon-home1{background:url(../images/bottom_icon11.png) no-repeat center center; background-size: contain;}
 .tab-item.active .icon-home2{background:url(../images/bottom_icon22.png) no-repeat center center; background-size: contain;}
 .tab-item.active .icon-home3{background:url(../images/bottom_icon33.png) no-repeat center center; background-size: contain;}
@@ -257,6 +258,7 @@
 .ly_post .forum_per.on{ color:#00a0e9;}
 
 /*上传图片*/
+/*
 .upimg{ font-size:0.6rem; text-align:center; position:absolute; top:-0.85rem; left:15%; }
 .added-pic{position: relative; float: left; background: none; width:5rem; height:5rem;}
 .uploadpic{float:left;}
@@ -264,6 +266,7 @@
 .j_img{width: 100%; height: 100%; -webkit-background-size: cover; background-size: cover;}
 .pic_img{display: block; opacity: 0; position: absolute; z-index: 2; background: #39f; overflow:hidden;}
 .s_picture{background: none repeat scroll 0 0 transparent; display: block; height: 100px; width: 100%; z-index: 3; -webkit-tap-highlight-color:rgba(255,0,0,0);}
+*/
 
 /*签到首页*/
 .post_sign .post_bg{ width:100%; }
@@ -481,6 +484,7 @@
 .wallet_mycoin .per_tab{ display:block; width:26%; height:1.6rem; border:1px solid #979797; border-radius: 3px; font-size: 0.65rem; color:#4a4a4a; text-align: center; line-height: 1.6rem; margin-right:3%;}
 .wallet_mycoin .per_tab:nth-child(1){ margin-left:22.5%;}
 .wallet_mycoin .per_tab.on{ color:#FF9B25; border:1px solid #FF9B25;}
+.wallet_mycoin .new-wechat-btn{width:64%;height:2.3rem;font-size: .8rem;text-align: center;line-height: 2.3rem;color:#fff;background:#0096E6;border-radius: 3px;margin-left: 18%;}
 .wallet_mycoin .mycoin_list{ background:#fff;}
 .wallet_mycoin .mycoin_list{ background:#fff;margin-top:0.5rem;}
 .wallet_mycoin .mycoin_list ul li{ border-bottom:1px solid #d7d7d7; padding: 0.6rem 0 0.45rem;}
@@ -598,7 +602,7 @@
 .change_box .submit_btn{ width:4.2rem; height:1.6rem; border:1px solid #999; color:#333; text-align: center; line-height: 1.5rem;font-size: 0.7rem; background:none; border-radius: 2em; margin:0.9rem auto; display:block;}
 .change_box .close_btn{ position:absolute; top:0.5rem; right:0.8rem; }
 .change_box .close_btn img{ width:0.6rem; height:0.6rem;}
-.change_erwm{ width:8.3rem; height:11rem; background:#fff;border-radius: 5px; position:absolute; top:50%; left:50%; margin-top:-5.5rem; margin-left:-4.15rem; background:#fff; z-index: 999; display:none;}
+.change_erwm{ width:8.3rem; height:11rem; background:#fff;border-radius: 5px; position:absolute; top:50%; left:50%; margin-top:-5.5rem; margin-left:-4.15rem; background:#fff; z-index: 99999; display:none;}
 .change_erwm img{ width:6.9rem; height:7.5rem; margin:0.5rem auto; display:block;}
 .change_erwm .erwm_txt{ color:#333; text-align: center; line-height: 1rem;}
 .price_tip{ width:12.25rem; height:4.9rem; background:#fff; position:absolute;top:50%; left:50%; margin-top:-2.5rem; margin-left:-6.1rem; z-index:999; border-radius: 3px; overflow:hidden; display:none;}
@@ -606,3 +610,80 @@
 .price_tip .text1 .color_r{ color:red;}
 .price_tip .text_btn{width:100%; height:2rem; position:absolute; bottom:0; left:0; border-top:1px solid #ddd; font-size: 0.7rem;}
 .price_tip .text_btn span{ display:block; width:50%; text-align: center; border-right:1px solid #ddd; color:#0096E6;line-height: 2rem; box-sizing: border-box; float:left;}
+
+
+.system-tip .system_info{ width:82%; color:#333; font-size: 0.7rem; margin:6rem auto; }
+.system-tip .link_btn{ width:64%; height:2.5rem; line-height: 2.5rem; text-align: center; background: #0096E6; color:#fff; color:#fff; font-size: 0.7rem; border-radius: 2em; display: block; margin:0 auto 1rem;}
+
+/*触屏七期发贴*/
+.v7_posttie .v7_title{ height:2.2rem; line-height: 2.2rem; font-size: 0.75rem; color:#333; background:none;border:none;}
+.v7_posttie .v7_title_z{margin-left: 0.6rem;}
+.v7_posttie .v7_title_y{ color:#0397E5; margin-right:0.6rem;}
+.v7_posttie .longtie_textarea{ width:100%; height:7rem; border:none; padding:0.6rem; font-size: 0.7rem; display:block; color:#333;}
+.v7_posttie .post_add{ width:100%;}
+.v7_posttie .vote_upload{ width:100%; background:#fff;}
+.v7_posttie .vote_upload #preview { padding-left:3.5%; width:100%; box-sizing: border-box; padding-top:0.5rem;}
+.v7_posttie .vote_upload #preview img { width: 30%; display:block; margin-right:2%; margin-bottom:0.5rem; float:left;}
+.v7_posttie .vote_upload .add_pic{ float:left;width:25%; position:relative; margin-bottom: 0.5rem;}
+.v7_posttie .input_box{ width:100%; height:1.8rem; line-height: 1.8rem; background:#fff;}
+.v7_posttie .input_box input{ width:94%; height:1.8rem; line-height: 1.8rem; margin:0 auto; display:block; font-size: 0.7rem; background:none; border:none; border-bottom: 1px solid #ddd; padding-left: 0.2rem;}
+.v7_posttie .select_part{ width:100%; background:#fff;}
+.v7_posttie .width90{ width:94%; height:2.5rem; line-height: 2.5rem; border-top:1px solid #ddd; margin:0 auto; font-size: 0.7rem; padding:0 0.2rem;}
+.v7_posttie .common-right-icon{ width:0.9rem; height:0.9rem; margin-top:0.7rem;}
+.v7_posttie .point_icon{ width:0.9rem; height:1.2rem; background:url(../images/addr_icon.png) no-repeat center center; margin:0.55rem 0.3rem 0 0;}
+
+/*触屏七期鱼圈*/
+.v7_yucircle .tab_con{ width:100%; height:2.25rem; background:#fff; border-bottom: 1px solid #ddd;}
+.v7_yucircle .tab_box{ width:13.8rem; margin:0 auto;}
+.v7_yucircle .tab_per{ width:3.6rem; height:2.2rem; line-height: 2.2rem; text-align: center; font-size: 0.72rem; color:#666; border-bottom: 1px solid #fff;}
+.v7_yucircle .tab_per.on{ color:#19A0E9; border-bottom: 1px solid #19A0E9; }
+.v7_yucircle .distance{ margin: 0 1.5rem;}
+.v7_yucircle .tabshow_list ul li{ width:94%; height:3.5rem; border:1px solid #e8e8e8; border-radius: 5px; background:#fff; margin:0.6rem auto 0; overflow:hidden;}
+.v7_yucircle .c_part1{ width:3.5rem; height:3.5rem; background-repeat: no-repeat; background-size: cover; background-position: center;}
+.v7_yucircle .c_part2{ width:9.5rem; margin:0.5rem 0 0 0.6rem;}
+.v7_yucircle .c_part3{}
+.v7_yucircle .c_part4{ width:2.8rem; height:1.3rem; background:url(../images/enter_add.png) no-repeat center center; background-size: contain; margin:1rem 0.5rem 0 0;}
+.v7_yucircle .c_part4.on{ background:url(../images/enter_add1.png) no-repeat center center;background-size: contain;}
+.v7_yucircle .c_title{ font-size: 0.72rem; color:#333; margin-bottom: 0.6rem;}
+.v7_yucircle .c_tienum{ font-size: 0.65rem; color:#bbb; margin-right:0.6rem;}
+.v7_yucircle .null_tip{ width:12.3rem; margin:3.2rem auto 0;}
+.v7_yucircle .null_text{ color:#bbb; text-align: center; font-size: 0.65rem;}
+
+/*触屏七期活跃榜*/
+.v7_gradelist{ width:100%; background: #fff;}
+.v7_gradelist .first_head{ width:3.7rem; height:3.7rem; margin:2.3rem auto 0.7rem; position:relative; display:block;}
+.v7_gradelist .first_line{border-bottom: 1px solid #ddd; padding-bottom: 0.9rem;}
+.v7_gradelist .first_line .head{ width:3.7rem; height:3.7rem; border-radius: 100%; margin:0 auto; display:block; }
+.v7_gradelist .first_line .first_title{ position:relative; font-size: 0.7rem; color:#333;}
+.v7_gradelist .grade{ position:absolute;right:-1.8rem; top:0;}
+.v7_gradelist .first_box{ text-align: center;margin-right: 1.5rem;}
+.v7_gradelist .first_icon{width:1rem; height:1rem; position:absolute; bottom:0; right:0;}
+.v7_gradelist .first_num{ width:100%; text-align: center; font-size: 0.6rem; color:#999;}
+.v7_gradelist .blue_c{ color:#0096E6;}
+.v7_gradelist ul li{ width:92%; border-bottom: 1px solid #ddd; margin:0 auto;}
+.v7_gradelist .per_num{ font-size: 0.72rem; color:#333; margin:1.4rem 0 0 0.2rem; width:1rem; height:1rem;text-align: center; line-height: 1rem;}
+.v7_gradelist .num2{ border-radius: 100%; background:#F97F09; color:#fff;}
+.v7_gradelist .num3{ border-radius: 100%; background:#F05E08; color:#fff; }
+.v7_gradelist .per_head img{ width:2.4rem; height:2.4rem; display:block; border-radius: 100%; margin:0.65rem 1rem;}
+.v7_gradelist .per_name{ position:relative; margin-top:0.9rem;}
+.v7_gradelist .text1{ font-size: 0.75rem; color:#333;}
+.v7_gradelist .active_text{ color:#999; margin-top:0.1rem;}
+
+/*触屏七期签到页面*/
+.v7_sign .sign_bg{ width:100%;  position:absolute; top:0; left:0; z-index: 999;}
+.v7_sign .grade_a{ width:100%; position:absolute; top:2.7rem; left:0; z-index: 9999;}
+.v7_sign .sign_btn{ width:6.75rem; height:3.25rem; position:absolute; top:9.5rem; left:50%; margin-left:-3.37rem;z-index: 9999; background:url(../images/sign_btn.png) center center no-repeat;background-size: cover;}
+.v7_sign .sign_btn.on{ background:url(../images/sign_btn1.png) center center no-repeat;background-size: cover;}
+.v7_sign .day_flag{width:100%; position:absolute; left:0; top:16rem;z-index: 9999;}
+.v7_sign .blank_f{ width:4%; height:1px;}
+.v7_sign .sign1,.v7_sign .sign3{ width:8%;text-align: center;}
+.v7_sign .sign2{ width:4%; height:2px;background:#0096E6; margin:1.25rem 1% 0;}
+.v7_sign .day_num{ color:#999; font-size: 0.6rem; margin-top:0.2rem; display:block;}
+.v7_sign .sign_text{ width:100%; text-align: center; font-size: 0.72rem; color:#999; position:absolute; top:20.3rem;z-index: 9999;}
+.v7_sign .sign_text .blue_c{ color:#0096E6; margin:0 0.2rem;}
+.v7_sign .sign_shadow{ position:fixed; background:rgba(0,0,0,0.5); width:100%; height:100%; top:0; left:0; z-index: 99999; display:none;}
+.v7_sign .sign_box1{ margin-top: 20%;}
+.v7_sign .text_box{ width:8.75rem;text-align: center; position:absolute; top:13rem; left:50%; margin-left:-4.325rem;}
+.v7_sign .color_grey{ color:#999; font-size: 0.7rem;}
+.v7_sign .color_red{ color:#894000; font-size: 0.75rem; margin-top:0.3rem;}
+.v7_sign .changelink{ width:100%; height:6rem; display:block; position:absolute; top:23.5rem; left:0; z-index: 9999;}

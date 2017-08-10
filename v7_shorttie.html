@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发微贴</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page v7_posttie">
+        <form action="">
+            <header class="bar bar-nav cl">
+                <button class="external v7_title v7_title_z z">取消</button>
+                <button class="external v7_title v7_title_y y">发布</button>
+            </header>
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <textarea name="" placeholder="晒晒你的爱鱼吧..." class="longtie_textarea"></textarea>
+                <div class="vote_upload">
+                    <div id="upload">
+                        <div id="filePickerid">
+                            <img id="resultImage" style="display:none;" />
+                            <div id="preview" class="cl">
+                                <div class="add_pic">
+                                    <img src="images/v7_addpic.png" style="width:100%;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/h5upload2.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript'>
+        /*上传图片插件*/
+        window.zp=window.Zepto = Zepto
+        zp.fileUpload({ filebutton: "#filePickerid", previewZoom: "#preview" });
+
+        var post_with = parseInt($(window).width())*0.3;
+        $("#preview img").width(post_with);
+        $("#preview img").height(post_with);
+    </script>
+</body>
+</html>

@@ -19,6 +19,15 @@
             <h1 class="title">验证手机</h1>
         </header>
         <div class="shadow_bg"></div>
+        <div class="pic_yanz">
+            <span class="close-yanz" onclick="closeYanz()"></span>
+            <p class="yanz_text1">请填写图片验证码</p>
+            <p class="yanz_box cl">
+                <input type="text" class="z" />
+                <img src="" class="y" />
+            </p>
+            <div id="sure_btn" class="sure_btn">确定</div>
+        </div>
         <!-- 这里是页面内容区 -->
         <div class="content login_con regi_con">
             <form action="">
@@ -31,26 +40,18 @@
                     <input type="text" class="log-input idecode z" placeholder="输入验证码" />
                     <div class="y getidecode" id="yan_btn">获取验证码</div>
                 </div>
-                <!-- <div class="input-box on cl">
+                <div class="input-box on cl">
                     <img src="images/icon-lock.png" class="log-icon z" alt="" />
-                    <input type="text" class="log-input z" placeholder="请输入密码" />
+                    <input type="password" required="required" id="eye_pwd" class="log-input z" placeholder="请输入密码" />
                     <a href="javascript:;" class="y external eye">
-                        <img src="images/icon-eye1.png" class="log-icon" alt="" />
+                        <span class="log-icon eye-btn"></span>
                     </a>
-                </div> -->
+                </div>
                 <button class="login_btn">确定</button>
                 <!-- <div class="login-tip2 cl">
                     <span class="z">可使用龙巅账号直接</span>
                     <a class="login-btn y external" href="javascript:;">登录</a>
                 </div> -->
-                <div class="pic_yanz">
-                    <p class="yanz_text1">请填写图片验证码</p>
-                    <p class="yanz_box cl">
-                        <input type="text" class="z" />
-                        <img src="" class="y" />
-                    </p>
-                    <div id="sure_btn" class="sure_btn">确定</div>
-                </div>
                 <p class="reg-tip">
 
 应国家相关法律《中华人民共和国网络安全法》要求，自6月1日起使用信息发布、即时通讯等互联网服务需进行身份信息验证。为保障您对相关服务功能的正常使用，请您完成手机号验证，感谢您的理解和支持。
@@ -103,6 +104,22 @@
             $('.shadow_bg').fadeIn();
             $('.pic_yanz').fadeIn();
         }
+
+        function closeYanz(){
+            $('.shadow_bg').fadeOut();
+            $('.pic_yanz').fadeOut();
+        }
+
+        /*密码可见眼睛*/
+        $(".eye-btn").click(function(){
+            if($('.eye-btn').hasClass("on")){
+                $(this).removeClass("on");
+                document.getElementById("eye_pwd").type = 'password';
+            }else{
+                $(this).addClass("on");
+                document.getElementById("eye_pwd").type = 'text';
+            }
+        })
 
     </script>
 </body>

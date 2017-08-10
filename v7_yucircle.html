@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>全部鱼圈</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <form action="">
+            <header class="bar bar-nav cl">
+                <h1 class="title">全部鱼圈</h1>
+                <a href="" class="icon search_icon y external"></a>
+            </header>
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll v7_yucircle">
+                <div class="tab_con">
+                    <div class="tab_box cl">
+                        <span id="per1" class="z tab_per on">兴趣</span>
+                        <span id="per2" class="z tab_per distance">地域</span>
+                        <span id="per3" class="z tab_per">品牌</span>
+                    </div>
+                    <div id="per1_show" class="tabshow_list">
+                        <ul class="list_block">
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4 on"></span>
+                            </li>
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="per2_show" class="tabshow_list" style="display:none;">
+                        <ul class="list_block">
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4 on"></span>
+                            </li>
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="per3_show" class="tabshow_list" style="display:none;">
+                        <ul class="list_block">
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4 on"></span>
+                            </li>
+                            <li class="cl">
+                                <p class="c_part1 z" style="background-image:url(images/test_img.jpg)"></p>
+                                <div class="c_part2 z">
+                                    <p class="c_title">龙鱼圈</p>
+                                    <div class="c_data">
+                                        <p class="c_tienum z">成员数 25</p>
+                                        <p class="c_tienum z">帖子数 1.2万</p>
+                                    </div>
+                                </div>
+                                <span class="y c_part4"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 没有数据缺省页 -->
+                    <div class="null_tip" style="display:none;">
+                        <img src="images/null_tip.png" width="100%" />
+                        <p class="null_text">还没有鱼圈</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript'>
+    $('.tab_per').click(function(event) {
+        var show_id = $(this).attr('id');
+        $(this).siblings('.tab_per').removeClass('on');
+        $(this).addClass('on');
+        $('#'+show_id+'_show').siblings('.tabshow_list').hide();
+        $('#'+show_id+'_show').show();
+    });
+    </script>
+</body>
+</html>

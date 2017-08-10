@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>签到</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav cl">
+            <h1 class="title">签到</h1>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content v7_sign">
+            <img src="images/sign_bigbg.png" class="sign_bg" />
+            <img src="images/grade3.png" class="grade_a" />
+            <span class="sign_btn"></span>
+            <div class="cl day_flag">
+                <p class="blank_f z"></p>
+                <p class="z sign1">
+                    <img src="images/day_add1.png" width="100%" />
+                    <!-- <img src="images/day_add.png" width="100%" /> -->
+                    <span class="day_num">1天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign1">
+                    <img src="images/day_add.png" width="100%" />
+                    <span class="day_num">2天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign1">
+                    <img src="images/day_add.png" width="100%" />
+                    <span class="day_num">3天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign1">
+                    <img src="images/day_add.png" width="100%" />
+                    <span class="day_num">4天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign1">
+                    <img src="images/day_add.png" width="100%" />
+                    <span class="day_num">5天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign1">
+                    <img src="images/day_add.png" width="100%" />
+                    <span class="day_num">6天</span>
+                </p>
+                <p class="z sign2"></p>
+                <p class="z sign3">
+                    <img src="images/weekday_add.png" width="100%" />
+                    <!-- <img src="images/weekday_add1.png" width="100%" /> -->
+                    <span class="day_num">7天</span>
+                </p>
+            </div>
+            <p class="sign_text">连续签到<span class="blue_c">7天</span>会有更多惊喜哦~</p>
+            <p class="sign_text">已连续签到<span class="blue_c">2天</span>，领先<span class="blue_c">22.5%</span>的鱼友</p>
+            <a href="" class="external changelink"></a>
+            <!-- 签到成功弹窗 -->
+            <div class="sign_shadow">
+                <div class="sign_box1">
+                    <img src="images/success_bg.png" width="100%"/>
+                    <div class="text_box">
+                        <p class="color_grey">已经同步论坛签到</p>
+                        <p class="color_red">+10贝壳</p>
+                        <p class="color_red">+20经验</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        /* 签到成功弹框显示以及消失 */
+        $('.sign_btn').click(function(event) {
+            $(this).addClass('on');
+            $('.sign_shadow').fadeIn();
+            // var timer = setInterval('$(".sign_shadow").fadeOut()',3000);
+            var timer = setInterval(function(){
+                $(".sign_shadow").fadeOut();
+                clearInterval(timer);
+            },3000);
+        });
+    </script>
+</body>
+</html>

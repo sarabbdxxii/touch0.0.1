@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>参赛规则</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" href="css/light7.min.css">
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/pages2.css" />
+    </head>
+    <body>
+        <!-- page 容器 -->
+        <div class="page vote-page">
+            <!-- 这里是页面内容区 -->
+            <div class="content" style="padding-top:1.15rem;">
+                <ul class="group-container">
+                    <li class="group-item active" id="group1">比赛规则</li>
+                    <li class="group-item" id="group2">大奖设置</li>
+                    <li class="group-item" id="group3">评委团队</li>
+                    <li class="group-item" id="group4">赞助方</li>
+                </ul>
+                <div class="group-content rule-con">
+                    <div class="content-group content-group1 cl">
+                        <img src="images/1-1.jpg" width="100%" alt="" />
+                        <img src="images/1-2.jpg" width="100%" alt="" />
+                        <img src="images/1-3.jpg" width="100%" alt="" />
+                        <img src="images/1-4.jpg" width="100%" alt="" />
+                        <img src="images/1-5.jpg" width="100%" alt="" />
+                    </div>
+                    <div class="content-group content-group2" style="display:none">
+                        <img src="images/2-1.jpg" width="100%" alt="" />
+                        <img src="images/2-2.jpg" width="100%" alt="" />
+                        <img src="images/2-3.jpg" width="100%" alt="" />
+                    </div>
+                    <div class="content-group content-group3" style="display:none">
+                        <img src="images/3-1.jpg" width="100%" alt="" />
+                        <img src="images/3-2.jpg" width="100%" alt="" />
+                        <img src="images/3-3.jpg" width="100%" alt="" />
+                        <img src="images/3-4.jpg" width="100%" alt="" />
+                        <img src="images/3-5.jpg" width="100%" alt="" />
+                        <img src="images/3-6.jpg" width="100%" alt="" />
+                        <img src="images/3-7.jpg" width="100%" alt="" />
+                        <img src="images/3-8.jpg" width="100%" alt="" />
+                    </div>
+                    <div class="content-group content-group4" style="display:none">
+                        <img src="images/4-1.jpg" width="100%" alt="" />
+                        <img src="images/4-2.jpg" width="100%" alt="" />
+                        <img src="images/4-3.jpg" width="100%" alt="" />
+                        <img src="images/4-4.jpg" width="100%" alt="" />
+                    </div>
+                </div>
+                <nav class="bar bar-tab">
+                    <a class="tab-item" href="#">
+                    首页
+                    </a>
+                    <a class="tab-item" href="#">
+                    赛事介绍
+                    </a>
+                    <a class="tab-item active" href="#">
+                    排行榜
+                    </a>
+                    <a class="tab-item" href="#">
+                    奖品兑换
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+        <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+        <script>
+            //不存在二级分类
+                    $(".group-item").click(function(){
+                        $(".group-item").removeClass('active');
+                        $(this).addClass('active');
+                        $('.content-group').hide();
+                        var itemId = $(this).attr('id');
+                        $('.content-'+itemId).show();
+                    });
+        </script>
+    </body>
+</html>

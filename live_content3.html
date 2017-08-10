@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>鱼邻直播界面</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-live_btn-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="live_content" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;">
+                <div class="cl">
+                    <div class="z">
+                        <div class="host_info cl">
+                            <span class="z avatar2" style="background:url(images/avatar.jpg) no-repeat center center;background-size:cover;"></span>
+                            <div class="z more_info">
+                                <p class="host_name">星华妃</p>
+                                <p>山西太原</p>
+                            </div>
+                        </div>
+                        <div class="host_info fish_bill">
+                            <div class="z more_info">
+                                 鱼票796
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="z watcher">
+                        <p>77776</p>
+                        <p>观看</p>
+                    </div> -->
+                    <div class="y">
+                        <!-- <div class="cl avatar_list">
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                            <span class="y avatar_item" style="background-image:url(images/avatar.jpg);"></span>
+                        </div> -->
+                        <div class="live-info">
+                            <div class="up-tip">鱼邻直播</div>
+                            <div class="down-id">ID:79677</div>
+                        </div>
+                        <!-- <div class="host_info fish_bill live_tag">
+                            <div class="z more_info">
+                                 鱼邻直播
+                            </div>
+                        </div>
+                        <p class="live_id">ID:79677</p> -->
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div class="gift_list">
+                    <div class="host_info big gift_item cl" onclick="send_gift(this)"><!--
+                        <div class="left_sc z"></div> -->
+                        <span class="z avatar2" style="background-image:url(images/pic3.jpg);"></span>
+                        <div class="z more_info">
+                            <p>小攀龙</p>
+                            <p style="color:#FACB38">送了我一个小海螺</p>
+                        </div>
+                        <!-- <div class="right_sc z"></div> -->
+                        <div class="agift" style="background-image:url(images/gift1.png);"></div>
+                    </div>
+                    <div class="host_info big gift_item cl" onclick="send_gift(this)">
+                        <span class="z avatar2" style="background-image:url(images/pic3.jpg);"></span>
+                        <div class="z more_info">
+                            <p>小攀龙</p>
+                            <p style="color:#FACB38">送了我一个小海螺</p>
+                        </div>
+                        <div class="agift" style="background:url(images/gift2.png) no-repeat center center;background-size:cover;"></div>
+                    </div>
+                </div>
+                <div id="aaaa" style="width:100%;height:30px; background:red;"></div>
+                <div class="price_pop">
+                    <div class="price_part1">
+                        <div id="banner" class="swiper-container-horizontal" style="height:100%;">
+                            <div class="swiper-wrapper">
+                                <div class="price_pop_inner swiper-slide">
+                                    <div class="price_content">
+                                        <p class="price_pop_text"><span>【名称】</span>武级美拉B级金龙</p>
+                                        <p class="price_pop_text"><span>【规格】</span>26公分</p>
+                                        <p class="price_pop_text"><span>【商品编码/芯片码】</span>F222</p>
+                                        <p class="price_pop_text"><span>【描述】</span>古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,到货时
+                    跳伤一根尾鳍，正在恢复中，不严重影响整体美观古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美</p>
+                                    </div>
+                                    <div class="img_list">
+                                        <img src="images/avatar.jpg" alt="" />
+                                        <img src="images/avatar.jpg" alt="" />
+                                        <img src="images/avatar.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="price_pop_inner swiper-slide">
+                                    <div class="price_content">
+                                        <p class="price_pop_text"><span>【名称】</span>武级美拉B级金龙</p>
+                                        <p class="price_pop_text"><span>【规格】</span>26公分</p>
+                                        <p class="price_pop_text"><span>【商品编码/芯片码】</span>F222</p>
+                                        <p class="price_pop_text"><span>【描述】</span>古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,到货时
+                    跳伤一根尾鳍，正在恢复中，不严重影响整体美观古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美</p>
+                                    </div>
+                                </div>
+                                <div class="price_pop_inner swiper-slide">
+                                    <div class="price_content">
+                                        <p class="price_pop_text"><span>【名称】</span>武级美拉B级金龙</p>
+                                        <p class="price_pop_text"><span>【规格】</span>26公分</p>
+                                        <p class="price_pop_text"><span>【商品编码/芯片码】</span>F222</p>
+                                        <p class="price_pop_text"><span>【描述】</span>古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,到货时
+                    跳伤一根尾鳍，正在恢复中，不严重影响整体美观古典重蓝底粗框包边，层次干净分明，无跌眼，极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美极微兜嘴，须子粗直正挺，爬背出色,货时跳伤一根尾鳍，正在恢复中，不严重影响整体美</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price_part2">
+                        <ul class="cl">
+                            <li>
+                                <p class="text_info1">￥800</p>
+                                <p class="text_info2">起拍价</p>
+                            </li>
+                            <li>
+                                <p class="text_info1">￥800</p>
+                                <p class="text_info2">加价幅度</p>
+                            </li>
+                            <li>
+                                <p class="text_info1">￥800</p>
+                                <p class="text_info2">邮费</p>
+                            </li>
+                            <li>
+                                <p class="text_info1">是</p>
+                                <p class="text_info2">包活包损</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slider_tip">向左滑动查看下一件商品</div>
+                </div>
+                <style>
+                    .price_pop{ width:100%; height: 67.5%; overflow: hidden; position:absolute; top:-67.5%; left:0; background:#fff; z-index:99999;}
+                    .price_pop .price_part1{width:100%; height:100%; padding-bottom: 3.5rem;}
+                    .price_pop .price_part2{ width:100%;height:3rem; background:#f5f5f5; position:absolute; bottom:0;}
+                    .price_pop .price_part2 ul li{ float:left; width:25%; height:3rem; background:url(images/tab_line2.png) no-repeat center right; }
+                    .price_pop .price_part2 ul li:last-child{ background:none;}
+                    .price_pop .price_part2 .text_info1{ color:#FF0707; font-size:0.7rem; text-align: center; margin-top:0.5rem;}
+                    .price_pop .price_part2 .text_info2{ color:#bbb; font-size:0.65rem; text-align: center; margin-top:0.1rem;}
+                    .price_pop .price_pop_text{ font-size: 0.8rem; color:#666; line-height: 1.2rem;}
+                    .price_pop .price_pop_inner{ width:100%; height:100%; overflow-y: scroll; margin-top:0.5rem;}
+                    .price_pop .price_content{ width:94%;margin:0 auto 0.5rem;}
+                    .price_pop .slider_tip{ width:1.5rem; height:10.5rem; background:rgba(0,0,0,0.6); position:absolute; top:10%; right:0; z-index:999; color:#fff; font-size:0.65rem; padding:0.45rem;}
+                    .price_pop .img_list img{ width:100%; display:block;}
+                </style>
+                <div class="sys-tip">
+                    <span>8000观看&nbsp;</span>
+                    <span class="audi-name">鱼儿好吃</span>
+                    进入了直播间
+                </div>
+                <div class="scroll_msg">
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx">
+                        <div class="z level_part level1" style="display:inline-block">LV1</div>
+                        <span class="line-owner">小攀龙：</span>
+                        我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level2">LV2</div><span class="line-owner">小攀龙：</span>我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level3">LV3</div><span class="line-owner">小攀龙：</span>你的鱼好牛……</span>
+                    </div>
+                    <div class="sys_msg">直播消息：一道金光闪过，鱼饵不好吃进入了直播间</div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level4">LV4</div><span class="line-owner">小攀龙：</span>你的鱼好牛……</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level5">LV5</div><span class="line-owner">小攀龙：</span>我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level6">LV6</div><span class="line-owner">小攀龙：</span>我送了一个小海螺</span>
+                    </div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level7">LV7</div><span class="line-owner">小攀龙：</span>你的鱼好牛……</span>
+                    </div>
+                    <div class="sys_msg">直播消息：一道金光闪过，鱼饵不好吃进入了直播间</div>
+                    <div class="cl pop_msg">
+                        <span class="z font14 textx"><div class="z level_part level8">LV8</div><span class="line-owner">小攀龙：</span>你的鱼好牛……</span>
+                    </div>
+                </div>
+                <div class="display_bar cl">
+                    <div class="live_goods"></div>
+                    <div class="wrapper_main">
+                        <span class="z func_icon icon5 confirm-title-ok"></span>
+                        <span class="y func_icon icon4" onclick="show_share()"></span>
+                        <span class="y func_icon icon3">
+                            <div class="heart">77998</div>
+                        </span>
+                        <span class="y func_icon icon1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 分享 -->
+        <div class="black" onclick="close_black()" style="display:none;"></div>
+        <div class="share_list">
+            <div class="share">
+                <div class="line1 cl">
+                    <div class="bdsharebuttonbox bdshare-button-style0-16">
+                        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">QQ</a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cancle font14" onclick="close_black(this)">取消</div>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/swiper3.0.8.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/common.js' charset='utf-8'></script>
+    <script>
+        $(document).on('click','.confirm-title-ok', function () {
+            $.confirm('下载app参与更多互动', '精彩直播不错过', function () {
+                $.alert('You clicked Ok button');
+            });
+        });
+        window.onload = function() {
+            var mySwiper2 = new Swiper('#banner',{
+                autoplay:false,
+                visibilityFullFit : true,
+                loop:false,
+                pagination : '.pagination',
+            });
+        }
+
+        function stopPropagation(e) {
+            if (e.stopPropagation)
+                e.stopPropagation();
+            else
+                e.cancelBubble = true;
+        }
+        $(document).bind('click',function(){
+            $(".price_pop").animate({top: '-67.5%'});
+        });
+        $('#up_slider').bind('click',function(e){
+            $(".price_pop").animate({top: '0'});
+            stopPropagation(e);
+        });
+    </script>
+</body>
+</html>

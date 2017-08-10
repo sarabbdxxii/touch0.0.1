@@ -1,0 +1,108 @@
+/*投票列表页*/
+.vote-page .bar .searchbar{background:#f9f9f9;}
+.vote-page .bar .searchbar .search-input input{background:#fff;}
+.vote-page .search-input .icon{left:.8rem;color:#626262;font-size: .8rem;}
+.vote-page .search-input label+input{padding-left: 1.9rem;color:#A0A0A2;font-size: .65rem;}
+.vote-page .content{background:#f9f9f9;}
+.vote-page .bar-tab .tab-item{font-size: .8rem; color:#333;}
+/*.vote-page .bar-tab .tab-item.active{color:#0096E6;}*/
+.vote-page .bar-tab .tab-item.active1{color:#0096E6;}
+.vote-page .bar-tab{border-top: none;padding-right: .6rem;}
+.vote-page .group-container{margin:0 3.2% 0 3.2%;height: 2.3rem;display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;justify-content: space-between;-webkit-justify-content: space-between;}
+.vote-page .group-container .group-item{flex: 1;background: #C8C8C8;color:#fff;font-size: .8rem;text-align: center;line-height: 2.3rem; margin-right:0.2rem;}
+.vote-page .group-container .group-item:last-child{margin-right: 0;}
+/*.vote-page .group-container.item4 .group-item{flex: 0 0 24.5%;width:24.5%;}*/
+.vote-page .group-container .group-item.active{background:#0096E6;}
+.vote-page .grade2{margin:0 3.2% 0 3.2%;height:2.4rem;}
+.vote-page .grade2 .grade2-item{width:33.3%;text-align: center; line-height: 2.4rem;font-size: .8rem; color:#333;}
+.vote-page .grade2 .grade2-item.active{color:#0096E6;}
+.vote-page .content-group{margin:0 3.2% 0 3.2%;padding-bottom: 3rem;}
+.vote-page .rule-con .content-group{margin:0;padding-bottom: 3rem;}
+.vote-page .content-group .list-item{width:48%;margin-left: 1.95%;background:#fff;margin-bottom: .35rem;}
+.vote-page .list-item .item-pic{display:inline-block;width:100%;height:8.6rem;position: relative;}
+.vote-page .list-item .item-pic img{width:100%;height:8.6rem;}
+.vote-page .item-pic .item-num{position:absolute;top:.45rem;left:.35rem;display:inline-block;width:1.3rem;height:1.3rem;border-radius: 50%;background:#0096E6;color:#fff;line-height: 1.3rem;text-align: center;font-size: .55rem;}
+.vote-page .item-pic .item-state{position: absolute;top:.5rem;right: 0;height:1.15rem;width:1.8rem;background:#FFB359;color:#fff;text-align: center;line-height: 1.15rem;font-size: .6rem;}
+.vote-page .item-pic .item-state .triangle{position:absolute;left:-11.4px;width:0;height:0;border-right: solid 11.66px #FFB359;border-top: 11.66px solid transparent;border-bottom: 11.68px solid transparent;}
+.vote-page .item-detail{padding:.5rem .6rem;}
+.vote-page .item-detail .text1{font-size: .7rem;color:#333;}
+.vote-page .item-detail .text1 span{ height:1rem;}
+.vote-page .item-detail .text1 .span1{width: 66%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; display: block;}
+.vote-page .item-detail .text2{line-height: 1.4rem;}
+.vote-page .item-detail .vote-btn{display:inline-block;width:100%;height:2rem;line-height: 2rem;text-align: center;color:#fff;font-size: .8rem;background:#0096E6;}
+.vote-page .chart-item{display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;height:5.4rem;background:#fff;margin-bottom: .35rem;}
+.vote-page .chart-item .chart-img{height:5.4rem;flex: 0 0 5.4rem;position: relative;}
+.vote-page .chart-item .chart-img img{height:5.4rem;width:5.4rem;}
+.vote-page .chart-item .chart-img .ranking{display:inline-block;position: absolute;top:.4rem;left:.4rem;width:2rem;height:1rem;line-height: 1rem;text-align: center;color:#fff;background:#FD735F;border-radius: 3px;}
+.vote-page .chart-item .chart-img .ranking.on{background:#0096E6;}
+.vote-page .chart-item .chart-info{flex:1;padding:.75rem .6rem 0 .9rem;display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;}
+.vote-page .chart-info .chart-detail{flex:1;color:#333;}
+.vote-page .chart-info .vote-btn2{display:block;flex:0 0 4rem;-webkit-flex:0 0 4rem;height:1.9rem;border:solid 1px #0096E6;font-size: .8rem;color:#0096E6;text-align: center;line-height: 1.9rem;margin-top: 1rem;}
+.vote-page .chart-info .vote-btn2.score{flex:0 0 5.9rem}
+.vote-page .chart-info .chart-num{font-size: .8rem;font-weight: bold;line-height: 2.5rem;}
+.vote-page .chart-info .chart-total{font-size: .7rem;color:#0096E6;}
+@media screen and (max-width: 320px) {
+  .vote-page .chart-info .vote-btn2{flex:0 0 3rem!important;}
+}
+.vote-page .parting-line{display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;height:2.7rem;line-height: 2.7rem;margin:0 3.2% 0 3.2%;}
+.vote-page .parting-line .line{ -webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1; position: relative;border-bottom: solid 1px #CDCDCD;height:1.35rem;}
+.vote-page .parting-line span{padding:0 .4rem; font-size: .65rem;color:#6B6B6B;}
+.vote-page .rule-con{padding-top: .5rem;font-size: 0;}
+
+/*兑换页面*/
+.exchange-page .title{font-weight: normal;color:#666;}
+.exchange-page .content{background:#f0f0f0;}
+.exchange-page .exchange-list{padding-top: .5rem;}
+.exchange-page .exchange-list .exchange-item{width:100%;height:3.5rem;background:#fff;border-bottom: solid 1px #f0f0f0;padding:0 .5rem;}
+.exchange-page .award-detail .text1{font-size: .75rem;color:#2F2F2F;font-weight: bold;margin-top: .75rem;}
+.exchange-page .award-detail .text2{font-size: .6rem;color:#999;margin-top: .1rem;}
+.exchange-page .exchange-list .text3{font-size: .7rem;color:#333;line-height: 3.5rem;margin-right: 23%;}
+.exchange-page .exchange-list .text4{font-size: .7rem;color:#EEA61C;line-height: 3.5rem;}
+.exchange-page .my-point{width:100%;padding: 1rem 0 1.15rem 0;text-align: center;background:#fff;}
+.exchange-page .my-point .text5{font-size: 2.25rem;color:#EEA61C;font-weight: bold;}
+.exchange-page .award-detail2{width:100%;margin-top: .5rem;background:#fff;}
+.exchange-page .award-detail2 .award-img{margin:.35rem .5rem;width:6.1rem;height:4.1rem;}
+.exchange-page .award-detail2 .award-img img{width:6.1rem;height:4.1rem;}
+.exchange-page .award-detail2 .award-info{width:61%;}
+@media screen and (max-width:320px){
+  .exchange-page .award-detail2 .award-info{width:55%;}
+}
+.exchange-page .award-detail2 .text6{margin-top: .7rem; font-size: .7rem;color:#2F2F2F;font-weight: bold;width:100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.exchange-page .award-detail2 .text7{font-size: .7rem;color:#999;}
+.exchange-page .award-detail2 .text8{margin-top: 1rem; font-size: .7rem;color:#EEA61C;}
+.exchange-page .owner-info{margin-top: .5rem;width:100%;padding-bottom:3rem;}
+.exchange-page .owner-info div{background:#fff;}
+.exchange-page .owner-info .line1{/*height:2.25rem;*/border-bottom: solid 1px #E4E4E4;padding:.8rem .65rem;}
+.exchange-page .owner-info .line1 .info-title{width:20%;font-size: .7rem;color:#999;}
+.exchange-page .owner-info .line1 input{width:80%;font-size: .7rem;color:#333;border:none;}
+.exchange-page .owner-info .line1 textarea{width:80%;font-size: .7rem;color:#333;border:none;}
+.exchange-page .confirm-btn{position:fixed;bottom:.5rem;width:94%;height:2.25rem;line-height: 2.25rem;text-align: center;color:#fff;font-size: .6rem;background:#EEA61C;left:3%;}
+.exchange-page .exchange-rules{padding:.75rem .5rem 1rem .5rem;background:#fff;border-bottom: solid 1px #f0f0f0;}
+.exchange-page .exchange-rules .explain-title{font-size: .7rem;color:#2f2f2f;padding-left: .2rem;}
+.exchange-page .exchange-rules .explain-title .yellow-bar{display:inline-block;width:3px;height:.7rem;background:#EEA61C;margin:.1rem .2rem 0 0;}
+.exchange-page .exchange-rules .explain-con{font-size: .6rem;color:#666;margin-top: .7rem;padding-left: .2rem;width:100%;}
+.exchange-page .title-bar{margin-top: .5rem;width:100%;background:#fff;}
+.exchange-page .title-bar .bar-item{width:50%;padding:.6rem 0;}
+.exchange-page .title-bar .bar-item .text-box{display:inline-block;width:100%;height:1.5rem;line-height: 1.5rem;text-align: center;font-size: .6rem;color:#333;}
+.exchange-page .title-bar .bar-item .text-box:first-child{border-right: solid 1px #f0f0f0;}
+.exchange-page .title-bar .bar-item .text-box.text2{color:#eea61c;}
+.exchange-page .text-box .num{font-size: .8rem;font-weight: bold;color:#eea61c;}
+.exchange-page .text-box .title-icon{display:inline-block;height:1.2rem;width:1.1rem;background:url(../images/integral.png) no-repeat;background-size: contain;position:relative;right: .6rem;top:.2rem;}
+.exchange-page .text-box .title-icon.title-icon2{background:url(../images/record.png) no-repeat;background-size: contain;position:relative;right: .6rem;top:.2rem;}
+.exchange-page .exchange-item2{margin:.5rem 2.6% 0 2.6%;background:#fff;}
+.exchange-page .exchange-item2 .img-box{display:inline-block;width:100%;height:8.6rem;position: relative;}
+.exchange-page .exchange-item2 .pics{width:100%;height:8.6rem;}
+.exchange-page .exchange-item2 .img-box .award-tip{position: absolute;width:2.55rem;height:1.55rem;background:url(../../images/vote/ex-background.png) no-repeat;background-size: contain;right:.5rem;top:-.14rem;text-align: center;color:#fff;font-size: .6rem;padding-top: .34rem;}
+.exchange-page .exchange-item2 .img-box .left1{position: absolute;width:2.45rem;height:2.45rem;background:#fff;border-radius: 50%;left:1.5rem;bottom:-.57rem;padding:.15rem}
+.exchange-page .exchange-item2 .img-box .left2{position: absolute;width:2.15rem;height:2.15rem;background:#eea61c;border-radius: 50%;text-align: center;font-size: .5rem;color:#fff;padding-top: .2rem;line-height: .8rem;}
+.exchange-page .exchange-item2 .img-box .left2 .text3{font-size: .9rem;}
+.exchange-page .exchange-item2 .item-info{padding:.8rem .475rem .674rem .475rem;}
+.exchange-page .exchange-item2 .item-info .leftone{font-size: .7rem;color:#2f2f2f;width:70%;}
+.exchange-page .exchange-item2 .item-info .leftone p{overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.exchange-page .exchange-item2 .item-info .leftone p:last-child{color:#eea61c;}
+.exchange-page .exchange-item2 .item-info .exchange-btn{display:inline-block;width:30%;height:1.75rem;text-align: center;line-height: 1.75rem;color:#fff;background:#eea61c;border-radius: 3px;font-size: .65rem;}
+
+/*决赛页面提示*/
+.vote-state{margin:3.2% 3.2% .65rem 3.2%;height:2rem;border-left: solid 4px #FFB359;padding-left: .55rem;}
+.vote-state .grading{font-size: .9rem;color:#333;}
+.vote-state .result{font-size: .6rem;color:#999;}

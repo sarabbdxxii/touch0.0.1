@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>我的鱼币</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/light7.min.css">
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <header class="bar bar-nav">
+            <h1 class="title">我的鱼币</h1>
+        </header>
+        <div class="content">
+            <div class="wallet_mycoin" style="height:100%;">
+                <div class="mycoin_top" style="height:100%;">
+                    <div class="top_logo"><img src="images/wallet_leave.png" width="100%" /></div>
+                    <p class="top_text1">鱼币余额</p>
+                    <p class="top_text2">306</p>
+                    <div class="sel_pay cl" style="margin-top:2.5rem;">
+                        <span href="" class="z on open-popup open-about new-wechat-btn" data-popup=".popup-about">微信支付</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup-about">
+        <div class="wallet_paytitle">
+            <p>请输入支付密码</p>
+            <span class="w_close close-popup"></span>
+        </div>
+        <p class="wallet_ptext">需要支付<span>¥300.00</span></p>
+        <div class="wallet_pswbox">
+            <input type="tel" class="pwd_input" maxlength="6" />
+            <ul class="wallet_password">
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i></i></li>
+                <span class="wallet_activeline"></span>
+            </ul>
+        </div>
+        <p class="psw_info">请仔细确认您购买的鱼币。</p>
+    </div>
+    <style>
+    .popup{ top:7rem;}
+    </style>
+    <script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+    <script>
+        /*支付密码获取焦点的效果*/
+        $('.pwd_input').focus(function(event) {
+            $('.wallet_activeline').attr("style","visibility:visible");
+            $('.wallet_activeline').css('left',0);
+        });
+        /*支付密码输入时的效果*/
+        $('.pwd_input').keyup(function(event){
+            var num = $('.pwd_input').val().length;
+            var li_length = $('.wallet_password li').width();
+            $(".wallet_password li").each(function(index, el) {
+                if(index<num){
+                    if(num==6){
+                        $(this).find("i").attr("style","visibility:visible");
+                        $('.wallet_activeline').attr("style","");
+                    }else{
+                        $(this).find("i").attr("style","visibility:visible");
+                        $('.wallet_activeline').attr("style","visibility:visible");
+                        $('.wallet_activeline').css('left',li_length*num+2);
+                    }
+                }
+            });
+        });
+        /*支付密码删除时的效果*/
+        $(document).keydown(function (e) {
+            var num = $('.pwd_input').val().length;
+            if (e.keyCode == 8) {
+                $(".wallet_password li").each(function(index, el) {
+                    if(index+1>=num){
+                        if(num==1){
+                            $('.wallet_activeline').css('left',0);
+                        }
+                        $(this).find("i").attr("style","");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
